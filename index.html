@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inspiratour: What Inspires You?</title>
+  <meta name="description" content="Inspira Tour is an incentive house. A travel agency specialising in corporate tour management.">
+  <meta name="theme-color" content="#F3F8F6">
+  <link rel="icon" href="data:,">
+  <link rel="preload" href="assets/fonts/kumbh-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.className = 'js';</script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <div class="site-header__inner">
+      <a class="brand" href="index.html" aria-label="Inspira Tour, home">
+        <img src="assets/img/logo.webp" width="640" height="121" alt="Inspira Tour. What inspires you?">
+      </a>
+
+      <!-- Links are in-page anchors until the other pages are redesigned. -->
+      <nav class="nav" aria-label="Main">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html" aria-current="page">Home</a></li>
+          <li>
+            <a class="nav__link" href="#business">About Us</a>
+          </li>
+          <li class="nav__item--sub">
+            <a class="nav__link" href="#places">Gallery</a>
+            <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="sub-gallery" aria-label="Gallery submenu"><svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5 6 6.5 11 1.5"/></svg></button>
+            <ul class="nav__sub" id="sub-gallery">
+              <li><a href="#places">Gallery Asia</a></li>
+              <li><a href="#places">Gallery America</a></li>
+              <li><a href="#places">Gallery Europe</a></li>
+              <li><a href="#places">Gallery Australia &amp; New Zealand</a></li>
+            </ul>
+          </li>
+          <li><a class="nav__link" href="#voices">Testimonials</a></li>
+          <li><a class="nav__link" href="#moment">Inspiration</a></li>
+        </ul>
+        <a class="btn btn--ghost btn--sm" href="#contact">Contact Us</a>
+      </nav>
+
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-open>
+        <span class="menu-btn__label">Menu</span>
+        <span class="menu-btn__bars" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <dialog class="mobile-menu" id="mobile-menu" aria-label="Main menu">
+    <div class="mobile-menu__top">
+      <img src="assets/img/logo.webp" width="640" height="121" alt="">
+      <button class="icon-btn" type="button" aria-label="Close menu" data-menu-close><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m2 2 12 12M14 2 2 14"/></svg></button>
+    </div>
+    <nav aria-label="Mobile">
+      <ul class="mobile-menu__list">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="#business">About Us</a></li>
+        <li><a href="#places">Gallery</a>
+          <ul>
+            <li><a href="#places">Gallery Asia</a></li>
+            <li><a href="#places">Gallery America</a></li>
+            <li><a href="#places">Gallery Europe</a></li>
+            <li><a href="#places">Gallery Australia &amp; New Zealand</a></li>
+          </ul>
+        </li>
+        <li><a href="#voices">Testimonials</a></li>
+        <li><a href="#moment">Inspiration</a></li>
+      </ul>
+      <a class="btn btn--primary" href="#contact">Contact Us</a>
+    </nav>
+  </dialog>
+
+  <main id="main">
+
+    <!-- Hero: base photo, then headline, then the cut-out people from the same photo. -->
+    <section class="hero" aria-label="Introduction" data-hero>
+      <div class="hero__stage">
+        <div class="hero__layer">
+          <img class="hero__img is-active" data-slide="1" src="assets/img/hero-1.webp" width="1600" height="1091" alt="Seven people jumping together on a beach" fetchpriority="high">
+          <img class="hero__img" data-slide="2" src="assets/img/hero-2.webp" width="1600" height="1067" alt="A climber with arms wide open above snowy mountains" fetchpriority="low">
+          <img class="hero__img" data-slide="3" src="assets/img/hero-3.webp" width="1600" height="1067" alt="An elderly couple walking hand in hand along the shore" fetchpriority="low">
+          <img class="hero__img" data-slide="4" src="assets/img/hero-4.webp" width="1600" height="1123" alt="A boy cheering on a staircase of books" fetchpriority="low">
+        </div>
+
+        <h1 class="hero__title"><span>What </span><span>Inspires </span><span>You?</span></h1>
+
+        <div class="hero__layer hero__layer--front" aria-hidden="true">
+          <img class="hero__img is-active" data-slide="1" src="assets/img/hero-1-cutout.webp" width="1600" height="1091" alt="">
+          <img class="hero__img" data-slide="2" src="assets/img/hero-2-cutout.webp" width="1600" height="1067" alt="" fetchpriority="low">
+          <img class="hero__img" data-slide="3" src="assets/img/hero-3-cutout.webp" width="1600" height="1067" alt="" fetchpriority="low">
+          <img class="hero__img" data-slide="4" src="assets/img/hero-4-cutout.webp" width="1600" height="1123" alt="" fetchpriority="low">
+        </div>
+
+        <p class="tag hero__tag"><span>Tour &amp; Travels</span></p>
+
+        <div class="hero__picker" role="group" aria-label="Choose hero photo">
+          <button type="button" class="thumb" data-go="1" aria-pressed="true" aria-label="Photo 1 of 4"><img src="assets/img/hero-1-thumb.webp" width="160" height="160" alt=""></button>
+          <button type="button" class="thumb" data-go="2" aria-pressed="false" aria-label="Photo 2 of 4"><img src="assets/img/hero-2-thumb.webp" width="160" height="160" alt=""></button>
+          <button type="button" class="thumb" data-go="3" aria-pressed="false" aria-label="Photo 3 of 4"><img src="assets/img/hero-3-thumb.webp" width="160" height="160" alt=""></button>
+          <button type="button" class="thumb" data-go="4" aria-pressed="false" aria-label="Photo 4 of 4"><img src="assets/img/hero-4-thumb.webp" width="160" height="160" alt=""></button>
+          <button type="button" class="thumb thumb--pause" data-pause aria-label="Pause slideshow">
+            <svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2h3v12H4zM9 2h3v12H9z"/></svg>
+            <svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2v12l10-6z"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="hero__notch">
+        <p>The best incentive house in Indonesia.<br>The catalyst to your business empowerment.</p>
+        <a class="btn btn--primary" href="#contact">Let’s Get Started</a>
+      </div>
+    </section>
+
+    <!-- Popular activities: photos keep their own proportions on one fixed height. -->
+    <section class="activities" aria-labelledby="activities-title">
+      <div class="wrap activities__head">
+        <h2 id="activities-title" class="h-section">Popular Activities</h2>
+        <div class="activities__ctrl">
+          <div class="meter" aria-hidden="true"><span data-rail-meter></span></div>
+          <button class="icon-btn" type="button" aria-label="Previous activities" data-rail-prev><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 2 4 8l6 6"/></svg></button>
+          <button class="icon-btn" type="button" aria-label="Next activities" data-rail-next><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 2 6 6-6 6"/></svg></button>
+        </div>
+      </div>
+      <div class="rail" tabindex="0" role="region" aria-label="Popular Activities, scrollable" data-rail>
+        <ul class="rail__list">
+          <li class="act act--p"><figure><span class="act__img"><img src="assets/img/aurora.webp" width="473" height="709" alt="Aurora Hunting" draggable="false"></span><figcaption><span>Wildlife</span><strong>Aurora Hunting</strong></figcaption></figure></li>
+          <li class="act act--l"><figure><span class="act__img"><img src="assets/img/dogsled.webp" width="1146" height="900" alt="Dogsled" draggable="false"></span><figcaption><span>Wildlife</span><strong>Dogsled</strong></figcaption></figure></li>
+          <li class="act act--s"><figure><span class="act__img"><img src="assets/img/funicular.webp" width="640" height="480" alt="Funicular" draggable="false"></span><figcaption><span>Wildlife</span><strong>Funicular</strong></figcaption></figure></li>
+          <li class="act act--p"><figure><span class="act__img"><img src="assets/img/segway.webp" width="473" height="709" alt="Segway" draggable="false"></span><figcaption><span>Wildlife</span><strong>Segway</strong></figcaption></figure></li>
+          <li class="act act--l"><figure><span class="act__img"><img src="assets/img/helicopter.webp" width="1200" height="800" alt="Helicopter Ride" loading="lazy" draggable="false"></span><figcaption><span>Wildlife</span><strong>Helicopter Ride</strong></figcaption></figure></li>
+          <li class="act act--s"><figure><span class="act__img"><img src="assets/img/speedboat.webp" width="669" height="446" alt="Speedboat" loading="lazy" draggable="false"></span><figcaption><span>Travel to</span><strong>Speedboat</strong></figcaption></figure></li>
+          <li class="act act--l"><figure><span class="act__img"><img src="assets/img/snow-mobile.webp" width="1200" height="762" alt="Snow Mobile" loading="lazy" draggable="false"></span><figcaption><span>Travel to</span><strong>Snow Mobile</strong></figcaption></figure></li>
+          <li class="act act--p"><figure><span class="act__img"><img src="assets/img/cycling.webp" width="473" height="709" alt="Cycling" loading="lazy" draggable="false"></span><figcaption><span>Travel to</span><strong>Cycling</strong></figcaption></figure></li>
+          <li class="act act--p"><figure><span class="act__img"><img src="assets/img/rickshaw.webp" width="473" height="709" alt="Rickshaw" loading="lazy" draggable="false"></span><figcaption><span>Travel to</span><strong>Rickshaw</strong></figcaption></figure></li>
+          <li class="act act--p"><figure><span class="act__img"><img src="assets/img/ferrari.webp" width="473" height="709" alt="Ferrari Self Drive" loading="lazy" draggable="false"></span><figcaption><strong>Ferrari Self Drive</strong></figcaption></figure></li>
+          <li class="act act--l"><figure><span class="act__img"><img src="assets/img/gala-dinner.webp" width="1200" height="801" alt="Gala Dinner" loading="lazy" draggable="false"></span><figcaption><strong>Gala Dinner</strong></figcaption></figure></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="business wrap" id="business" aria-labelledby="business-title">
+      <div class="business__photos" data-reveal>
+        <img class="business__a" src="assets/img/russia.webp" width="544" height="800" alt="Saint Basil's Cathedral, Russia" loading="lazy">
+        <p class="business__years"><span class="num">30+</span><span>Years of experience</span></p>
+        <img class="business__b" src="assets/img/paris.webp" width="750" height="500" alt="Eiffel Tower, Paris" loading="lazy">
+      </div>
+      <div class="business__text">
+        <h2 id="business-title" class="h-section">What We Do For Your Business</h2>
+        <ol class="route">
+          <li data-reveal>
+            <svg class="route__line" viewBox="0 0 40 100" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M20 0C52 30 -12 68 20 100"/></svg>
+            <h3>A Catalyst to Your Business Empowerment</h3>
+            <p>Tell us your dreams. Share your objectives. We are committed to turn them into reality.</p>
+          </li>
+          <li data-reveal>
+            <svg class="route__line" viewBox="0 0 40 100" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M20 0C52 30 -12 68 20 100"/></svg>
+            <h3>The Essence for an Inspiring Journey</h3>
+            <p>These factors are the essence of our products. Thus, discovering these factors specific to our clients are key to a successful trip.</p>
+          </li>
+          <li data-reveal>
+            <h3>With 30+ Years of Experience</h3>
+            <p>We bring service-excellence, superior-product, and exceptional-creativity to all our products.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="moment" id="moment" aria-labelledby="moment-title">
+      <div class="moment__top">
+        <div class="moment__copy">
+          <h2 id="moment-title" class="h-section">Feel the Inspira moment</h2>
+          <p class="moment__lead">Improve mindset,<br>Enhance relationship,<br>Boost sales</p>
+          <p class="moment__body">In every <em>Inspiring Journey</em>, <em>Inspira Moments</em> will be sprinkled along the trip. Containing inspirational and motivational stories, <em>Inspira Moment</em> is created to motivate and boost the work ethic of listeners: key to better relationships with your customers!</p>
+        </div>
+        <div class="moment__ribbon" aria-hidden="true"><svg viewBox="0 0 900 600"><path class="rb-b" d="M452 330C520 190 560 -20 960 96"/><path class="rb-a" d="M172 640C172 370 382 500 462 310"/></svg></div>
+        <div class="moment__figure">
+          <img src="assets/img/inspira-moment-cutout.webp" width="1200" height="900" alt="Two business partners raising their fists" loading="lazy">
+        </div>
+      </div>
+
+      <div class="moment__list" lang="id">
+        <article>
+          <h3 lang="en">Inspira Moment</h3>
+          <div>
+            <p class="lead">Meningkatkan Loyalitas &amp; Penjualan Dealer Anda</p>
+            <p><strong>Pertumbuhan sales &amp; market share</strong> Anda pasti terjadi ... Dealer Anda menjadi <strong>loyal customer</strong> Dengan moment khusus yang berisi motivasi dan cerita inspirational yang dapat memberikan semangat dan kinerja lebih tinggi</p>
+          </div>
+        </article>
+        <article>
+          <h3 lang="en">Save Your Time</h3>
+          <div>
+            <p class="lead">Menghemat waktu Anda</p>
+            <p><strong>Asset</strong> yang <strong>tidak bisa kembali</strong>, bisa anda <strong>manfaatkan</strong> untuk <strong>core business</strong> Anda ... dapat focus ke hal-hal lain yang essential untuk bisnis Anda dan kami memberikan progress report selama persiapan acara perjalanan berlangsung laksana Personal Assistant Anda</p>
+          </div>
+        </article>
+        <article>
+          <h3 lang="en">Flexibility</h3>
+          <div>
+            <p class="lead">Menyesuaikan Itinerary sesuai kebutuhan Anda</p>
+            <p><strong>Keleluasaan</strong> untuk <strong>kreatifitas</strong> dalam <strong>memenuhi kebutuhan</strong> Anda ...</p>
+          </div>
+        </article>
+        <article>
+          <h3 lang="en">Business Oriented Solution</h3>
+          <div>
+            <p class="lead">Menyediakan segala kebutuhan Anda, meminimalkan pekerjaan Anda</p>
+            <p>membuat Anda <strong>tenang &amp; relax</strong> ... Karena kami melakukan segala sesuatu A-Z, mulai dari membuat draft campaign untuk Anda, persiapan sebelum keberangkatan, proses dokumen perjalanan, saat keberangkatan, acara perjalanan, serta pelayanan saat kembali ke Tanah Air</p>
+          </div>
+        </article>
+        <article>
+          <h3 lang="en">Post Tour Touch</h3>
+          <div>
+            <p class="lead">Memberikan Laporan yang transparan &amp; konkrit setelah Tour</p>
+            <p><strong>Jaminan</strong> bahwa Tour yang Anda jalankan benar-benar <strong>memenuhi misi business</strong> Anda</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="ready" aria-label="Plan a trip">
+      <img src="assets/img/helicopter-wide.webp" width="2400" height="1600" alt="Helicopter flying past green mountains" loading="lazy">
+      <div class="ready__text">
+        <p>Ready to adventure and enjoy premium trip</p>
+        <a class="btn btn--primary" href="#contact">Explore More</a>
+      </div>
+    </section>
+
+    <section class="places wrap" id="places" aria-labelledby="places-title">
+      <h2 id="places-title" class="h-section">Go Exotic Places</h2>
+      <ul class="places__list" data-places>
+        <li class="is-open"><div class="places__card" tabindex="0"><img src="assets/img/asia.webp" width="667" height="1000" alt="" loading="lazy"><span class="places__cap"><span>Travel to</span><strong>Asia</strong></span></div></li>
+        <li><div class="places__card" tabindex="0"><img src="assets/img/australia.webp" width="1068" height="561" alt="" loading="lazy"><span class="places__cap"><span>Travel to</span><strong>Australia</strong></span></div></li>
+        <li><div class="places__card" tabindex="0"><img src="assets/img/europe.webp" width="1120" height="426" alt="" loading="lazy"><span class="places__cap"><span>Travel to</span><strong>Europe</strong></span></div></li>
+        <li><div class="places__card" tabindex="0"><img src="assets/img/america.webp" width="660" height="462" alt="" loading="lazy"><span class="places__cap"><span>Travel to</span><strong>America</strong></span></div></li>
+      </ul>
+    </section>
+
+    <section class="facts wrap" aria-labelledby="facts-title">
+      <div class="facts__head">
+        <h2 id="facts-title" class="h-section">Achievements</h2>
+        <p class="tag"><span>Company Fact</span></p>
+      </div>
+      <dl class="facts__list">
+        <div><dt>Happy Traveler</dt><dd class="num"><span data-count="3500">3500</span>+</dd></div>
+        <div><dt>Corporate Clients</dt><dd class="num"><span data-count="120">120</span>+</dd></div>
+        <div><dt>Destination Visited</dt><dd class="num"><span data-count="62">62</span>k+</dd></div>
+      </dl>
+    </section>
+
+    <section class="voices" id="voices" aria-labelledby="voices-title">
+      <div class="voices__inner">
+        <div class="voices__head">
+          <h2 id="voices-title" class="h-section">Our Inspira moment truth from our customers</h2>
+          <p>More than 100 corporate within 30 years who feel the “Inspira moment” of Inspiratour</p>
+          <a class="btn btn--ghost" href="#voices">All Testimonials</a>
+        </div>
+        <div class="voices__body" data-voices>
+          <div class="voices__panels">
+            <figure class="voice" role="tabpanel" id="voice-1" aria-labelledby="voice-tab-1">
+              <div class="stars" role="img" aria-label="5 out of 5 stars"></div>
+              <blockquote lang="id">Ketepatan toleransi waktu, mengatur acara serta tour guide yang baik, cepat akrab dengan peserta, dan Inspira tour, tour yang baik dalam mengatur jadwal waktu dan lokasi yang akan di kunjungi serta baik menyampaikan keterangan dengan diselingi sedikit candaan</blockquote>
+            </figure>
+            <figure class="voice" role="tabpanel" id="voice-2" aria-labelledby="voice-tab-2">
+              <div class="stars" role="img" aria-label="5 out of 5 stars"></div>
+              <blockquote lang="id">Pelayanan yang baik, makananya ok, tour guide yang bisa menjelaskan dengan baik dan mampu membawa suasana sehingga tidak membosankan di bus dan kisah inspiratifnya semoga Inspira semakin sukses</blockquote>
+            </figure>
+            <figure class="voice" role="tabpanel" id="voice-3" aria-labelledby="voice-tab-3">
+              <div class="stars" role="img" aria-label="5 out of 5 stars"></div>
+              <blockquote lang="id">Leadernya membantu banget top lah, Bisa jadi refrensi kita buat tour bareng keluarga dilain kesempatan, terimakasih untuk inspira tour dan leader yang sudah membantu selama tour berjalan</blockquote>
+            </figure>
+          </div>
+          <div class="voices__tabs" role="tablist" aria-label="Customer testimonials">
+            <button type="button" role="tab" id="voice-tab-1" aria-controls="voice-1" aria-selected="true"><strong>Johan</strong><span>STHIL</span></button>
+            <button type="button" role="tab" id="voice-tab-2" aria-controls="voice-2" aria-selected="false" tabindex="-1"><strong>Rina Chaterina Onggiyana</strong><span>POLYTRON</span></button>
+            <button type="button" role="tab" id="voice-tab-3" aria-controls="voice-3" aria-selected="false" tabindex="-1"><strong>Devy</strong><span>DAIKIN</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="footer__inner">
+      <div class="footer__lead">
+        <a class="brand" href="index.html" aria-label="Inspira Tour, home"><img src="assets/img/logo-white.webp" width="640" height="136" alt="Inspira Tour. What inspires you?" loading="lazy"></a>
+        <p>Inspira Tour is an <em>incentive house.</em> A travel agency specialising in corporate tour management</p>
+        <ul class="social">
+          <li><a href="https://www.tiktok.com/@inspiratour">Tiktok</a></li>
+          <li><a href="https://www.instagram.com/inspira_tour/">Instagram</a></li>
+          <!-- TODO: the live site points these two at the theme vendor's demo accounts (Envato). Add the real profile URLs. -->
+          <li><span>Facebook <small>coming soon</small></span></li>
+          <li><span>Linkedin <small>coming soon</small></span></li>
+        </ul>
+      </div>
+      <nav class="footer__pages" aria-labelledby="footer-pages">
+        <h2 id="footer-pages">Pages</h2>
+        <ul>
+          <li><a href="#business">About us</a></li>
+          <li><a href="#places">Gallery Asia</a></li>
+          <li><a href="#places">Gallery America</a></li>
+          <li><a href="#places">Gallery Europe</a></li>
+          <li><a href="#places">Gallery Australia &amp; New Zealand</a></li>
+          <li><a href="#moment">Inspirations</a></li>
+          <li><a href="#voices">Testimonial</a></li>
+          <li><a href="#contact">Contact us</a></li>
+        </ul>
+      </nav>
+      <div class="footer__contact">
+        <h2>Contact</h2>
+        <dl>
+          <div><dt>Drop a Line</dt><dd><a href="tel:+622129405333">(021)29405333</a></dd></div>
+          <div><dt>Email Address</dt><dd><a href="mailto:info@inspiratour.co.id">info@inspiratour.co.id</a></dd></div>
+          <div><dt>Visit office</dt><dd><a href="https://maps.app.goo.gl/cVauzKDgBsiJzicm8">Ruko Duta Garden Blok B4 No.15 Tangerang 15124 Banten-Indonesia</a></dd></div>
+        </dl>
+      </div>
+      <p class="footer__legal">© 2023 Inspiratour. All Rights Reserved</p>
+    </div>
+  </footer>
+</body>
+</html>
