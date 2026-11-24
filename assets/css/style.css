@@ -390,5 +390,25 @@ button:disabled { cursor: not-allowed; }
   .hero__img { transform: none; }
 }
 
-/* In-page anchors clear the sticky header. */
-[id="business"], [id="moment"], [id="places"], [id="voices"], [id="contact"] { scroll-margin-top: 84px; }
+/* Smooth scroll (Lenis) and word-reveal masks. */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-stopped { overflow: clip; }
+.lenis [data-lenis-prevent] { overscroll-behavior: contain; }
+.w { display: inline-block; overflow: hidden; vertical-align: top; padding: .08em .05em .16em; margin: -.08em -.05em -.16em; }
+.w__i { display: inline-block; }
+
+/* Card hover: only on devices that can hover. */
+@media (hover: hover) {
+  .act figcaption strong { transition: color .25s, transform .4s var(--ease); }
+  .act:hover figcaption strong { color: var(--primary-deep); transform: translateX(6px); }
+  .places__list img { transition: transform .8s var(--ease); }
+  .places__list li:hover img, .places__card:focus-visible img { transform: scale(1.06); }
+  .moment__list h3 { transition: transform .4s var(--ease); }
+  .moment__list article:hover h3 { transform: translateX(10px); }
+  .facts__list > div { transition: transform .4s var(--ease); }
+  .facts__list > div:hover { transform: translateY(-6px); }
+  .voices__tabs button { transition: border-color .2s, background-color .2s, transform .3s var(--ease); }
+  .voices__tabs button:hover { transform: translateY(-3px); }
+  .btn:hover { transform: translateY(-2px); }
+  .btn:active { transform: none; }
+}
