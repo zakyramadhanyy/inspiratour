@@ -1,329 +1,1054 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Inspiratour: What Inspires You?</title>
+  <title>Inspira Tour company profile: What Inspires You?</title>
   <meta name="description" content="Inspira Tour is an incentive house. A travel agency specialising in corporate tour management.">
-  <meta name="theme-color" content="#F3F8F6">
+  <meta name="theme-color" content="#F6F4EC">
   <link rel="icon" href="data:,">
-  <link rel="preload" href="assets/fonts/kumbh-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script>document.documentElement.className = 'js';</script>
-  <script src="assets/js/vendor/gsap.min.js" defer></script>
-  <script src="assets/js/vendor/ScrollTrigger.min.js" defer></script>
-  <script src="assets/js/vendor/lenis.min.js" defer></script>
-  <script src="assets/js/main.js" defer></script>
-  <script src="assets/js/motion.js" defer></script>
+  <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="assets/js/gsap.min.js" defer></script>
+  <script src="assets/js/ScrollTrigger.min.js" defer></script>
+  <script src="assets/js/lenis.min.js" defer></script>
+  <style>
+    @font-face { font-family: Archivo; src: url('assets/fonts/archivo-latin.woff2') format('woff2'); font-weight: 400 700; font-stretch: 75% 125%; font-display: swap; }
+
+    /* Green and lime are sampled from the logo; forest and neutrals are DESIGN.md section 02. */
+    :root {
+      --green: #5ebb0c;
+      --green-hover: #74cb2a;
+      --lime: #d8e94a;
+      --forest: #244b39;
+      --forest-2: #30604a;
+      --canvas: #f6f4ec;
+      --white: #fff;
+      --ink: #1b1d19;
+      --muted: #5f645b;
+      --line: #e5e3da;
+      --line-2: #cfccc0;
+      --r: 20px;
+      --r-l: 24px;
+      --win: 46% / 33%;
+      --gutter: 64px;
+      --ease: cubic-bezier(.2, .7, .2, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; scroll-padding-top: 112px; }
+    body { margin: 0; background: var(--canvas); color: var(--ink); font: 400 17px/1.6 Archivo, system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: clip; }
+    img, svg { display: block; max-width: 100%; }
+    img { height: auto; }
+    h1, h2, h3, p, ul, ol, dl, dd, figure, blockquote { margin: 0; padding: 0; }
+    ul, ol { list-style: none; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; color: inherit; background: none; border: 0; padding: 0; text-align: inherit; }
+    a[href], button, summary { cursor: pointer; }
+    button:disabled { cursor: not-allowed; }
+    em { font-style: normal; }
+    :focus-visible { outline: 3px solid #2f6d05; outline-offset: 3px; border-radius: 8px; }
+    .dark :focus-visible { outline-color: var(--lime); }
+
+    .wrap { width: min(100% - 2 * var(--gutter), 1312px); margin-inline: auto; }
+    .h2 { font-size: clamp(31px, 3.06vw, 44px); line-height: 1.08; font-weight: 600; font-stretch: 112%; letter-spacing: -.03em; text-wrap: balance; }
+    .num { font-weight: 400; font-stretch: 112%; letter-spacing: -.06em; line-height: .86; font-variant-numeric: tabular-nums; }
+    .skip { position: fixed; top: 8px; left: 8px; z-index: 100; padding: 12px 20px; background: var(--ink); color: #fff; border-radius: 12px; transform: translateY(-200%); }
+    .skip:focus { transform: none; }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 28px; border-radius: 16px; background: var(--green); color: var(--ink); font-weight: 600; font-size: 16px; white-space: nowrap; transition: background-color .2s, transform .2s var(--ease); }
+    .btn:hover { background: var(--green-hover); }
+    .btn:active { transform: scale(.97); background: #52a30a; }
+    .btn--s { min-height: 48px; padding: 0 20px; font-size: 15px; border-radius: 14px; }
+    .round { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 14px; border: 1.5px solid var(--ink); transition: background-color .2s, color .2s, transform .2s; }
+    .round svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; }
+    .round:hover { background: var(--ink); color: #fff; }
+    .round:active { transform: scale(.94); }
+
+    /* Cabin window: the one shape every destination and person is seen through. */
+    .win { position: relative; overflow: hidden; border-radius: var(--win); background: #dad7ca; }
+    .ring { padding: 10px; border-radius: var(--win); background: #e8e5da; }
+    .shade { position: absolute; inset: 0; z-index: 2; background: #f1eee4; border-bottom: 1px solid var(--line-2); transform: translateY(-101%); transition: transform .28s var(--ease); }
+    .shade::after { content: ''; position: absolute; left: 50%; bottom: 14px; width: 44px; height: 6px; margin-left: -22px; border-radius: 6px; background: #d3d0c3; }
+
+    .px { position: relative; overflow: hidden; }
+    .px > img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: var(--pos, 50% 50%); }
+    .parallax .px > img { top: calc(var(--p, 12) * -1%); height: calc(100% + var(--p, 12) * 2%); will-change: transform; }
+
+    .w { display: inline-block; overflow: hidden; vertical-align: top; padding: .06em .05em .16em; margin: -.06em -.05em -.16em; }
+    .w > span { display: inline-block; }
+    html.lenis, html.lenis body { height: auto; }
+    .lenis.lenis-stopped { overflow: clip; }
+
+    /* Navigation bar */
+    .bar { position: fixed; z-index: 60; top: 16px; left: 50%; translate: -50% 0; width: min(100% - 48px, 1376px); display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 68px; padding: 0 10px 0 24px; background: var(--white); border: 1px solid var(--line); border-radius: 22px; }
+    .bar__logo { display: flex; align-items: center; min-height: 44px; }
+    .bar__logo img { width: 166px; }
+    .nav { display: none; }
+    .nav > ul { display: flex; gap: 2px; }
+    .nav > ul > li { position: relative; display: flex; align-items: center; }
+    .nav__a { display: flex; align-items: center; min-height: 44px; padding: 0 14px; border-radius: 12px; font-size: 15px; font-weight: 500; transition: background-color .2s; }
+    .has-sub .nav__a { padding-right: 34px; }
+    .nav__a:hover { background: var(--canvas); }
+    .nav__a:active { background: var(--line); }
+    .nav__a[aria-current] { background: var(--ink); color: #fff; }
+    .nav__t { position: absolute; right: 2px; top: 50%; margin-top: -22px; display: grid; place-items: center; width: 32px; height: 44px; }
+    .nav__a[aria-current] + .nav__t { color: #fff; }
+    .nav__t svg { width: 11px; fill: none; stroke: currentColor; stroke-width: 1.8; transition: transform .2s; }
+    .nav__t[aria-expanded="true"] svg, .has-sub:hover .nav__t svg { transform: rotate(180deg); }
+    .sub { position: absolute; top: 100%; left: 0; min-width: 210px; padding: 8px; background: var(--white); border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 18px 40px -22px rgb(27 29 25 / .45); visibility: hidden; opacity: 0; transform: translateY(6px); transition: opacity .2s, transform .2s, visibility .2s; }
+    .has-sub:hover .sub, .nav__t[aria-expanded="true"] + .sub { visibility: visible; opacity: 1; transform: none; }
+    .sub a { display: block; padding: 11px 14px; border-radius: 12px; font-size: 15px; line-height: 1.4; white-space: nowrap; }
+    .sub a:hover { background: var(--canvas); }
+    .bar__end { display: flex; align-items: center; gap: 8px; }
+    .menu-btn { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 14px; background: var(--ink); color: #fff; }
+    .menu-btn svg { width: 18px; stroke: currentColor; stroke-width: 2; fill: none; }
+    .menu-btn:active { background: var(--forest); }
+    .menu { width: 100%; max-width: none; height: 100dvh; max-height: none; margin: 0; padding: 20px 20px 32px; border: 0; background: var(--forest); color: #fff; overflow-y: auto; overscroll-behavior: contain; }
+    .menu__top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+    .menu__top img { width: 160px; }
+    .menu .round { border-color: #fff; }
+    .menu__list > li { padding-block: 8px; border-bottom: 1px solid #44705b; }
+    .menu__list > li > a { display: flex; align-items: center; min-height: 48px; font-size: 27px; font-weight: 600; font-stretch: 112%; letter-spacing: -.02em; }
+    .menu__list [aria-current] { color: var(--lime); }
+    .menu li li a { display: flex; align-items: center; min-height: 44px; color: #d4e2da; }
+    .menu .btn { width: 100%; margin-top: 24px; }
+
+    /* Hero: a cabin wall with five windows in front of one landscape. */
+    /* Hero: sky, title and ridge are three layers measured from one scene width. */
+    .hero { position: relative; container-type: size; height: 100svh; min-height: 640px; max-height: 1180px; overflow: hidden; background: #22343a; text-align: center; }
+    .scene { --w: max(100cqw, 124cqh); position: absolute; width: var(--w); aspect-ratio: 2400 / 2125; left: calc((100cqw - var(--w)) * .24); top: calc(var(--w) * -.05); }
+    .scene img { position: absolute; left: 0; width: 100%; max-width: none; }
+    .scene__ridge { top: 26.467%; }
+    .hero h1 { position: absolute; left: calc((100cqw - var(--w)) * -.24); width: 100cqw; top: calc(var(--w) * .2745 - .51em); font-size: 10cqw; line-height: 1; font-weight: 600; letter-spacing: -.062em; white-space: nowrap; }
+    .hero__in { position: absolute; z-index: 3; left: 0; right: 0; top: calc(max(100cqw, 124cqh) * .331); padding: 0 var(--gutter); }
+    .hero__in b { display: block; margin-bottom: 8px; font-size: 14px; font-weight: 600; }
+    .hero__in p { font-size: clamp(20px, 1.94vw, 28px); line-height: 1.3; font-weight: 600; letter-spacing: -.06em; text-shadow: 0 0 24px rgb(9 27 32 / .55); color:#fff; }
+    .hero__in .btn { margin-top: 24px; background: #fff; color: var(--ink); }
+    .hero { color: #fff; }
+    .hero__in .btn::after { content: "+"; margin-left: 12px; }
+
+
+    /* About */
+    .sheet { position: relative; z-index: 4; border-radius: 40px 40px 0 0; background: var(--white); }
+    .about { margin-top: -40px; padding-block: 128px 136px; }
+    .say { max-width: 1180px; font-size: clamp(36px, 4.03vw, 58px); line-height: 1.16; font-weight: 600; font-stretch: 112%; letter-spacing: -.035em; }
+    .say i { display: inline-block; vertical-align: -.12em; width: 1.9em; height: .9em; margin-inline: .04em; border-radius: 99px; border: 1px solid var(--line-2); overflow: hidden; }
+    .say i img { width: 100%; height: 100%; object-fit: cover; }
+    .what { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(40px, 7vw, 112px); margin-top: 120px; align-items: start; }
+    .what__pics { position: relative; height: 640px; }
+    .what__a { position: absolute; left: 0; top: 0; width: 336px; height: 476px; }
+    .what__b { position: absolute; right: 0; bottom: 0; width: 236px; height: 334px; }
+    .what__b .ring, .what__a .ring { height: 100%; }
+    .what .win { height: 100%; }
+    .years { display: flex; align-items: flex-end; gap: 16px; padding-bottom: 44px; }
+    .years .num { font-size: clamp(96px, 10.6vw, 152px); }
+    .years span:last-child { max-width: 5.6em; line-height: 1.3; color: var(--muted); }
+    .what li { padding-block: 28px; border-top: 1px solid var(--line-2); }
+    .what .h2 { margin-bottom: 36px; }
+    .what h3 { font-size: 24px; line-height: 1.25; font-weight: 600; letter-spacing: -.02em; }
+    .what li p { margin-top: 8px; max-width: 58ch; color: var(--muted); }
+
+    /* Founder */
+    .founder { padding-block: 128px; display: grid; grid-template-columns: 240px 1fr; gap: clamp(48px, 8vw, 128px); align-items: start; }
+    .founder .win { aspect-ratio: 220 / 300; }
+    .founder .win img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+    .founder h2 { margin-top: 22px; font-size: 24px; font-weight: 600; line-height: 1.2; letter-spacing: -.02em; }
+    .founder__id > p { color: var(--muted); }
+    .founder__lead { font-size: clamp(24px, 2.36vw, 34px); line-height: 1.3; font-weight: 500; letter-spacing: -.022em; text-wrap: pretty; }
+    .founder details { margin-top: 28px; }
+    .founder summary { display: inline-flex; align-items: center; min-height: 48px; padding: 0 20px; border: 1.5px solid var(--ink); border-radius: 14px; font-weight: 600; font-size: 15px; list-style: none; transition: background-color .2s, color .2s; }
+    .founder summary::-webkit-details-marker { display: none; }
+    .founder summary:hover { background: var(--ink); color: #fff; }
+    .founder summary:active { background: var(--forest); }
+    .founder summary .b, .founder [open] summary .a { display: none; }
+    .founder [open] summary .b { display: inline; }
+    .founder__more { columns: 2; column-gap: 48px; margin-top: 32px; }
+    .founder__more p { break-inside: avoid; padding-bottom: 18px; }
+
+    /* Through the window: a window opens until the photo covers the words behind it. */
+    .open { position: relative; height: 210vh; }
+    .open__pin { position: sticky; top: 0; height: 100vh; min-height: 640px; overflow: hidden; }
+    .open__words { position: absolute; inset: 0; display: flex; align-items: center; justify-content: space-between; padding-inline: max(var(--gutter), (100vw - 1312px) / 2); font-size: clamp(34px, 3.9vw, 56px); line-height: 1.06; font-weight: 600; font-stretch: 112%; letter-spacing: -.04em; }
+    .open__words span { width: 8.2em; }
+    .open__words span:last-child { text-align: right; }
+    .open__photo { position: absolute; inset: 0; clip-path: inset(17% 37.5% 13% 37.5% round 168px); }
+    .open__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%; }
+
+    /* Vision stack */
+    .vision { margin-top: -40px; background: var(--canvas); padding-block: 120px 40px; }
+    .stack { margin-top: 44px; }
+    .vcard { position: sticky; top: calc(104px + var(--i) * 20px); display: grid; grid-template-columns: 1fr 1fr; min-height: 520px; margin-bottom: 32px; border-radius: 32px; overflow: hidden; background: var(--white); border: 1px solid var(--line); transform-origin: 50% 0; }
+    .vcard--forest { background: var(--forest); border-color: var(--forest); color: #fff; }
+    .vcard__t { display: flex; flex-direction: column; justify-content: space-between; gap: 40px; padding: 56px; }
+    .vcard h3 { font-size: clamp(40px, 4.2vw, 60px); line-height: 1; font-weight: 600; font-stretch: 112%; letter-spacing: -.04em; }
+    .vcard p { font-size: 18px; max-width: 34em; }
+    .vcard p + p { margin-top: 10px; }
+    .mission { padding-block: 96px 128px; }
+    .mission ul { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 32px; margin-top: 40px; }
+    .mission li { padding: 22px 0 30px; border-top: 1px solid var(--line-2); font-size: 22px; line-height: 1.25; font-weight: 600; letter-spacing: -.02em; }
+
+    /* Activities */
+    .acts { background: var(--white); padding-block: 120px; }
+    .acts__g { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 96px); align-items: start; }
+    .acts__frame { position: sticky; top: 112px; height: calc(100vh - 152px); min-height: 460px; max-height: 760px; border-radius: 32px; overflow: hidden; background: #dad7ca; }
+    .acts__frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.05); transition: opacity .35s, transform .6s var(--ease); }
+    .acts__frame img.is-on { opacity: 1; transform: none; }
+    .acts__list { margin-top: 32px; }
+    .act { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; width: 100%; padding: 20px 0; border-top: 1px solid var(--line-2); color: #6c7167; transition: color .2s, padding .28s var(--ease); }
+    .act b { font-size: clamp(26px, 2.5vw, 36px); line-height: 1.15; font-weight: 600; font-stretch: 112%; letter-spacing: -.035em; }
+    .act span { font-size: 14px; white-space: nowrap; }
+    .act:hover { color: var(--ink); }
+    .act:active { color: #2f6d05; }
+    .act[aria-current] { color: var(--ink); padding-left: 20px; background: linear-gradient(var(--lime), var(--lime)) no-repeat 0 50% / 8px 28px; }
+    .act__thumb { display: none; }
+
+    /* Inspira moment */
+    .moment { position: relative; z-index: 3; background: var(--forest); color: #fff; border-radius: 40px; padding-block: 120px 96px; }
+    .moment__top { display: grid; grid-template-columns: 5fr 4fr 4fr; gap: clamp(32px, 4vw, 64px); align-items: end; }
+    .moment__lead { font-size: clamp(24px, 2.1vw, 30px); line-height: 1.22; letter-spacing: -.02em; color: var(--lime); }
+    .moment__body { color: #dbe7e0; font-size: 16px; }
+    .moment__body em { color: #fff; font-weight: 600; }
+    .seats { display: flex; gap: 12px; height: 420px; margin-top: 72px; }
+    .seat { position: relative; display: flex; flex: 0 1 96px; min-width: 96px; border-radius: 28px; overflow: hidden; background: var(--forest-2); transition: flex-grow .45s var(--ease), background-color .25s; }
+    .seat.is-on { flex-grow: 1; background: var(--lime); color: var(--ink); }
+    .seat h3 { flex: none; width: 96px; height: 100%; }
+    .seat button { display: flex; align-items: center; justify-content: flex-start; width: 100%; height: 100%; padding: 28px 0; writing-mode: vertical-rl; rotate: 180deg; font-size: 24px; line-height: 1.2; font-weight: 600; letter-spacing: -.02em; transition: background-color .2s; }
+    .seat:not(.is-on) button:hover { background: #3b7058; }
+    .seat:not(.is-on) button:active { background: #1c3d2e; }
+    .seat.is-on :focus-visible { outline-color: var(--ink); outline-offset: -6px; }
+    .seat :focus-visible { outline-offset: -6px; border-radius: 24px; }
+    .seat__b { width: min(784px, 100vw - 2 * var(--gutter) - 528px); flex: none; display: flex; flex-direction: column; justify-content: space-between; padding: 44px 40px 40px 20px; visibility: hidden; opacity: 0; transition: opacity .2s, visibility .2s; }
+    .seat.is-on .seat__b { visibility: visible; opacity: 1; transition: opacity .35s .15s, visibility 0s .15s; }
+    .seat .lead { font-size: clamp(26px, 2.36vw, 34px); line-height: 1.16; font-weight: 600; font-stretch: 108%; letter-spacing: -.03em; text-wrap: balance; }
+    .seat strong { font-weight: 600; }
+    .seat__b p:last-child { font-size: 18px; max-width: 64ch; }
+
+    /* Ready: the photo holds still while the card rides up and lands on the edge of the next section. */
+    .ready { position: relative; margin-top: -40px; }
+    .ready__bg { position: sticky; top: 0; height: 100vh; min-height: 640px; }
+    .ready__over { position: relative; z-index: 5; display: flex; align-items: flex-end; height: 46vh; }
+    .ready__card { width: 100%; margin-bottom: -24px; border: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 32px 32px 32px 40px; border-radius: var(--r-l); background: var(--white); }
+    .ready__card p { font-size: clamp(28px, 2.9vw, 42px); line-height: 1.08; font-weight: 600; font-stretch: 112%; letter-spacing: -.035em; text-wrap: balance; }
+
+    /* Places */
+    .places { margin-top: -40px; background: var(--canvas); padding-block: 176px 0; overflow: clip; }
+    .places__row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 36px; margin-top: 56px; }
+    .place { scroll-margin-top: 96px; }
+    .place:nth-child(2) { margin-top: 72px; }
+    .place:nth-child(3) { margin-top: 24px; }
+    .place:nth-child(4) { margin-top: 104px; }
+    .place > *, .place a { display: block; }
+    .place .win { aspect-ratio: 272 / 386; }
+    .place .shade { transform: translateY(-74%); }
+    .place p { margin-top: 18px; text-align: center; line-height: 1.25; }
+    .place small { display: block; font-size: 14px; color: var(--muted); }
+    .place strong { font-size: 28px; font-weight: 600; font-stretch: 112%; letter-spacing: -.03em; }
+    .place a strong { text-decoration: underline; text-decoration-color: var(--green); text-decoration-thickness: 3px; text-underline-offset: 6px; }
+    .place a:active strong { color: #2f6d05; }
+
+    /* Gallery viewer */
+    .gal { padding-block: 112px 128px; background: var(--canvas); }
+    .gal__head { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 36px; }
+    .tabs { display: flex; gap: 6px; padding: 6px; border-radius: 18px; background: #e8e5da; }
+    .tabs button { min-height: 44px; padding: 0 20px; border-radius: 13px; font-size: 15px; font-weight: 500; transition: background-color .2s; }
+    .tabs button:hover { background: #f1eee4; }
+    .tabs button:active { background: var(--line-2); }
+    .tabs [aria-selected="true"], .tabs [aria-selected="true"]:hover { background: var(--ink); color: #fff; }
+    .view { display: grid; grid-template-columns: 840fr 448fr; gap: 24px; align-items: start; }
+    .view figure { border-radius: var(--r-l); overflow: hidden; background: var(--white); border: 1px solid var(--line); }
+    .view figure img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; background: #dad7ca; }
+    .view figcaption { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 18px 18px 24px; line-height: 1.3; }
+    .view figcaption b { display: block; font-size: 20px; font-weight: 600; letter-spacing: -.015em; }
+    .view figcaption span { font-size: 15px; color: var(--muted); }
+    .view__ctrl { display: flex; gap: 8px; }
+    .thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .thumbs[hidden] { display: none; }
+    .thumbs button { position: relative; border-radius: 14px; overflow: hidden; aspect-ratio: 3 / 2; transition: transform .2s var(--ease); }
+    .thumbs img { width: 100%; height: 100%; object-fit: cover; transition: transform .28s var(--ease); }
+    .thumbs button::after { content: ''; position: absolute; inset: 0; border-radius: inherit; border: 0 solid var(--ink); transition: border-width .2s; }
+    .thumbs [aria-pressed="true"]::after { border-width: 4px; box-shadow: inset 0 0 0 2px var(--lime); }
+    .thumbs button:active { transform: scale(.96); }
+
+    /* Achievements */
+    .facts { background: var(--white); padding-block: 128px; }
+    .facts__g { display: grid; grid-template-columns: 380px 1fr; gap: clamp(48px, 9vw, 152px); align-items: center; }
+    .facts .ring { aspect-ratio: 380 / 560; }
+    .facts .win { height: 100%; }
+    .facts__h { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding-bottom: 28px; }
+    .facts__h p { color: var(--muted); }
+    .facts dl > div { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; padding: 30px 0 34px; border-top: 1px solid var(--line-2); }
+    .facts dt { font-size: 18px; padding-bottom: 4px; }
+    .facts dd { font-size: clamp(76px, 9.2vw, 134px); }
+
+    /* Voices */
+    .voices { padding-block: 120px 136px; overflow: clip; }
+    .voices__h { display: grid; grid-template-columns: 7fr 5fr; gap: 48px; align-items: end; margin-bottom: 56px; }
+    .voices__h p { color: var(--muted); }
+    .cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: start; }
+    .col { display: grid; gap: 24px; }
+    .voice { padding: 28px 28px 24px; border-radius: var(--r-l); background: var(--white); border: 1px solid var(--line); }
+    .voice--f { background: var(--forest); border-color: var(--forest); color: #fff; }
+    .voice blockquote { margin-top: 14px; font-size: 17px; line-height: 1.5; text-wrap: pretty; }
+    .voice--l blockquote { font-size: 21px; line-height: 1.4; letter-spacing: -.01em; }
+    .voice figcaption { display: flex; justify-content: space-between; gap: 16px; margin-top: 20px; font-size: 15px; line-height: 1.35; }
+    .voice figcaption b { font-weight: 600; }
+    .voice figcaption span { text-align: right; color: var(--muted); }
+    .voice--f figcaption span { color: #cfe0d7; }
+    .stars { width: 100px; height: 17px; background: #3f7f0c; -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m12 1.8 3.1 6.6 7.2.9-5.3 5 1.4 7.1L12 17.9l-6.4 3.5L7 14.3l-5.3-5 7.2-.9z'/%3E%3C/svg%3E") 0 0 / 20px 17px repeat-x; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m12 1.8 3.1 6.6 7.2.9-5.3 5 1.4 7.1L12 17.9l-6.4 3.5L7 14.3l-5.3-5 7.2-.9z'/%3E%3C/svg%3E") 0 0 / 20px 17px repeat-x; }
+    .voice--f .stars { background: var(--lime); }
+
+    /* Team */
+    .team[hidden] { display: none; }
+    .team { background: var(--white); padding-block: 120px 184px; }
+    .crew { display: grid; grid-template-columns: repeat(4, 1fr); gap: 48px 32px; margin-top: 64px; }
+    .crew > li:nth-child(even) { padding-top: 56px; }
+    .crew .win { aspect-ratio: 240 / 330; }
+    .crew .ring { max-width: 264px; }
+    .crew .win img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 24%; transition: transform .28s var(--ease); }
+    .crew h3 { margin-top: 18px; font-size: 20px; line-height: 1.25; font-weight: 600; letter-spacing: -.015em; }
+    .crew li > p { font-size: 15px; color: var(--muted); }
+    .culture { align-self: start; }
+    .culture h3 { margin: 0 0 14px; font-size: 16px; font-weight: 500; color: var(--muted); letter-spacing: 0; }
+    .culture li { padding: 14px 0; border-top: 1px solid var(--line-2); font-size: 21px; line-height: 1.25; font-weight: 600; letter-spacing: -.02em; }
+
+    /* Night flight: contact and footer */
+    .night { position: relative; z-index: 4; margin-top: -56px; border-radius: 40px 40px 0 0; background: var(--forest); color: #fff; overflow: hidden; }
+    .night__row { display: flex; justify-content: center; gap: 72px; margin-top: 88px; }
+    .night .ring { flex: none; width: 236px; height: 330px; background: #1b3a2c; }
+    .night .win { height: 100%; background: #101b22; }
+    .night .shade { background: #2d5a45; border-color: #1b3a2c; transition: none; }
+    .night .shade::after { background: #4b7c65; }
+    .contact { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(40px, 6vw, 96px); padding-block: 88px 80px; }
+    .contact dl { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 48px; }
+    .contact dl > div:last-child { grid-column: 1 / -1; }
+    .contact dt { font-size: 15px; color: #c3d6cb; }
+    .contact dd a { display: inline-block; min-height: 44px; padding-block: 6px; font-size: clamp(21px, 1.95vw, 28px); line-height: 1.3; letter-spacing: -.02em; overflow-wrap: anywhere; text-decoration: underline; text-decoration-color: transparent; text-decoration-thickness: 2px; text-underline-offset: 6px; transition: text-decoration-color .2s, color .2s; }
+    .contact dd a:hover { text-decoration-color: var(--lime); }
+    .contact dd a:active { color: var(--lime); }
+    .foot { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(40px, 6vw, 96px); padding-block: 56px; border-top: 1px solid #44705b; }
+    .foot__logo img { width: 200px; }
+    .foot__logo { display: inline-flex; align-items: center; min-height: 44px; }
+    .foot__a > p { margin: 16px 0 24px; max-width: 25em; color: #dbe7e0; }
+    .foot__a em { color: var(--lime); }
+    .social { display: flex; flex-wrap: wrap; gap: 8px; }
+    .social a, .social span { display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border-radius: 13px; border: 1px solid #86a896; font-size: 15px; transition: background-color .2s, color .2s; }
+    .social a:hover { background: #fff; color: var(--ink); }
+    .social a:active { background: var(--lime); color: var(--ink); }
+    .social span { border-style: dashed; color: #cfe0d7; }
+    .social small { font-size: 13px; }
+    .foot nav h2 { font-size: 15px; font-weight: 500; color: #c3d6cb; }
+    .foot nav ul { columns: 2; column-gap: 48px; margin-top: 6px; }
+    .foot nav li { break-inside: avoid; }
+    .foot nav a { display: block; min-height: 44px; padding-block: 10px; line-height: 1.4; }
+    .foot nav a:hover { text-decoration: underline; text-decoration-color: var(--lime); text-decoration-thickness: 2px; text-underline-offset: 5px; }
+    .legal { padding-block: 22px 30px; border-top: 1px solid #44705b; font-size: 14px; color: #c3d6cb; }
+
+    @media (hover: hover) {
+      .place:hover .shade { transform: translateY(-101%); }
+      .place:hover .px > img { scale: 1.03; }
+      .thumbs button:hover img, .crew li:hover .win img { transform: scale(1.04); }
+      .place .px > img { transition: scale .28s var(--ease); }
+    }
+    @media (min-width: 1080px) {
+      .nav { display: block; }
+      .menu-btn { display: none; }
+    }
+
+    @media (max-width: 1180px) {
+      :root { --gutter: 40px; }
+      .founder__more { columns: 1; }
+      .moment__top { grid-template-columns: 1fr 1fr; }
+      .moment__top .h2 { grid-column: 1 / -1; }
+      .seat .lead { font-size: 24px; }
+      .seat__b { padding: 32px 28px 32px 8px; }
+      .seat__b p:last-child { font-size: 15px; line-height: 1.5; }
+      .what__a { width: 280px; height: 396px; }
+      .what__b { width: 200px; height: 284px; }
+      .what__pics { height: 560px; }
+      .facts__g { grid-template-columns: 300px 1fr; }
+      .cols { grid-template-columns: 1fr 1fr; }
+      .cols .col:last-child { grid-column: 1 / -1; grid-template-columns: 1fr 1fr; align-items: start; }
+      .night__row { gap: 40px; }
+    }
+
+    /* Below 900 nothing pins: one window leads, the rest stacks. */
+    @media (max-width: 900px) {
+      .bar { width: calc(100% - 24px); top: 12px; padding-left: 18px; height: 64px; }
+      .bar__end .btn { display: none; }
+      .scene { --w: 142cqh; top: 0; }
+      .hero h1 { top: calc(88px + 4.4cqh); font-size: min(21.5vw, 12cqh); line-height: .92; white-space: normal; }
+      .hero h1 span { display: block; }
+      .hero__in { top: auto; bottom: 32px; padding: 0 20px; }
+      .hero__in p { font-size: 18px; }
+      .hero__in .btn { display: flex; justify-content: center; }
+      .about { padding-block: 80px 88px; }
+      .what { grid-template-columns: 1fr; margin-top: 72px; gap: 64px; }
+      .what__pics { height: 480px; max-width: 520px; }
+      .founder { grid-template-columns: 1fr; padding-block: 88px; gap: 40px; }
+      .founder__id { display: grid; grid-template-columns: 132px 1fr; column-gap: 24px; align-content: center; }
+      .founder__id .ring { grid-row: 1 / 3; }
+      .founder h2 { align-self: end; margin: 0; }
+      .open { height: auto; }
+      .open__pin { position: relative; height: auto; min-height: 0; }
+      .open__words { position: static; display: block; padding-block: 8px 28px; }
+      .open__words span { display: block; width: auto; text-align: left !important; }
+      .open__photo { position: relative; clip-path: none; }
+      .open__photo img { aspect-ratio: 5 / 4; }
+      .vision { padding-block: 96px 0; }
+      .vcard { position: relative; top: 0; grid-template-columns: 1fr; margin-bottom: 20px; }
+      .vcard__t { padding: 36px 28px; }
+      .vcard .px { min-height: 280px; }
+      .mission { padding-block: 72px 96px; }
+      .mission ul { grid-template-columns: 1fr 1fr; }
+      .acts { padding-block: 88px; }
+      .acts__g { grid-template-columns: 1fr; }
+      .acts__frame { display: none; }
+      .acts__list { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 16px; }
+      .act, .act[aria-current] { display: block; padding: 0; border: 0; color: var(--ink); background: none; }
+      .act__thumb { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--r); margin-bottom: 12px; }
+      .act b { display: block; font-size: 20px; }
+      .act span { color: var(--muted); }
+      .moment { padding-block: 88px 72px; }
+      .moment__top { grid-template-columns: 1fr; gap: 24px; }
+      .seats { flex-direction: column; height: auto; margin-top: 48px; }
+      .seat { flex-direction: column; min-width: 0; flex: none; border-radius: 24px; }
+      .seat h3 { width: 100%; height: auto; }
+      .seat button { writing-mode: horizontal-tb; rotate: none; min-height: 64px; padding: 16px 24px; }
+      .seat__b { width: auto; padding: 4px 24px 28px; display: none; gap: 20px; }
+      .seat.is-on .seat__b { display: flex; }
+      .ready__bg { position: relative; height: 62vw; min-height: 300px; }
+      .ready__over { height: auto; margin-top: -48px; padding-bottom: 88px; }
+      .ready__card { flex-direction: column; align-items: flex-start; padding: 28px; width: 100%; }
+      .places { padding-top: 88px; }
+      .places__row { grid-template-columns: 1fr 1fr; gap: 28px 20px; }
+      .place:nth-child(2) { margin-top: 40px; }
+      .place:nth-child(3) { margin-top: -20px; }
+      .place:nth-child(4) { margin-top: 20px; }
+      .gal { padding-block: 88px; }
+      .view { grid-template-columns: 1fr; }
+      .thumbs { grid-template-columns: repeat(5, 1fr); }
+      .facts { padding-block: 88px; }
+      .facts__g { grid-template-columns: 1fr; }
+      .facts .ring { width: min(62%, 280px); }
+      .voices { padding-block: 88px; }
+      .voices__h { grid-template-columns: 1fr; gap: 16px; margin-bottom: 32px; }
+      .cols { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x proximity; scroll-padding-left: var(--gutter); margin-inline: calc(var(--gutter) * -1); padding: 4px var(--gutter) 16px; align-items: flex-start; }
+      .cols .col, .cols .col:last-child { display: contents; }
+      .voice { flex: none; width: min(80vw, 380px); scroll-snap-align: start; }
+      .team { padding-block: 88px 144px; }
+      .crew { grid-template-columns: repeat(3, 1fr); gap: 36px 20px; margin-top: 40px; }
+      .crew > li:nth-child(even) { padding-top: 0; }
+      .crew > li:nth-child(3n + 2) { padding-top: 0; }
+      .culture { grid-column: 1 / -1; }
+      .culture ul { display: grid; grid-template-columns: 1fr 1fr; column-gap: 24px; }
+      .contact, .foot { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    @media (max-width: 640px) {
+      :root { --gutter: 20px; }
+      body { font-size: 16px; }
+      .bar__logo img { width: 146px; }
+      .sheet, .moment, .night { border-radius: 28px 28px 0 0; }
+      .moment { border-radius: 28px; }
+      .what__pics { height: 400px; }
+      .what__a { width: 216px; height: 306px; }
+      .what__b { width: 160px; height: 226px; }
+      .mission ul { grid-template-columns: 1fr; }
+      .mission li { padding: 16px 0; font-size: 20px; }
+      .gal__head { flex-direction: column; align-items: flex-start; }
+      .tabs { width: 100%; }
+      .tabs button { flex: 1; padding: 0 8px; text-align: center; }
+      .thumbs { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+      .thumbs button { aspect-ratio: 1 / 1; }
+      .facts dl > div { flex-direction: column-reverse; align-items: flex-start; gap: 10px; padding: 24px 0; }
+      .crew { grid-template-columns: 1fr 1fr; }
+      .crew h3 { font-size: 18px; }
+      .culture ul { grid-template-columns: 1fr; }
+      .culture h3 { font-size: 16px; }
+      .contact dl { grid-template-columns: 1fr; gap: 20px; }
+      .foot nav ul { column-gap: 20px; }
+      .night__row { gap: 24px; margin-top: 56px; }
+      .night .ring { width: 150px; height: 210px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
+      .open { height: auto; }
+      .open__pin { position: relative; height: auto; min-height: 0; overflow: visible; }
+      .open__words { position: static; padding-block: 24px; }
+      .open__photo { position: relative; clip-path: none; height: 80vh; }
+    }
+  </style>
 </head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
 
-  <header class="site-header" data-header>
-    <div class="site-header__inner">
-      <a class="brand" href="index.html" aria-label="Inspira Tour, home">
-        <img src="assets/img/logo.webp" width="640" height="121" alt="Inspira Tour. What inspires you?">
-      </a>
-
-      <!-- Links are in-page anchors until the other pages are redesigned. -->
-      <nav class="nav" aria-label="Main">
-        <ul class="nav__list">
-          <li><a class="nav__link" href="index.html" aria-current="page">Home</a></li>
-          <li>
-            <a class="nav__link" href="#business">About Us</a>
-          </li>
-          <li class="nav__item--sub">
-            <a class="nav__link" href="#places">Gallery</a>
-            <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="sub-gallery" aria-label="Gallery submenu"><svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5 6 6.5 11 1.5"/></svg></button>
-            <ul class="nav__sub" id="sub-gallery">
-              <li><a href="#places">Gallery Asia</a></li>
-              <li><a href="#places">Gallery America</a></li>
-              <li><a href="#places">Gallery Europe</a></li>
-              <li><a href="#places">Gallery Australia &amp; New Zealand</a></li>
-            </ul>
-          </li>
-          <li><a class="nav__link" href="#voices">Testimonials</a></li>
-          <li><a class="nav__link" href="#moment">Inspiration</a></li>
-        </ul>
-        <a class="btn btn--ghost btn--sm" href="#contact">Contact Us</a>
-      </nav>
-
-      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-open>
-        <span class="menu-btn__label">Menu</span>
-        <span class="menu-btn__bars" aria-hidden="true"></span>
-      </button>
+  <header class="bar">
+    <a class="bar__logo" href="#top" aria-label="Inspira Tour, home"><img src="assets/img/logo.webp" width="640" height="121" alt="Inspira Tour. What inspires you?"></a>
+    <nav class="nav" aria-label="Main">
+      <ul>
+        <li><a class="nav__a" href="#top" aria-current="true">Home</a></li>
+        <li><a class="nav__a" href="#about">About Us</a></li>
+        <li class="has-sub">
+          <a class="nav__a" href="#gallery">Gallery</a>
+          <button class="nav__t" type="button" aria-expanded="false" aria-controls="sub-gallery" aria-label="Gallery submenu"><svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5 6 6.5 11 1.5"/></svg></button>
+          <ul class="sub" id="sub-gallery">
+            <li><a href="#gallery" data-open-tab="asia">Gallery Asia</a></li>
+            <li><a href="#place-america">Gallery America</a></li>
+            <li><a href="#gallery" data-open-tab="europe">Gallery Europe</a></li>
+            <li><a href="#place-australia">Gallery Australia &amp; New Zealand</a></li>
+          </ul>
+        </li>
+        <li><a class="nav__a" href="#testimonials">Testimonials</a></li>
+        <li><a class="nav__a" href="#inspiration">Inspiration</a></li>
+      </ul>
+    </nav>
+    <div class="bar__end">
+      <a class="btn btn--s" href="#contact">Contact Us</a>
+      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu" data-menu-open><svg viewBox="0 0 18 12" aria-hidden="true"><path d="M0 1h18M0 11h18"/></svg></button>
     </div>
   </header>
 
-  <dialog class="mobile-menu" id="mobile-menu" aria-label="Main menu">
-    <div class="mobile-menu__top">
-      <img src="assets/img/logo.webp" width="640" height="121" alt="">
-      <button class="icon-btn" type="button" aria-label="Close menu" data-menu-close><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m2 2 12 12M14 2 2 14"/></svg></button>
+  <dialog class="menu dark" id="menu" aria-label="Main menu" data-lenis-prevent>
+    <div class="menu__top">
+      <img src="assets/img/logo-white.webp" width="640" height="136" alt="">
+      <button class="round" type="button" aria-label="Close menu" data-menu-close><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m2 2 12 12M14 2 2 14"/></svg></button>
     </div>
     <nav aria-label="Mobile">
-      <ul class="mobile-menu__list">
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="#business">About Us</a></li>
-        <li><a href="#places">Gallery</a>
+      <ul class="menu__list">
+        <li><a href="#top" aria-current="true">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#gallery">Gallery</a>
           <ul>
-            <li><a href="#places">Gallery Asia</a></li>
-            <li><a href="#places">Gallery America</a></li>
-            <li><a href="#places">Gallery Europe</a></li>
-            <li><a href="#places">Gallery Australia &amp; New Zealand</a></li>
+            <li><a href="#gallery" data-open-tab="asia">Gallery Asia</a></li>
+            <li><a href="#place-america">Gallery America</a></li>
+            <li><a href="#gallery" data-open-tab="europe">Gallery Europe</a></li>
+            <li><a href="#place-australia">Gallery Australia &amp; New Zealand</a></li>
           </ul>
         </li>
-        <li><a href="#voices">Testimonials</a></li>
-        <li><a href="#moment">Inspiration</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#inspiration">Inspiration</a></li>
       </ul>
-      <a class="btn btn--primary" href="#contact">Contact Us</a>
+      <a class="btn" href="#contact">Contact Us</a>
     </nav>
   </dialog>
 
   <main id="main">
-
-    <!-- Hero: base photo, then headline, then the cut-out people from the same photo. -->
     <section class="hero" aria-label="Introduction" data-hero>
-      <div class="hero__stage">
-        <div class="hero__layer">
-          <img class="hero__img is-active" data-slide="1" src="assets/img/hero-1.webp" width="1600" height="1091" alt="Seven people jumping together on a beach" fetchpriority="high">
-          <img class="hero__img" data-slide="2" src="assets/img/hero-2.webp" width="1600" height="1067" alt="A climber with arms wide open above snowy mountains" fetchpriority="low">
-          <img class="hero__img" data-slide="3" src="assets/img/hero-3.webp" width="1600" height="1067" alt="An elderly couple walking hand in hand along the shore" fetchpriority="low">
-          <img class="hero__img" data-slide="4" src="assets/img/hero-4.webp" width="1600" height="1123" alt="A boy cheering on a staircase of books" fetchpriority="low">
-        </div>
-
-        <h1 class="hero__title"><span>What </span><span>Inspires </span><span>You?</span></h1>
-
-        <div class="hero__layer hero__layer--front" aria-hidden="true">
-          <img class="hero__img is-active" data-slide="1" src="assets/img/hero-1-cutout.webp" width="1600" height="1091" alt="">
-          <img class="hero__img" data-slide="2" src="assets/img/hero-2-cutout.webp" width="1600" height="1067" alt="" fetchpriority="low">
-          <img class="hero__img" data-slide="3" src="assets/img/hero-3-cutout.webp" width="1600" height="1067" alt="" fetchpriority="low">
-          <img class="hero__img" data-slide="4" src="assets/img/hero-4-cutout.webp" width="1600" height="1123" alt="" fetchpriority="low">
-        </div>
-
-        <p class="tag hero__tag"><span>Tour &amp; Travels</span></p>
-
-        <div class="hero__picker" role="group" aria-label="Choose hero photo">
-          <button type="button" class="thumb" data-go="1" aria-pressed="true" aria-label="Photo 1 of 4"><img src="assets/img/hero-1-thumb.webp" width="160" height="160" alt=""></button>
-          <button type="button" class="thumb" data-go="2" aria-pressed="false" aria-label="Photo 2 of 4"><img src="assets/img/hero-2-thumb.webp" width="160" height="160" alt=""></button>
-          <button type="button" class="thumb" data-go="3" aria-pressed="false" aria-label="Photo 3 of 4"><img src="assets/img/hero-3-thumb.webp" width="160" height="160" alt=""></button>
-          <button type="button" class="thumb" data-go="4" aria-pressed="false" aria-label="Photo 4 of 4"><img src="assets/img/hero-4-thumb.webp" width="160" height="160" alt=""></button>
-          <button type="button" class="thumb thumb--pause" data-pause aria-label="Pause slideshow">
-            <svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2h3v12H4zM9 2h3v12H9z"/></svg>
-            <svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2v12l10-6z"/></svg>
-          </button>
-        </div>
+      <div class="scene">
+        <img data-layer="back" src="assets/img/peak-scene.webp" width="2400" height="2125" alt="Green mountain peak above the sea" fetchpriority="high">
+        <h1 data-layer="title"><span>What </span><span>Inspires </span><span>You?</span></h1>
+        <img class="scene__ridge" data-layer="back" src="assets/img/peak-ridge.webp" width="2400" height="1031" alt="" fetchpriority="high">
       </div>
-
-      <div class="hero__notch">
+      <div class="hero__in" data-layer="text">
+        <b>Tour &amp; Travels</b>
         <p>The best incentive house in Indonesia.<br>The catalyst to your business empowerment.</p>
-        <a class="btn btn--primary" href="#contact">Let’s Get Started</a>
+        <a class="btn" href="#contact">Let’s Get Started</a>
       </div>
     </section>
 
-    <!-- Popular activities: photos keep their own proportions on one fixed height. -->
-    <section class="activities" aria-labelledby="activities-title">
-      <div class="wrap activities__head">
-        <h2 id="activities-title" class="h-section">Popular Activities</h2>
-        <div class="activities__ctrl">
-          <div class="meter" aria-hidden="true"><span data-rail-meter></span></div>
-          <button class="icon-btn" type="button" aria-label="Previous activities" data-rail-prev><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 2 4 8l6 6"/></svg></button>
-          <button class="icon-btn" type="button" aria-label="Next activities" data-rail-next><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 2 6 6-6 6"/></svg></button>
+    <section class="sheet about" id="about" aria-labelledby="say">
+      <div class="wrap">
+        <h2 class="say" id="say">Inspira Tour <i><img src="assets/img/inspire-1.webp" width="480" height="327" alt=""></i> is an incentive house. A&nbsp;travel <i><img src="assets/img/inspire-2.webp" width="480" height="320" alt=""></i> agency specialising in corporate <i><img src="assets/img/inspire-3.webp" width="480" height="320" alt=""></i> tour <span style="white-space:nowrap">management <i><img style="object-position:0 20%" src="assets/img/inspire-4.webp" width="480" height="337" alt=""></i></span></h2>
+        <div class="what">
+          <div class="what__pics">
+            <div class="what__a" data-drift="36"><div class="ring"><div class="win px" style="--p:10"><img src="assets/img/russia.webp" width="544" height="800" alt="Saint Basil's Cathedral, Russia" loading="lazy"></div></div></div>
+            <div class="what__b" data-drift="96"><div class="ring"><div class="win px" style="--p:10; --pos:58% 50%"><img src="assets/img/paris.webp" width="750" height="500" alt="Eiffel Tower, Paris" loading="lazy"></div></div></div>
+          </div>
+          <div>
+            <p class="years"><span class="num">30+</span><span>Years of experience</span></p>
+            <h2 class="h2" data-words>What We Do For Your Business</h2>
+            <ol>
+              <li><h3>A Catalyst to Your Business Empowerment</h3><p>Tell us your dreams. Share your objectives. We are committed to turn them into reality.</p></li>
+              <li><h3>The Essence for an Inspiring Journey</h3><p>These factors are the essence of our products. Thus, discovering these factors specific to our clients are key to a successful trip.</p></li>
+              <li><h3>With 30+ Years of Experience</h3><p>We bring service-excellence, superior-product, and exceptional-creativity to all our products.</p></li>
+            </ol>
+          </div>
         </div>
       </div>
-      <div class="rail" tabindex="0" role="region" aria-label="Popular Activities, scrollable" data-rail>
-        <ul class="rail__list">
-          <li class="act act--p"><figure><span class="act__img"><img src="assets/img/aurora.webp" width="473" height="709" alt="Aurora Hunting" draggable="false"></span><figcaption><span>Wildlife</span><strong>Aurora Hunting</strong></figcaption></figure></li>
-          <li class="act act--l"><figure><span class="act__img"><img src="assets/img/dogsled.webp" width="1146" height="900" alt="Dogsled" draggable="false"></span><figcaption><span>Wildlife</span><strong>Dogsled</strong></figcaption></figure></li>
-          <li class="act act--s"><figure><span class="act__img"><img src="assets/img/funicular.webp" width="640" height="480" alt="Funicular" draggable="false"></span><figcaption><span>Wildlife</span><strong>Funicular</strong></figcaption></figure></li>
-          <li class="act act--p"><figure><span class="act__img"><img src="assets/img/segway.webp" width="473" height="709" alt="Segway" draggable="false"></span><figcaption><span>Wildlife</span><strong>Segway</strong></figcaption></figure></li>
-          <li class="act act--l"><figure><span class="act__img"><img src="assets/img/helicopter.webp" width="1200" height="800" alt="Helicopter Ride" loading="lazy" draggable="false"></span><figcaption><span>Wildlife</span><strong>Helicopter Ride</strong></figcaption></figure></li>
-          <li class="act act--s"><figure><span class="act__img"><img src="assets/img/speedboat.webp" width="669" height="446" alt="Speedboat" loading="lazy" draggable="false"></span><figcaption><span>Travel to</span><strong>Speedboat</strong></figcaption></figure></li>
-          <li class="act act--l"><figure><span class="act__img"><img src="assets/img/snow-mobile.webp" width="1200" height="762" alt="Snow Mobile" loading="lazy" draggable="false"></span><figcaption><span>Travel to</span><strong>Snow Mobile</strong></figcaption></figure></li>
-          <li class="act act--p"><figure><span class="act__img"><img src="assets/img/cycling.webp" width="473" height="709" alt="Cycling" loading="lazy" draggable="false"></span><figcaption><span>Travel to</span><strong>Cycling</strong></figcaption></figure></li>
-          <li class="act act--p"><figure><span class="act__img"><img src="assets/img/rickshaw.webp" width="473" height="709" alt="Rickshaw" loading="lazy" draggable="false"></span><figcaption><span>Travel to</span><strong>Rickshaw</strong></figcaption></figure></li>
-          <li class="act act--p"><figure><span class="act__img"><img src="assets/img/ferrari.webp" width="473" height="709" alt="Ferrari Self Drive" loading="lazy" draggable="false"></span><figcaption><strong>Ferrari Self Drive</strong></figcaption></figure></li>
-          <li class="act act--l"><figure><span class="act__img"><img src="assets/img/gala-dinner.webp" width="1200" height="801" alt="Gala Dinner" loading="lazy" draggable="false"></span><figcaption><strong>Gala Dinner</strong></figcaption></figure></li>
-        </ul>
+    </section>
+
+    <section class="wrap founder" aria-label="Founder message">
+      <div class="founder__id">
+        <div class="ring"><div class="win"><img src="assets/img/founder.webp" width="269" height="308" alt="Daniel Tan" loading="lazy"></div></div>
+        <h2>Daniel Tan</h2>
+        <p>Founder &amp; CEO</p>
+      </div>
+      <div>
+        <p class="founder__lead">Being 30 years in the corporate incentive industry, through all those challenges and victories, had made us what we are today. Aiming at the highest standard of service with an affordable budget, we dedicate our 100% energy and persistence to accomplish your goal.</p>
+        <details>
+          <summary><span class="a">Read the full message</span><span class="b">Close the message</span></summary>
+          <div class="founder__more">
+            <p>In the heart of Inspira Tour, we believe in the alignment of your goal and ours.</p>
+            <p>In this years of growing competition, we are stretching ourselves to make every distinctions, every signature, at every step of the process, in order to be the pioneer and inventor of a new breed of services.</p>
+            <p>Our focus to details, habits, empathizes, understandings, anticipations, technologies, and integrated databases, will increase our competitiveness to serve you better.</p>
+            <p>As part of commitment, we always keep on asking ourselves. Questions like: How can we be in assistance to obtain an efficient and effective campaign for your company? How to motivate your dealers? How to empower and inspiring them? How to keep their loyalty? How to increase your profit? How to achieve success? How to grow and expand? You will see our reasons of existence in the next pages. We elaborate them in powerful statements like: Who we are, What we do, Why we do, How does it look like.</p>
+            <p>We are proud to be in partnership with you, as well as our esteemed existing clientele.</p>
+          </div>
+        </details>
       </div>
     </section>
 
-    <section class="business wrap" id="business" aria-labelledby="business-title">
-      <div class="business__photos" data-reveal>
-        <img class="business__a" src="assets/img/russia.webp" width="544" height="800" alt="Saint Basil's Cathedral, Russia" loading="lazy">
-        <p class="business__years"><span class="num">30+</span><span>Years of experience</span></p>
-        <img class="business__b" src="assets/img/paris.webp" width="750" height="500" alt="Eiffel Tower, Paris" loading="lazy">
-      </div>
-      <div class="business__text">
-        <h2 id="business-title" class="h-section">What We Do For Your Business</h2>
-        <ol class="route">
-          <li data-reveal>
-            <svg class="route__line" viewBox="0 0 40 100" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M20 0C52 30 -12 68 20 100"/></svg>
-            <h3>A Catalyst to Your Business Empowerment</h3>
-            <p>Tell us your dreams. Share your objectives. We are committed to turn them into reality.</p>
-          </li>
-          <li data-reveal>
-            <svg class="route__line" viewBox="0 0 40 100" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M20 0C52 30 -12 68 20 100"/></svg>
-            <h3>The Essence for an Inspiring Journey</h3>
-            <p>These factors are the essence of our products. Thus, discovering these factors specific to our clients are key to a successful trip.</p>
-          </li>
-          <li data-reveal>
-            <h3>With 30+ Years of Experience</h3>
-            <p>We bring service-excellence, superior-product, and exceptional-creativity to all our products.</p>
-          </li>
-        </ol>
+    <section class="open" aria-label="People Don’t Take Trips, Trips Take People" data-open>
+      <div class="open__pin">
+        <p class="open__words"><span>People Don’t Take Trips, </span><span>Trips Take People.</span></p>
+        <div class="open__photo"><img src="assets/img/lake.webp" width="2200" height="1260" alt="Tasco group on an Inspira Tour trip beside a lake in Japan" loading="lazy"></div>
       </div>
     </section>
 
-    <section class="moment" id="moment" aria-labelledby="moment-title">
-      <div class="moment__top">
-        <div class="moment__copy">
-          <h2 id="moment-title" class="h-section">Feel the Inspira moment</h2>
+    <section class="sheet vision" aria-labelledby="vision-t">
+      <div class="wrap">
+        <h2 class="h2" id="vision-t" data-words>Vision</h2>
+        <div class="stack">
+          <article class="vcard vcard--forest" style="--i:0">
+            <div class="vcard__t"><h3>Inspiring</h3><div><p>As its name suggests, we exist to inspire.</p><p>Inspiring our clients, our staff, and the people we interact with.</p></div></div>
+            <div class="px" style="--p:10; --pos:54% 50%"><img src="assets/img/activities/dogsled.webp" width="1146" height="900" alt="Two travellers waving from a dogsled on snow" loading="lazy"></div>
+          </article>
+          <article class="vcard" style="--i:1">
+            <div class="vcard__t"><h3>Empowering</h3><div><p>We are a catalyst to your business empowerment.</p><p>Joining an Inspira Journey leaves our clients fulfilled and empowered, ready to take on challenges.</p></div></div>
+            <div class="px" style="--p:10; --pos:46% 50%"><img src="assets/img/activities/snow-mobile.webp" width="1200" height="762" alt="Two travellers giving a thumbs up on a snow mobile" loading="lazy"></div>
+          </article>
+          <article class="vcard vcard--forest" style="--i:2">
+            <div class="vcard__t"><h3>Service Excellence</h3><div><p>Assisting clients from the very beginning until the very end.</p><p>Providing service excellence and constant assistance throughout.</p></div></div>
+            <div class="px" style="--p:10; --pos:50% 60%"><img src="assets/img/activities/gala-dinner.webp" width="1200" height="801" alt="Ballroom set for a gala dinner" loading="lazy"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap mission" aria-labelledby="mission-t">
+      <h2 class="h2" id="mission-t" data-words>Mission</h2>
+      <ul data-stagger>
+        <li>Total assistance and dedication</li>
+        <li>Giving out the “WOW Factor”</li>
+        <li>Delivering service-excellence</li>
+        <li>Create an Inspiring Journey</li>
+        <li>Maximising the clients’ trust</li>
+        <li>Superior product</li>
+        <li>Exceptional creativity</li>
+        <li>High value service</li>
+        <li>Excellent client loyalty</li>
+      </ul>
+    </section>
+
+    <section class="acts" id="activities" aria-labelledby="acts-t">
+      <div class="wrap acts__g">
+        <div class="acts__frame" aria-hidden="true" data-acts-frame>
+          <img class="is-on" src="assets/img/activities/aurora.webp" width="473" height="709" alt="" loading="lazy">
+          <img src="assets/img/activities/dogsled.webp" width="1146" height="900" alt="" loading="lazy">
+          <img src="assets/img/activities/funicular.webp" width="640" height="480" alt="" loading="lazy">
+          <img src="assets/img/activities/segway.webp" width="473" height="709" alt="" loading="lazy">
+          <img src="assets/img/activities/helicopter.webp" width="1200" height="800" alt="" loading="lazy">
+          <img src="assets/img/activities/speedboat.webp" width="669" height="446" alt="" loading="lazy">
+          <img src="assets/img/activities/snow-mobile.webp" width="1200" height="762" alt="" loading="lazy">
+          <img src="assets/img/activities/cycling.webp" width="473" height="709" alt="" loading="lazy">
+          <img src="assets/img/activities/rickshaw.webp" width="473" height="709" alt="" loading="lazy">
+          <img src="assets/img/activities/ferrari.webp" width="473" height="709" alt="" loading="lazy">
+          <img src="assets/img/activities/gala-dinner.webp" width="1200" height="801" alt="" loading="lazy">
+        </div>
+        <div>
+          <h2 class="h2" id="acts-t" data-words>Popular Activities</h2>
+          <ul class="acts__list" data-acts>
+            <li><button class="act" type="button" aria-current="true"><img class="act__thumb" src="assets/img/activities/aurora.webp" width="473" height="709" alt="" loading="lazy"><b>Aurora Hunting</b><span>Wildlife</span></button></li>
+            <li><button class="act" type="button"><img class="act__thumb" src="assets/img/activities/dogsled.webp" width="1146" height="900" alt="" loading="lazy"><b>Dogsled</b><span>Wildlife</span></button></li>
+            <li><button class="act" type="button"><img class="act__thumb" src="assets/img/activities/funicular.webp" width="640" height="480" alt="" loading="lazy"><b>Funicular</b><span>Wildlife</span></button></li>
+            <li><button class="act" type="button"><img class="act__thumb" src="assets/img/activities/segway.webp" width="473" height="709" alt="" loading="lazy"><b>Segway</b><span>Wildlife</span></button></li>
+            <li><button class="act" type="button"><img class="act__thumb" src="assets/img/activities/helicopter.webp" width="1200" height="800" alt="" loading="lazy"><b>Helicopter Ride</b><span>Wildlife</span></button></li>
+            <li><button class="act" type="button"><img class="act__thumb" src="assets/img/activities/speedboat.webp" width="669" height="446" alt="" loading="lazy"><b>Speedboat</b><span>Travel to</span></button></li>
+            <li><button class="act" type="button"><img class="act__thumb" src="assets/img/activities/snow-mobile.webp" width="1200" height="762" alt="" loading="lazy"><b>Snow Mobile</b><span>Travel to</span></button></li>
+            <li><button class="act" type="button"><img class="act__thumb" src="assets/img/activities/cycling.webp" width="473" height="709" alt="" loading="lazy"><b>Cycling</b><span>Travel to</span></button></li>
+            <li><button class="act" type="button"><img class="act__thumb" src="assets/img/activities/rickshaw.webp" width="473" height="709" alt="" loading="lazy"><b>Rickshaw</b><span>Travel to</span></button></li>
+            <li><button class="act" type="button"><img class="act__thumb" src="assets/img/activities/ferrari.webp" width="473" height="709" alt="" loading="lazy"><b>Ferrari Self Drive</b></button></li>
+            <li><button class="act" type="button"><img class="act__thumb" src="assets/img/activities/gala-dinner.webp" width="1200" height="801" alt="" loading="lazy"><b>Gala Dinner</b></button></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="moment dark" id="inspiration" aria-labelledby="moment-t">
+      <div class="wrap">
+        <div class="moment__top">
+          <h2 class="h2" id="moment-t" data-words>Feel the Inspira moment</h2>
           <p class="moment__lead">Improve mindset,<br>Enhance relationship,<br>Boost sales</p>
           <p class="moment__body">In every <em>Inspiring Journey</em>, <em>Inspira Moments</em> will be sprinkled along the trip. Containing inspirational and motivational stories, <em>Inspira Moment</em> is created to motivate and boost the work ethic of listeners: key to better relationships with your customers!</p>
         </div>
-        <div class="moment__ribbon" aria-hidden="true"><svg viewBox="0 0 900 600"><path class="rb-b" d="M452 330C520 190 560 -20 960 96"/><path class="rb-a" d="M172 640C172 370 382 500 462 310"/></svg></div>
-        <div class="moment__figure">
-          <img src="assets/img/inspira-moment-cutout.webp" width="1200" height="900" alt="Two business partners raising their fists" loading="lazy">
+        <div class="seats" data-seats>
+          <article class="seat is-on"><h3><button type="button" aria-expanded="true" aria-controls="s1">Inspira Moment</button></h3><div class="seat__b" id="s1" lang="id"><p class="lead">Meningkatkan Loyalitas &amp; Penjualan Dealer Anda</p><p><strong>Pertumbuhan sales &amp; market share</strong> Anda pasti terjadi ... Dealer Anda menjadi <strong>loyal customer</strong> Dengan moment khusus yang berisi motivasi dan cerita inspirational yang dapat memberikan semangat dan kinerja lebih tinggi</p></div></article>
+          <article class="seat"><h3><button type="button" aria-expanded="false" aria-controls="s2">Save Your Time</button></h3><div class="seat__b" id="s2" lang="id"><p class="lead">Menghemat waktu Anda</p><p><strong>Asset</strong> yang <strong>tidak bisa kembali</strong>, bisa anda <strong>manfaatkan</strong> untuk <strong>core business</strong> Anda ... dapat focus ke hal-hal lain yang essential untuk bisnis Anda dan kami memberikan progress report selama persiapan acara perjalanan berlangsung laksana Personal Assistant Anda</p></div></article>
+          <article class="seat"><h3><button type="button" aria-expanded="false" aria-controls="s3">Flexibility</button></h3><div class="seat__b" id="s3" lang="id"><p class="lead">Menyesuaikan Itinerary sesuai kebutuhan Anda</p><p><strong>Keleluasaan</strong> untuk <strong>kreatifitas</strong> dalam <strong>memenuhi kebutuhan</strong> Anda ...</p></div></article>
+          <article class="seat"><h3><button type="button" aria-expanded="false" aria-controls="s4">Business Oriented Solution</button></h3><div class="seat__b" id="s4" lang="id"><p class="lead">Menyediakan segala kebutuhan Anda, meminimalkan pekerjaan Anda</p><p>membuat Anda <strong>tenang &amp; relax</strong> ... Karena kami melakukan segala sesuatu A-Z, mulai dari membuat draft campaign untuk Anda, persiapan sebelum keberangkatan, proses dokumen perjalanan, saat keberangkatan, acara perjalanan, serta pelayanan saat kembali ke Tanah Air</p></div></article>
+          <article class="seat"><h3><button type="button" aria-expanded="false" aria-controls="s5">Post Tour Touch</button></h3><div class="seat__b" id="s5" lang="id"><p class="lead">Memberikan Laporan yang transparan &amp; konkrit setelah Tour</p><p><strong>Jaminan</strong> bahwa Tour yang Anda jalankan benar-benar <strong>memenuhi misi business</strong> Anda</p></div></article>
         </div>
-      </div>
-
-      <div class="moment__list" lang="id">
-        <article>
-          <h3 lang="en">Inspira Moment</h3>
-          <div>
-            <p class="lead">Meningkatkan Loyalitas &amp; Penjualan Dealer Anda</p>
-            <p><strong>Pertumbuhan sales &amp; market share</strong> Anda pasti terjadi ... Dealer Anda menjadi <strong>loyal customer</strong> Dengan moment khusus yang berisi motivasi dan cerita inspirational yang dapat memberikan semangat dan kinerja lebih tinggi</p>
-          </div>
-        </article>
-        <article>
-          <h3 lang="en">Save Your Time</h3>
-          <div>
-            <p class="lead">Menghemat waktu Anda</p>
-            <p><strong>Asset</strong> yang <strong>tidak bisa kembali</strong>, bisa anda <strong>manfaatkan</strong> untuk <strong>core business</strong> Anda ... dapat focus ke hal-hal lain yang essential untuk bisnis Anda dan kami memberikan progress report selama persiapan acara perjalanan berlangsung laksana Personal Assistant Anda</p>
-          </div>
-        </article>
-        <article>
-          <h3 lang="en">Flexibility</h3>
-          <div>
-            <p class="lead">Menyesuaikan Itinerary sesuai kebutuhan Anda</p>
-            <p><strong>Keleluasaan</strong> untuk <strong>kreatifitas</strong> dalam <strong>memenuhi kebutuhan</strong> Anda ...</p>
-          </div>
-        </article>
-        <article>
-          <h3 lang="en">Business Oriented Solution</h3>
-          <div>
-            <p class="lead">Menyediakan segala kebutuhan Anda, meminimalkan pekerjaan Anda</p>
-            <p>membuat Anda <strong>tenang &amp; relax</strong> ... Karena kami melakukan segala sesuatu A-Z, mulai dari membuat draft campaign untuk Anda, persiapan sebelum keberangkatan, proses dokumen perjalanan, saat keberangkatan, acara perjalanan, serta pelayanan saat kembali ke Tanah Air</p>
-          </div>
-        </article>
-        <article>
-          <h3 lang="en">Post Tour Touch</h3>
-          <div>
-            <p class="lead">Memberikan Laporan yang transparan &amp; konkrit setelah Tour</p>
-            <p><strong>Jaminan</strong> bahwa Tour yang Anda jalankan benar-benar <strong>memenuhi misi business</strong> Anda</p>
-          </div>
-        </article>
       </div>
     </section>
 
     <section class="ready" aria-label="Plan a trip">
-      <img src="assets/img/helicopter-wide.webp" width="2400" height="1600" alt="Helicopter flying past green mountains" loading="lazy">
-      <div class="ready__text">
-        <p>Ready to adventure and enjoy premium trip</p>
-        <a class="btn btn--primary" href="#contact">Explore More</a>
+      <div class="ready__bg px" style="--p:4; --pos:50% 60%"><img src="assets/img/alpine.webp" width="2200" height="1260" alt="Sanken group on an Inspira Tour trip in front of the snow walls of the Japan Alpine Route" loading="lazy"></div>
+      <div class="wrap ready__over"><div class="ready__card"><p>Ready to adventure and enjoy premium trip</p><a class="btn" href="#contact">Explore More</a></div></div>
+    </section>
+
+    <section class="sheet places" id="places" aria-labelledby="places-t">
+      <div class="wrap">
+        <h2 class="h2" id="places-t" data-words>Go Exotic Places</h2>
+        <ul class="places__row">
+          <li class="place" data-drift="18"><a href="#gallery" data-open-tab="asia"><div class="ring"><div class="win px" style="--p:9; --pos:50% 60%"><img src="assets/img/asia.webp" width="736" height="1104" alt="Mount Fuji behind a red pagoda" loading="lazy"><span class="shade"></span></div></div><p><small>Travel to</small><strong>Asia</strong></p></a></li>
+          <li class="place" id="place-australia" data-drift="54"><div class="ring"><div class="win px" style="--p:9; --pos:62% 50%"><img src="assets/img/australia.webp" width="1068" height="561" alt="Sydney Harbour Bridge at dusk" loading="lazy"><span class="shade"></span></div></div><p><small>Travel to</small><strong>Australia</strong></p></li>
+          <li class="place" data-drift="28"><a href="#gallery" data-open-tab="europe"><div class="ring"><div class="win px" style="--p:6; --pos:47% 50%"><img src="assets/img/europe.webp" width="1120" height="426" alt="Louvre Pyramid at night" loading="lazy"><span class="shade"></span></div></div><p><small>Travel to</small><strong>Europe</strong></p></a></li>
+          <li class="place" id="place-america" data-drift="72"><div class="ring"><div class="win px" style="--p:8; --pos:34% 50%"><img src="assets/img/america.webp" width="660" height="462" alt="Golden Gate Bridge" loading="lazy"><span class="shade"></span></div></div><p><small>Travel to</small><strong>America</strong></p></li>
+        </ul>
       </div>
     </section>
 
-    <section class="places wrap" id="places" aria-labelledby="places-title">
-      <h2 id="places-title" class="h-section">Go Exotic Places</h2>
-      <ul class="places__list" data-places>
-        <li class="is-open"><div class="places__card" tabindex="0"><img src="assets/img/asia.webp" width="667" height="1000" alt="" loading="lazy"><span class="places__cap"><span>Travel to</span><strong>Asia</strong></span></div></li>
-        <li><div class="places__card" tabindex="0"><img src="assets/img/australia.webp" width="1068" height="561" alt="" loading="lazy"><span class="places__cap"><span>Travel to</span><strong>Australia</strong></span></div></li>
-        <li><div class="places__card" tabindex="0"><img src="assets/img/europe.webp" width="1120" height="426" alt="" loading="lazy"><span class="places__cap"><span>Travel to</span><strong>Europe</strong></span></div></li>
-        <li><div class="places__card" tabindex="0"><img src="assets/img/america.webp" width="660" height="462" alt="" loading="lazy"><span class="places__cap"><span>Travel to</span><strong>America</strong></span></div></li>
-      </ul>
-    </section>
-
-    <section class="facts wrap" aria-labelledby="facts-title">
-      <div class="facts__head">
-        <h2 id="facts-title" class="h-section">Achievements</h2>
-        <p class="tag"><span>Company Fact</span></p>
+    <section class="gal" id="gallery" aria-labelledby="gal-t">
+      <div class="wrap">
+        <div class="gal__head">
+          <h2 class="h2" id="gal-t" data-words>Gallery</h2>
+          <div class="tabs" role="tablist" aria-label="Gallery region">
+            <button type="button" role="tab" id="tab-asia" aria-controls="asia" aria-selected="true">Gallery Asia</button>
+            <button type="button" role="tab" id="tab-europe" aria-controls="europe" aria-selected="false" tabindex="-1">Gallery Europe</button>
+          </div>
+        </div>
+        <div class="view">
+          <figure>
+            <img src="assets/img/trips/asia-01.webp" width="1400" height="933" alt="Sanken group, Japan Alpine Route" loading="lazy" data-view>
+            <figcaption><p aria-live="polite"><b data-view-t>Sanken</b><span data-view-s>Japan Alpine Route</span></p>
+              <div class="view__ctrl">
+                <button class="round" type="button" aria-label="Previous photo" data-view-prev><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 2 4 8l6 6"/></svg></button>
+                <button class="round" type="button" aria-label="Next photo" data-view-next><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 2 6 6-6 6"/></svg></button>
+              </div>
+            </figcaption>
+          </figure>
+          <div>
+            <div class="thumbs" role="tabpanel" id="asia" aria-labelledby="tab-asia">
+              <button type="button" data-trip="asia-01" aria-pressed="true" aria-label="Sanken, Japan Alpine Route"><img src="assets/img/trips/asia-01-s.webp" width="330" height="220" alt="" loading="lazy"></button>
+              <button type="button" data-trip="asia-02" aria-pressed="false" aria-label="J&amp;T Express, Incredible Japan Hokkaido"><img src="assets/img/trips/asia-02-s.webp" width="330" height="220" alt="" loading="lazy"></button>
+              <button type="button" data-trip="asia-03" aria-pressed="false" aria-label="J&amp;T Express, Explore Yiwu, Experience Shanghai"><img src="assets/img/trips/asia-03-s.webp" width="330" height="220" alt="" loading="lazy"></button>
+              <button type="button" data-trip="asia-04" aria-pressed="false" aria-label="Atlanta Electronics and Samsung, Paradise of Danang"><img src="assets/img/trips/asia-04-s.webp" width="330" height="220" alt="" loading="lazy"></button>
+              <button type="button" data-trip="asia-05" aria-pressed="false" aria-label="Sanken, Beautiful Yunnan"><img src="assets/img/trips/asia-05-s.webp" width="330" height="220" alt="" loading="lazy"></button>
+              <button type="button" data-trip="asia-06" aria-pressed="false" aria-label="ToffeeDev, Funtastic Thailand"><img src="assets/img/trips/asia-06-s.webp" width="330" height="220" alt="" loading="lazy"></button>
+              <button type="button" data-trip="asia-07" aria-pressed="false" aria-label="Tasco, Beautiful Japan"><img src="assets/img/trips/asia-07-s.webp" width="330" height="220" alt="" loading="lazy"></button>
+              <button type="button" data-trip="asia-08" aria-pressed="false" aria-label="Sanken, Beautiful Khao Yai"><img src="assets/img/trips/asia-08-s.webp" width="330" height="220" alt="" loading="lazy"></button>
+              <button type="button" data-trip="asia-09" aria-pressed="false" aria-label="J&amp;T Express, Incredible Japan Hokkaido"><img src="assets/img/trips/asia-09-s.webp" width="330" height="220" alt="" loading="lazy"></button>
+              <button type="button" data-trip="asia-10" aria-pressed="false" aria-label="Amazing Three Kingdom, Chongqing, Guangyuan, Jianmenguan, Chengdu"><img src="assets/img/trips/asia-10-s.webp" width="330" height="220" alt="" loading="lazy"></button>
+              <button type="button" data-trip="asia-11" aria-pressed="false" aria-label="Mahkota Diesel, Beautiful Japan"><img src="assets/img/trips/asia-11-s.webp" width="330" height="220" alt="" loading="lazy"></button>
+              <button type="button" data-trip="asia-12" aria-pressed="false" aria-label="J&amp;T Express, Incredible Japan Hokkaido"><img src="assets/img/trips/asia-12-s.webp" width="330" height="220" alt="" loading="lazy"></button>
+            </div>
+            <div class="thumbs" role="tabpanel" id="europe" aria-labelledby="tab-europe" hidden>
+              <button type="button" data-trip="europe-01" aria-pressed="false" aria-label="Sanken, Enchanting East Europe"><img src="assets/img/trips/europe-01-s.webp" width="330" height="220" alt="" loading="lazy"></button>
+              <button type="button" data-trip="europe-02" aria-pressed="false" aria-label="Polytron, Amazing Greece"><img src="assets/img/trips/europe-02-s.webp" width="330" height="220" alt="" loading="lazy"></button>
+              <button type="button" data-trip="europe-03" aria-pressed="false" aria-label="Orient, Trip of Winners"><img src="assets/img/trips/europe-03-s.webp" width="330" height="220" alt="" loading="lazy"></button>
+              <button type="button" data-trip="europe-04" aria-pressed="false" aria-label="STIHL, Northern Italy"><img src="assets/img/trips/europe-04-s.webp" width="330" height="220" alt="" loading="lazy"></button>
+              <button type="button" data-trip="europe-05" aria-pressed="false" aria-label="J&amp;T Express, Wonderful West Europe"><img src="assets/img/trips/europe-05-s.webp" width="330" height="220" alt="" loading="lazy"></button>
+              <button type="button" data-trip="europe-06" aria-pressed="false" aria-label="Polytron, Scandinavia"><img src="assets/img/trips/europe-06-s.webp" width="330" height="220" alt="" loading="lazy"></button>
+              <button type="button" data-trip="europe-07" aria-pressed="false" aria-label="Bahn Hoft, Charming Europe"><img src="assets/img/trips/europe-07-s.webp" width="330" height="220" alt="" loading="lazy"></button>
+              <button type="button" data-trip="europe-08" aria-pressed="false" aria-label="J&amp;T Express, Wonderful West Europe"><img src="assets/img/trips/europe-08-s.webp" width="330" height="220" alt="" loading="lazy"></button>
+              <button type="button" data-trip="europe-09" aria-pressed="false" aria-label="Polytron, Charming East Europe"><img src="assets/img/trips/europe-09-s.webp" width="330" height="220" alt="" loading="lazy"></button>
+              <button type="button" data-trip="europe-10" aria-pressed="false" aria-label="Sanken, Fantastic West Europe"><img src="assets/img/trips/europe-10-s.webp" width="330" height="220" alt="" loading="lazy"></button>
+              <button type="button" data-trip="europe-11" aria-pressed="false" aria-label="Alisan, Exotic East Europe"><img src="assets/img/trips/europe-11-s.webp" width="330" height="220" alt="" loading="lazy"></button>
+              <button type="button" data-trip="europe-12" aria-pressed="false" aria-label="Polytron, Charming East Europe"><img src="assets/img/trips/europe-12-s.webp" width="330" height="220" alt="" loading="lazy"></button>
+              <button type="button" data-trip="europe-13" aria-pressed="false" aria-label="Toko Lima, Lima Family Tour part 3"><img src="assets/img/trips/europe-13-s.webp" width="330" height="220" alt="" loading="lazy"></button>
+              <button type="button" data-trip="europe-14" aria-pressed="false" aria-label="Modena, Europe Charming"><img src="assets/img/trips/europe-14-s.webp" width="330" height="220" alt="" loading="lazy"></button>
+              <button type="button" data-trip="europe-15" aria-pressed="false" aria-label="KBN, East Europe plus Paris"><img src="assets/img/trips/europe-15-s.webp" width="330" height="220" alt="" loading="lazy"></button>
+              <button type="button" data-trip="europe-16" aria-pressed="false" aria-label="Modena, Europe Sensation"><img src="assets/img/trips/europe-16-s.webp" width="330" height="220" alt="" loading="lazy"></button>
+              <button type="button" data-trip="europe-17" aria-pressed="false" aria-label="Carlton, The Beauty of Greece and Cyprus"><img src="assets/img/trips/europe-17-s.webp" width="330" height="220" alt="" loading="lazy"></button>
+              <button type="button" data-trip="europe-18" aria-pressed="false" aria-label="Cahaya Mas, East Europe"><img src="assets/img/trips/europe-18-s.webp" width="330" height="220" alt="" loading="lazy"></button>
+              <button type="button" data-trip="europe-19" aria-pressed="false" aria-label="Polytron, Exotic Spain Portugal"><img src="assets/img/trips/europe-19-s.webp" width="330" height="220" alt="" loading="lazy"></button>
+              <button type="button" data-trip="europe-20" aria-pressed="false" aria-label="Toko Lima, Lima Family Tour part 5"><img src="assets/img/trips/europe-20-s.webp" width="330" height="220" alt="" loading="lazy"></button>
+              <button type="button" data-trip="europe-21" aria-pressed="false" aria-label="U.D. Duta Teknik Jaya, Magnificent East Europe"><img src="assets/img/trips/europe-21-s.webp" width="330" height="220" alt="" loading="lazy"></button>
+            </div>
+          </div>
+        </div>
       </div>
-      <dl class="facts__list">
-        <div><dt>Happy Traveler</dt><dd class="num"><span data-count="3500">3500</span>+</dd></div>
-        <div><dt>Corporate Clients</dt><dd class="num"><span data-count="120">120</span>+</dd></div>
-        <div><dt>Destination Visited</dt><dd class="num"><span data-count="62">62</span>k+</dd></div>
-      </dl>
     </section>
 
-    <section class="voices" id="voices" aria-labelledby="voices-title">
-      <div class="voices__inner">
-        <div class="voices__head">
-          <h2 id="voices-title" class="h-section">Our Inspira moment truth from our customers</h2>
-          <p>More than 100 corporate within 30 years who feel the “Inspira moment” of Inspiratour</p>
-          <a class="btn btn--ghost" href="#voices">All Testimonials</a>
+    <section class="facts" aria-labelledby="facts-t">
+      <div class="wrap facts__g">
+        <div class="ring" data-drift="40"><div class="win px" style="--p:10; --pos:50% 40%"><img src="assets/img/yunnan.webp" width="800" height="1114" alt="Sanken group on an Inspira Tour trip below a pagoda in Yunnan" loading="lazy"></div></div>
+        <div>
+          <div class="facts__h"><h2 class="h2" id="facts-t" data-words>Achievements</h2><p>Company Fact</p></div>
+          <dl>
+            <div><dt>Happy Traveler</dt><dd class="num"><span data-count="3500">3500</span>+</dd></div>
+            <div><dt>Corporate Clients</dt><dd class="num"><span data-count="120">120</span>+</dd></div>
+            <div><dt>Destination Visited</dt><dd class="num"><span data-count="62">62</span>k+</dd></div>
+          </dl>
         </div>
-        <div class="voices__body" data-voices>
-          <div class="voices__panels">
-            <figure class="voice" role="tabpanel" id="voice-1" aria-labelledby="voice-tab-1">
-              <div class="stars" role="img" aria-label="5 out of 5 stars"></div>
-              <blockquote lang="id">Ketepatan toleransi waktu, mengatur acara serta tour guide yang baik, cepat akrab dengan peserta, dan Inspira tour, tour yang baik dalam mengatur jadwal waktu dan lokasi yang akan di kunjungi serta baik menyampaikan keterangan dengan diselingi sedikit candaan</blockquote>
-            </figure>
-            <figure class="voice" role="tabpanel" id="voice-2" aria-labelledby="voice-tab-2">
-              <div class="stars" role="img" aria-label="5 out of 5 stars"></div>
-              <blockquote lang="id">Pelayanan yang baik, makananya ok, tour guide yang bisa menjelaskan dengan baik dan mampu membawa suasana sehingga tidak membosankan di bus dan kisah inspiratifnya semoga Inspira semakin sukses</blockquote>
-            </figure>
-            <figure class="voice" role="tabpanel" id="voice-3" aria-labelledby="voice-tab-3">
-              <div class="stars" role="img" aria-label="5 out of 5 stars"></div>
-              <blockquote lang="id">Leadernya membantu banget top lah, Bisa jadi refrensi kita buat tour bareng keluarga dilain kesempatan, terimakasih untuk inspira tour dan leader yang sudah membantu selama tour berjalan</blockquote>
-            </figure>
+      </div>
+    </section>
+
+    <section class="voices" id="testimonials" aria-labelledby="voices-t">
+      <div class="wrap">
+        <div class="voices__h"><h2 class="h2" id="voices-t" data-words>Our Inspira moment truth from our customers</h2><p>More than 100 corporate within 30 years who feel the “Inspira moment” of Inspiratour</p></div>
+        <div class="cols" tabindex="0" role="region" aria-label="Customer testimonials" lang="id">
+          <div class="col" data-col="0">
+            <figure class="voice voice--l"><div class="stars" role="img" aria-label="5 out of 5 stars"></div><blockquote>Ketepatan toleransi waktu, mengatur acara serta tour guide yang baik, cepat akrab dengan peserta, dan Inspira tour, tour yang baik dalam mengatur jadwal waktu dan lokasi yang akan di kunjungi serta baik menyampaikan keterangan dengan diselingi sedikit candaan</blockquote><figcaption><b>Johan</b><span>STIHL</span></figcaption></figure>
+            <figure class="voice"><div class="stars" role="img" aria-label="5 out of 5 stars"></div><blockquote>Leadernya membantu banget top lah, Bisa jadi refrensi kita buat tour bareng keluarga dilain kesempatan, terimakasih untuk inspira tour dan leader yang sudah membantu selama tour berjalan</blockquote><figcaption><b>Devy</b><span>DAIKIN</span></figcaption></figure>
           </div>
-          <div class="voices__tabs" role="tablist" aria-label="Customer testimonials">
-            <button type="button" role="tab" id="voice-tab-1" aria-controls="voice-1" aria-selected="true"><strong>Johan</strong><span>STHIL</span></button>
-            <button type="button" role="tab" id="voice-tab-2" aria-controls="voice-2" aria-selected="false" tabindex="-1"><strong>Rina Chaterina Onggiyana</strong><span>POLYTRON</span></button>
-            <button type="button" role="tab" id="voice-tab-3" aria-controls="voice-3" aria-selected="false" tabindex="-1"><strong>Devy</strong><span>DAIKIN</span></button>
+          <div class="col" data-col="1">
+            <figure class="voice voice--f"><div class="stars" role="img" aria-label="5 out of 5 stars"></div><blockquote>Pelayanan yang baik, makananya ok, tour guide yang bisa menjelaskan dengan baik dan mampu membawa suasana sehingga tidak membosankan di bus dan kisah inspiratifnya semoga Inspira semakin sukses</blockquote><figcaption><b>Rina Chaterina Onggiyana</b><span>POLYTRON</span></figcaption></figure>
+            <figure class="voice"><div class="stars" role="img" aria-label="5 out of 5 stars"></div><blockquote>Inspiratour ternyata memang canggih, luar biasa, ramah dan cerdas. sangat puas</blockquote><figcaption><b>Hadi W.</b><span>SANKEN</span></figcaption></figure>
+          </div>
+          <div class="col" data-col="2">
+            <figure class="voice voice--l"><div class="stars" role="img" aria-label="5 out of 5 stars"></div><blockquote>Terimakasih atas perjalanan yang menyenangkan ke eropa ! selalu menjadi impian untuk ke eropa dan pengalaman saya jadi memorable &amp; berharga. Thankyou ! saya sudah rekomend keteman dan mereka excited banget !!</blockquote><figcaption><b>Dorine Law</b><span>J&amp;T</span></figcaption></figure>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Hidden for now. Remove the hidden attribute to bring the team section back. -->
+    <section class="team" id="team" aria-labelledby="team-t" hidden>
+      <div class="wrap">
+        <h2 class="h2" id="team-t" data-words>Meet Our Inspira Team!</h2>
+        <ul class="crew">
+          <li class="culture"><h3>Team &amp; Culture</h3><ul><li>Fun &amp; Creative</li><li>Integrity &amp; Commitment</li><li>Wealth &amp; Abundance</li><li>Productive &amp; Consistent</li></ul></li>
+          <li><div class="ring"><div class="win"><img src="assets/img/team/efata-eben.webp" width="640" height="720" alt="Efata Eben" loading="lazy"></div></div><h3>Efata Eben</h3><p>Incentive Specialist Manager</p></li>
+          <li><div class="ring"><div class="win"><img src="assets/img/team/mey.webp" width="640" height="720" alt="Mey" loading="lazy"></div></div><h3>Mey</h3><p>Product Specialist Manager</p></li>
+          <li><div class="ring"><div class="win"><img src="assets/img/team/ezra-dynand.webp" width="640" height="720" alt="Ezra Dynand" loading="lazy"></div></div><h3>Ezra Dynand</h3><p>GRV Manager</p></li>
+          <li><div class="ring"><div class="win"><img src="assets/img/team/fely-julia-wijaya.webp" width="640" height="720" alt="Fely Julia Wijaya" loading="lazy"></div></div><h3>Fely Julia Wijaya</h3><p>Product Specialist Assistant</p></li>
+          <li><div class="ring"><div class="win"><img src="assets/img/team/hendar-supriatna.webp" width="640" height="720" alt="Hendar Supriatna" loading="lazy"></div></div><h3>Hendar Supriatna</h3><p>GRV</p></li>
+          <li><div class="ring"><div class="win"><img src="assets/img/team/yessy-okta-widjaja.webp" width="640" height="720" alt="Yessy Okta Widjaja" loading="lazy"></div></div><h3>Yessy Okta Widjaja</h3><p>Incentive Specialist Assistant</p></li>
+          <li><div class="ring"><div class="win"><img src="assets/img/team/gabriel-miracle.webp" width="640" height="720" alt="Gabriel Miracle" loading="lazy"></div></div><h3>Gabriel Miracle</h3><p>Incentive Specialist Assistant</p></li>
+          <li><div class="ring"><div class="win"><img src="assets/img/team/dewi-damayanti.webp" width="640" height="720" alt="Dewi Damayanti" loading="lazy"></div></div><h3>Dewi Damayanti</h3><p>Incentive Specialist Assistant</p></li>
+          <li><div class="ring"><div class="win"><img src="assets/img/team/agung-rahmat-wijaya-hia.webp" width="640" height="720" alt="Agung Rahmat Wijaya Hia" loading="lazy"></div></div><h3>Agung Rahmat Wijaya Hia</h3><p>Document Staff</p></li>
+          <li><div class="ring"><div class="win"><img src="assets/img/team/astrid-patricia.webp" width="640" height="720" alt="Astrid Patricia" loading="lazy"></div></div><h3>Astrid Patricia</h3><p>Document Staff</p></li>
+          <li><div class="ring"><div class="win"><img src="assets/img/team/aziz-fikri.webp" width="640" height="720" alt="Aziz Fikri" loading="lazy"></div></div><h3>Aziz Fikri</h3><p>Graphic Design</p></li>
+        </ul>
       </div>
     </section>
   </main>
 
-  <footer class="footer" id="contact">
-    <div class="footer__inner">
-      <div class="footer__lead">
-        <a class="brand" href="index.html" aria-label="Inspira Tour, home"><img src="assets/img/logo-white.webp" width="640" height="136" alt="Inspira Tour. What inspires you?" loading="lazy"></a>
-        <p>Inspira Tour is an <em>incentive house.</em> A travel agency specialising in corporate tour management</p>
-        <ul class="social">
-          <li><a href="https://www.tiktok.com/@inspiratour">Tiktok</a></li>
-          <li><a href="https://www.instagram.com/inspira_tour/">Instagram</a></li>
-          <!-- TODO: the live site points these two at the theme vendor's demo accounts (Envato). Add the real profile URLs. -->
-          <li><span>Facebook <small>coming soon</small></span></li>
-          <li><span>Linkedin <small>coming soon</small></span></li>
-        </ul>
-      </div>
-      <nav class="footer__pages" aria-labelledby="footer-pages">
-        <h2 id="footer-pages">Pages</h2>
-        <ul>
-          <li><a href="#business">About us</a></li>
-          <li><a href="#places">Gallery Asia</a></li>
-          <li><a href="#places">Gallery America</a></li>
-          <li><a href="#places">Gallery Europe</a></li>
-          <li><a href="#places">Gallery Australia &amp; New Zealand</a></li>
-          <li><a href="#moment">Inspirations</a></li>
-          <li><a href="#voices">Testimonial</a></li>
-          <li><a href="#contact">Contact us</a></li>
-        </ul>
-      </nav>
-      <div class="footer__contact">
-        <h2>Contact</h2>
+  <footer class="night dark" id="contact">
+    <div class="night__row" aria-hidden="true" data-night>
+      <div class="ring"><div class="win px" style="--p:8; --pos:20% 40%"><img src="assets/img/asia.webp" width="736" height="1104" alt="" loading="lazy"><span class="shade"></span></div></div>
+      <div class="ring"><div class="win px" style="--p:8; --pos:88% 50%"><img src="assets/img/australia.webp" width="1068" height="561" alt="" loading="lazy"><span class="shade"></span></div></div>
+      <div class="ring"><div class="win px" style="--p:8; --pos:50% 0%"><img src="assets/img/activities/aurora.webp" width="473" height="709" alt="" loading="lazy"><span class="shade"></span></div></div>
+      <div class="ring"><div class="win px" style="--p:8; --pos:50% 50%"><img src="assets/img/europe.webp" width="1120" height="426" alt="" loading="lazy"><span class="shade"></span></div></div>
+      <div class="ring"><div class="win px" style="--p:8; --pos:50% 50%"><img src="assets/img/activities/gala-dinner.webp" width="1200" height="801" alt="" loading="lazy"><span class="shade"></span></div></div>
+    </div>
+    <div class="wrap">
+      <div class="contact">
+        <h2 class="h2" data-words>Have questions? Feel free to write us</h2>
         <dl>
           <div><dt>Drop a Line</dt><dd><a href="tel:+622129405333">(021)29405333</a></dd></div>
           <div><dt>Email Address</dt><dd><a href="mailto:info@inspiratour.co.id">info@inspiratour.co.id</a></dd></div>
-          <div><dt>Visit office</dt><dd><a href="https://maps.app.goo.gl/cVauzKDgBsiJzicm8">Ruko Duta Garden Blok B4 No.15 Tangerang 15124 Banten-Indonesia</a></dd></div>
+          <div><dt>Visit office</dt><dd><a href="https://maps.app.goo.gl/cVauzKDgBsiJzicm8">Ruko Duta Garden Blok B4 No.15 Tangerang 15124 <span style="white-space:nowrap">Banten-Indonesia</span></a></dd></div>
         </dl>
       </div>
-      <p class="footer__legal">© 2023 Inspiratour. All Rights Reserved</p>
+      <div class="foot">
+        <div class="foot__a">
+          <a class="foot__logo" href="#top" aria-label="Inspira Tour, back to top"><img src="assets/img/logo-white.webp" width="640" height="136" alt="Inspira Tour. What inspires you?" loading="lazy"></a>
+          <p>Inspira Tour is an <em>incentive house.</em> A travel agency specialising in corporate tour management</p>
+          <ul class="social">
+            <li><a href="https://www.tiktok.com/@inspiratour">Tiktok</a></li>
+            <li><a href="https://www.instagram.com/inspira_tour/">Instagram</a></li>
+            <!-- TODO: add the real Facebook and LinkedIn profile URLs. -->
+            <li><span>Facebook <small>coming soon</small></span></li>
+            <li><span>Linkedin <small>coming soon</small></span></li>
+          </ul>
+        </div>
+        <nav aria-labelledby="pages-t">
+          <h2 id="pages-t">Pages</h2>
+          <ul>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#gallery" data-open-tab="asia">Gallery Asia</a></li>
+            <li><a href="#place-america">Gallery America</a></li>
+            <li><a href="#gallery" data-open-tab="europe">Gallery Europe</a></li>
+            <li><a href="#place-australia">Gallery Australia &amp; New Zealand</a></li>
+            <li><a href="#inspiration">Inspirations</a></li>
+            <li><a href="#testimonials">Testimonial</a></li>
+            <li><a href="#contact">Contact us</a></li>
+          </ul>
+        </nav>
+      </div>
+      <p class="legal">© 2023 Inspiratour. All Rights Reserved</p>
     </div>
   </footer>
+
+  <script>
+    (() => {
+      const $ = (s, r = document) => r.querySelector(s);
+      const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+      const still = matchMedia('(prefers-reduced-motion: reduce)');
+
+      const toggles = $$('.nav__t');
+      const closeSubs = (but) => toggles.forEach((t) => t !== but && t.setAttribute('aria-expanded', 'false'));
+      toggles.forEach((t) => {
+        const item = t.parentElement;
+        t.addEventListener('click', () => { closeSubs(t); t.setAttribute('aria-expanded', String(t.getAttribute('aria-expanded') !== 'true')); });
+        item.addEventListener('focusout', (e) => { if (!item.contains(e.relatedTarget)) t.setAttribute('aria-expanded', 'false'); });
+        item.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && t.getAttribute('aria-expanded') === 'true') { t.setAttribute('aria-expanded', 'false'); t.focus(); }
+        });
+      });
+      document.addEventListener('click', (e) => { if (!e.target.closest('.has-sub')) closeSubs(); });
+
+      const spots = [['.hero', '#top'], ['#about', '#about'], ['.founder', '#about'], ['.open', '#about'], ['.vision', '#about'], ['.mission', '#about'], ['.acts', ''], ['#inspiration', '#inspiration'], ['.ready', ''], ['#places', '#gallery'], ['#gallery', '#gallery'], ['.facts', ''], ['#testimonials', '#testimonials'], ['#contact', '']];
+      const links = $$('.nav__a, .menu__list > li > a');
+      const spy = new IntersectionObserver((es) => es.forEach((e) => {
+        if (!e.isIntersecting) return;
+        const key = spots.find(([s]) => $(s) === e.target)[1];
+        links.forEach((a) => (a.hash === key ? a.setAttribute('aria-current', 'true') : a.removeAttribute('aria-current')));
+      }), { rootMargin: '-50% 0px -50% 0px' });
+      spots.forEach(([s]) => spy.observe($(s)));
+
+      const menu = $('#menu');
+      const opener = $('[data-menu-open]');
+      opener.addEventListener('click', () => { menu.showModal(); opener.setAttribute('aria-expanded', 'true'); });
+      $('[data-menu-close]').addEventListener('click', () => menu.close());
+      menu.addEventListener('click', (e) => { if (e.target.closest('a[href^="#"]')) menu.close(); });
+      menu.addEventListener('close', () => opener.setAttribute('aria-expanded', 'false'));
+      matchMedia('(min-width: 1080px)').addEventListener('change', (e) => { if (e.matches && menu.open) menu.close(); });
+
+      // Activities: the row at the middle of the screen drives the photo; hover, focus and click override it.
+      const acts = $$('.act');
+      const frames = $$('[data-acts-frame] img');
+      const setAct = (i) => {
+        acts.forEach((a, k) => (k === i ? a.setAttribute('aria-current', 'true') : a.removeAttribute('aria-current')));
+        frames.forEach((f, k) => f.classList.toggle('is-on', k === i));
+      };
+      const mid = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) setAct(acts.indexOf(e.target)); }), { rootMargin: '-48% 0px -48% 0px' });
+      acts.forEach((a, i) => {
+        mid.observe(a);
+        ['pointerenter', 'focus', 'click'].forEach((ev) => a.addEventListener(ev, () => setAct(i)));
+      });
+
+      const seats = $$('.seat');
+      seats.forEach((s) => $('button', s).addEventListener('click', () => seats.forEach((o) => {
+        const on = o === s;
+        o.classList.toggle('is-on', on);
+        $('button', o).setAttribute('aria-expanded', String(on));
+      })));
+
+      const view = $('[data-view]');
+      const tabs = $$('[role="tab"]');
+      const shots = (id) => $$(`#${id} [data-trip]`);
+      let region = 'asia';
+      const show = (btn) => {
+        const [title, ...rest] = btn.getAttribute('aria-label').split(', ');
+        shots(region).forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+        view.src = `assets/img/trips/${btn.dataset.trip}.webp`;
+        view.alt = `${title} group, ${rest.join(', ')}`;
+        $('[data-view-t]').textContent = title;
+        $('[data-view-s]').textContent = rest.join(', ');
+      };
+      const pick = (id, focus) => {
+        region = id;
+        tabs.forEach((t) => {
+          const on = t.getAttribute('aria-controls') === id;
+          t.setAttribute('aria-selected', String(on));
+          t.tabIndex = on ? 0 : -1;
+          $(`#${t.getAttribute('aria-controls')}`).hidden = !on;
+          if (on && focus) t.focus();
+        });
+        show(shots(id)[0]);
+      };
+      const step = (d) => {
+        const list = shots(region);
+        const i = list.findIndex((b) => b.getAttribute('aria-pressed') === 'true');
+        show(list[(i + d + list.length) % list.length]);
+      };
+      view.addEventListener('error', () => { $('[data-view-s]').textContent = 'This photo could not be loaded. Check your connection and try again.'; });
+      $$('[data-trip]').forEach((b) => b.addEventListener('click', () => show(b)));
+      $('[data-view-prev]').addEventListener('click', () => step(-1));
+      $('[data-view-next]').addEventListener('click', () => step(1));
+      tabs.forEach((t, i) => {
+        t.addEventListener('click', () => pick(t.getAttribute('aria-controls')));
+        t.addEventListener('keydown', (e) => {
+          if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+          e.preventDefault();
+          pick(tabs[(i + 1) % tabs.length].getAttribute('aria-controls'), true);
+        });
+      });
+      $$('[data-open-tab]').forEach((a) => a.addEventListener('click', () => pick(a.dataset.openTab)));
+
+      addEventListener('DOMContentLoaded', () => {
+        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined' || still.matches) return;
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Wheel smoothing only; touch keeps native scrolling.
+        if (typeof Lenis !== 'undefined' && matchMedia('(pointer: fine)').matches) {
+          const lenis = new Lenis({ lerp: 0.11, anchors: true });
+          lenis.on('scroll', ScrollTrigger.update);
+          gsap.ticker.add((t) => lenis.raf(t * 1000));
+          gsap.ticker.lagSmoothing(0);
+          new MutationObserver(() => (menu.open ? lenis.stop() : lenis.start())).observe(menu, { attributes: true, attributeFilter: ['open'] });
+          menu.addEventListener('click', (e) => { if (e.target.closest('a[href^="#"]')) lenis.start(); });
+        }
+
+
+        const mm = gsap.matchMedia();
+        mm.add('(min-width: 901px)', () => {
+          document.documentElement.classList.add('parallax');
+          const hero = $('[data-hero]');
+          gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: true } })
+            .to('[data-layer="back"]', { y: () => hero.offsetHeight * 0.22 }, 0)
+            .to('[data-layer="title"]', { y: () => hero.offsetHeight * 0.3 }, 0)
+            .to('[data-layer="text"]', { y: () => hero.offsetHeight * 0.3 }, 0);
+
+          const photo = $('.open__photo');
+          gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: { trigger: '[data-open]', start: 'top top', end: 'bottom bottom', scrub: true } })
+            .fromTo(photo, { clipPath: 'inset(17% 37.5% 13% 37.5% round 168px)' }, { clipPath: 'inset(0% 0% 0% 0% round 0px)', duration: 0.8, ease: 'power1.inOut' }, 0)
+            .fromTo($('img', photo), { scale: 1.22 }, { scale: 1.02, duration: 1 }, 0)
+            .to('.open__words span:first-child', { x: -60, duration: 0.8 }, 0)
+            .to('.open__words span:last-child', { x: 60, duration: 0.8 }, 0);
+
+          // Photos lag behind their frame, so each section edge slides past them.
+          $$('.px').forEach((frame) => {
+            const p = Number(getComputedStyle(frame).getPropertyValue('--p')) || 12;
+            const shift = (p / (100 + 2 * p)) * 100;
+            gsap.fromTo($('img', frame), { yPercent: -shift }, { yPercent: shift, ease: 'none', scrollTrigger: { trigger: frame.closest('.vcard, .ready') || frame, start: 'top bottom', end: 'bottom top', scrub: true } });
+          });
+          $$('[data-drift]').forEach((el) => {
+            const d = Number(el.dataset.drift);
+            gsap.fromTo(el, { y: d }, { y: -d, ease: 'none', scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom top', scrub: true } });
+          });
+          $$('[data-col]').forEach((col) => {
+            const d = [40, 130, 0][Number(col.dataset.col)];
+            gsap.fromTo(col, { y: d }, { y: -d * 0.4, ease: 'none', scrollTrigger: { trigger: '.cols', start: 'top bottom', end: 'bottom top', scrub: true } });
+          });
+          const cards = $$('.vcard');
+          cards.slice(0, -1).forEach((card, i) => {
+            gsap.to(card, { scale: 0.95 - (1 - i) * 0.02, ease: 'none', scrollTrigger: { trigger: cards[i + 1], start: 'top 85%', end: 'top 20%', scrub: true } });
+          });
+          return () => document.documentElement.classList.remove('parallax');
+        });
+
+        // The shades come down as the flight ends.
+        $$('[data-night] .shade').forEach((s, i) => {
+          gsap.fromTo(s, { yPercent: -101, y: 0, transform: 'none' }, { yPercent: [-30, -52, -78, -44, -24][i], ease: 'none', scrollTrigger: { trigger: '[data-night]', start: 'top 70%', end: 'top 8%', scrub: true } });
+        });
+
+        const splitWords = (el) => {
+          const frag = document.createDocumentFragment();
+          el.textContent.split(/(\s+)/).forEach((part) => {
+            if (!part) return;
+            if (!part.trim()) { frag.append(' '); return; }
+            const mask = document.createElement('span');
+            const word = document.createElement('span');
+            mask.className = 'w';
+            word.textContent = part;
+            mask.append(word);
+            frag.append(mask);
+          });
+          el.replaceChildren(frag);
+          return $$('.w > span', el);
+        };
+        $$('[data-words]').forEach((el) => {
+          const words = splitWords(el);
+          gsap.set(words, { yPercent: 118 });
+          ScrollTrigger.create({ trigger: el, start: 'top 88%', once: true, onEnter: () => gsap.to(words, { yPercent: 0, duration: 0.6, ease: 'power3.out', stagger: 0.04, clearProps: 'transform' }) });
+        });
+        $$('[data-stagger]').forEach((list) => {
+          gsap.from(list.children, { opacity: 0, y: 24, duration: 0.5, ease: 'power3.out', stagger: 0.05, clearProps: 'opacity,transform', scrollTrigger: { trigger: list, start: 'top 86%', once: true } });
+        });
+        $$('[data-count]').forEach((el) => {
+          const n = { v: 0 };
+          gsap.to(n, { v: Number(el.dataset.count), duration: 1.1, ease: 'power2.out', onUpdate: () => { el.textContent = Math.round(n.v); }, scrollTrigger: { trigger: el, start: 'top 90%', once: true } });
+        });
+
+        addEventListener('load', () => ScrollTrigger.refresh());
+      });
+    })();
+  </script>
 </body>
 </html>

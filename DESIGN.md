@@ -1,535 +1,335 @@
 # DESIGN.md — INSPIRATOUR
+## Modern Travel Editorial · Premium Adventure · Playful Minimalism
 
-> Brand-Preserved Visual System  
-> Direction: Modern Travel Editorial × Premium Adventure × Playful Minimalism
-
----
-
-## 01. DESIGN IDENTITY
-
-### Product Identity
-
-Inspiratour is a modern travel platform designed to help people discover destinations, explore travel experiences, and find journeys that match their interests.
-
-The visual experience should communicate:
-
-- Professional and trustworthy.
-- Playful and adventurous.
-- Inspiring and visually engaging.
-- Premium but approachable.
-- Clear and easy to navigate.
-
-### Core Visual Direction
-
-Combine three visual characteristics:
-
-**01 — Outdoor Editorial**
-- Nature-inspired photography.
-- Strong editorial typography.
-- Minimal interface decoration.
-- Natural visual atmosphere.
-- Spacious presentation.
-
-**02 — Premium Travel**
-- Refined typography hierarchy.
-- Elegant visual compositions.
-- Warm and inviting atmosphere.
-- Sophisticated image treatment.
-- Carefully controlled visual details.
-
-**03 — Modern Adventure**
-- Contemporary interface elements.
-- Rounded components.
-- Immersive photography.
-- Playful interactive details.
-- Smooth and natural motion.
-
-### Brand Personality
-
-| Attribute | Direction |
-|---|---|
-| Professional | High |
-| Playful | Medium |
-| Adventurous | High |
-| Premium | Medium–High |
-| Minimal | High |
-| Friendly | High |
-
-### Important Brand Rule
-
-Inspiratour's existing brand identity must remain recognizable.
-
-Do not redesign the brand identity just to match the visual references.
-
-The existing brand is the foundation. The references are only used to improve visual quality, presentation, and interaction.
+Dokumen ini mendefinisikan bahasa visual untuk website travel Inspiratour. Gunakan screenshot referensi sebagai inspirasi kualitas visual, bukan sebagai template layout.
 
 ---
 
-## 02. BRAND COLOR SYSTEM
+## 01. IDENTITY
 
-### Existing Brand Preservation
+### Product
+Inspiratour adalah website travel yang membantu pengguna mengenal destinasi, memahami pengalaman perjalanan, dan menemukan trip yang sesuai dengan minat mereka.
 
-Before implementing any visual changes, inspect the existing Inspiratour website and codebase.
+### Visual personality
+- **Professional:** terpercaya, terorganisir, dan informatif.
+- **Playful:** terasa hidup, optimistis, dan mengundang eksplorasi.
+- **Adventurous:** membangkitkan rasa ingin tahu dan keinginan untuk bepergian.
+- **Editorial:** mengutamakan fotografi, tipografi yang kuat, dan komposisi yang terkurasi.
+- **Approachable premium:** terlihat berkualitas tanpa terasa kaku atau eksklusif.
 
-Identify:
-- Existing primary brand color.
-- Existing secondary brand color.
-- Existing accent color.
-- Existing background colors.
-- Existing typography colors.
-- Existing gradients, if any.
-- Logo colors and brand assets.
+### Core direction
+Gabungkan nuansa outdoor editorial, travel photography yang imersif, dan UI modern yang bersih. Website harus membuat destinasi menjadi daya tarik utama, sementara interface membantu pengguna memahami informasi dan mengambil keputusan.
 
-Use the existing brand colors as the source of truth.
+**Prinsip utama:** destination-first, brand-consistent, easy to explore.
 
-Do not introduce an unrelated color palette.
+### Reference interpretation
+Ambil kualitas visual berikut dari screenshot:
+- Fotografi alam dan aktivitas perjalanan yang besar, autentik, dan atmosferik.
+- Kontras antara gambar yang ekspresif dan area konten yang bersih.
+- Tipografi editorial dengan headline yang tegas.
+- Aksen warna cerah yang digunakan secara hemat.
+- Komponen modern dengan sudut membulat dan detail interaksi yang halus.
+- Komposisi yang terasa dinamis, tetapi tetap rapi dan mudah dipahami.
 
-### Semantic Color Tokens
+Jangan menyalin susunan section, urutan konten, komposisi hero, maupun bentuk layout screenshot secara literal.
 
-Map existing brand colors into the following semantic roles:
+---
 
-| Token | Usage |
-|---|---|
-| Primary | Main brand identity and primary actions |
-| Primary Hover | Hover and active states |
-| Secondary | Supporting brand elements |
-| Accent | Highlights and important visual emphasis |
-| Background | Main page background |
-| Surface | Cards, panels, and containers |
-| Surface Muted | Secondary content surfaces |
-| Text Primary | Main headlines and body text |
-| Text Secondary | Descriptions and supporting information |
-| Border | Dividers and subtle boundaries |
-| Overlay | Image overlays and text readability |
+## 02. COLOR PALETTE
 
-### Color Application Rules
+### Color philosophy
+Gunakan warna yang terasa natural, hangat, dan segar. Warna alam menjadi fondasi suasana travel; warna aksen memberi energi dan membantu elemen penting lebih mudah ditemukan.
 
-- Preserve the original brand primary color.
-- Use the accent color selectively.
-- Keep backgrounds neutral when appropriate.
-- Use subtle tonal variations from existing brand colors.
-- Maintain sufficient contrast between text and surfaces.
-- Avoid excessive gradients and decorative colors.
-- Do not use color as the only indicator of information.
+**Penting:** jika Inspiratour sudah memiliki warna brand resmi di website atau source code, pertahankan warna tersebut sebagai warna utama. Token di bawah adalah arahan peran visual dan warna pendukung, bukan alasan untuk mengganti identitas brand.
 
-### Photography Color Direction
+### Suggested supporting palette
 
-Photography should feel natural, vibrant, and cinematic.
+| Token | Color | Hex | Usage |
+|---|---|---|---|
+| Warm Canvas | <span style="color:#F6F4EC">■</span> Warm off-white | `#F6F4EC` | Background utama untuk area editorial yang hangat |
+| Pure Surface | <span style="color:#FFFFFF">■</span> White | `#FFFFFF` | Card, form, dan area yang membutuhkan kontras bersih |
+| Ink | <span style="color:#1B1D19">■</span> Deep charcoal | `#1B1D19` | Headline, body text, dan elemen utama |
+| Muted Text | <span style="color:#777B73">■</span> Soft gray | `#777B73` | Metadata, caption, dan deskripsi sekunder |
+| Nature Green | <span style="color:#244B39">■</span> Forest green | `#244B39` | Supporting color untuk elemen bertema alam atau surface gelap |
+| Fresh Accent | <span style="color:#D8E94A">■</span> Fresh lime | `#D8E94A` | Highlight, badge, atau aksen CTA bila sesuai dengan brand |
+| Soft Border | <span style="color:#E5E3DA">■</span> Warm gray | `#E5E3DA` | Border, divider, dan pemisah konten |
 
-Preferred visual characteristics:
-- Natural lighting.
-- Rich environmental colors.
-- Authentic travel moments.
-- Beautiful landscape composition.
-- Realistic color grading.
-- Balanced highlights and shadows.
+### Color usage rules
+- Gunakan warna brand resmi Inspiratour untuk primary CTA, active state, dan identitas utama.
+- Warm Canvas dan White menjadi pilihan surface; jangan membuat semua section berwarna.
+- Ink digunakan untuk teks utama agar keterbacaan tetap tinggi.
+- Muted Text hanya untuk informasi sekunder, bukan teks penting.
+- Nature Green dapat memperkuat nuansa outdoor, terutama pada elemen pendukung atau area gelap.
+- Fresh Accent digunakan sedikit dan terarah. Jangan menjadikan lime sebagai warna dominan jika tidak sesuai dengan brand resmi.
+- Jangan mencampur banyak warna aksen sekaligus. Pilih satu aksen dominan yang paling selaras dengan brand.
+- Pastikan kontras teks dan background memenuhi aksesibilitas.
 
-Avoid artificial saturation and excessive filters.
+### Photography color direction
+- Natural greens, earthy tones, warm sunlight, ocean blues, dan warna destinasi yang autentik.
+- Hindari saturasi berlebihan, filter ekstrem, serta color grading yang membuat foto terlihat tidak natural.
+- Gunakan overlay gelap hanya ketika teks ditempatkan di atas foto dan membutuhkan kontras.
 
 ---
 
 ## 03. TYPOGRAPHY
 
-### Font Strategy
+### Font family
+Gunakan **satu keluarga font utama** untuk seluruh interface.
 
-Use ONE primary font family.
+Prioritas pemilihan:
+1. Pertahankan font brand yang sudah digunakan Inspiratour.
+2. Jika belum ada font yang konsisten, gunakan satu keluarga sans-serif modern dengan karakter bersih, humanist, dan mudah dibaca.
 
-Priority:
-1. Existing font used by Inspiratour.
-2. Existing brand typography defined in the project.
-3. If no font is established, select a modern sans-serif family that matches the brand personality.
+Jangan mencampur beberapa keluarga font hanya untuk meniru screenshot.
 
-Do not introduce multiple unrelated font families.
+### Typographic character
+- Clean and contemporary.
+- Confident but friendly.
+- Editorial, bukan dekoratif.
+- Headline kuat dan mudah dipindai.
+- Body text nyaman dibaca.
 
-### Typography Characteristics
-
-- Modern.
-- Clean.
-- Professional.
-- Friendly.
-- Editorial.
-- Highly readable.
-
-### Typography Hierarchy
-
-| Element | Visual Treatment |
-|---|---|
-| Hero Heading | Large, expressive, confident |
-| Section Heading | Clear and editorial |
-| Card Heading | Medium and readable |
-| Body Text | Regular and comfortable |
-| Caption | Small and subtle |
-| Navigation | Compact and clean |
-| Labels | Small with controlled emphasis |
-
-### Font Weight
-
+### Weight
 | Weight | Usage |
 |---|---|
-| 400 Regular | Body, descriptions, large numbers |
-| 500 Medium | Navigation and supporting text |
-| 600 Semibold | Section headings and card titles |
-| 700 Bold | Important headlines only |
+| 400 Regular | Body text, deskripsi, angka besar |
+| 500 Medium | Navigation, label, dan metadata penting |
+| 600 Semibold | Card title dan section heading |
+| 700 Bold | Headline yang benar-benar membutuhkan penekanan |
 
-### Special Typography Rules
+**Angka besar wajib menggunakan weight 400 / Regular.** Hindari angka tebal yang terasa seperti dashboard finansial.
 
-- Large numerical displays must use Regular 400.
-- Avoid excessive bold typography.
-- Use tight line-height for large headings.
-- Use comfortable line-height for paragraphs.
-- Establish hierarchy through size, weight, and spacing.
-- Avoid unnecessary uppercase text.
-- Use editorial typography without sacrificing readability.
-
-### Suggested Type Scale
-
-| Element | Desktop |
+### Type scale
+| Role | Desktop guideline |
 |---|---:|
-| Hero | 64–88px |
-| Section Heading | 36–48px |
-| Card Heading | 22–28px |
-| Body | 15–17px |
-| Caption | 12–14px |
-| Navigation | 13–15px |
+| Display / Hero | 64–88 px |
+| H1 / Page title | 48–64 px |
+| H2 / Section title | 32–44 px |
+| H3 / Card title | 20–28 px |
+| Body | 15–17 px |
+| Caption | 12–14 px |
+| Navigation | 13–15 px |
 
-Scale typography responsively for smaller screens.
+Sesuaikan skala secara responsif. Gunakan line-height rapat untuk headline dan lebih longgar untuk paragraf. Hindari penggunaan uppercase panjang pada body text.
 
 ---
 
-## 04. COMPONENT DESIGN SYSTEM
+## 04. COMPONENTS
 
-### 4.1 Cards
+### Cards
+Karakter card: clean, tactile, modern, dan tidak terlalu dekoratif.
 
-Cards should feel lightweight, modern, and premium.
+- Radius guideline: 16–24 px.
+- Gunakan surface putih atau warm neutral.
+- Border tipis atau shadow sangat halus.
+- Padding konsisten dan proporsional.
+- Image card dapat menggunakan foto sebagai elemen dominan.
+- Informasi di dalam card harus memiliki hierarki yang jelas.
+- Variasikan ukuran card hanya jika kebutuhan kontennya berbeda.
 
-Visual properties:
-- Border radius: 16–24px.
-- Clean surfaces.
-- Subtle borders.
-- Minimal shadows.
-- Balanced internal spacing.
-- Strong image presentation.
+Jangan membuat semua card identik atau menambahkan shadow tebal pada setiap komponen.
 
-Use different treatments when appropriate:
-- Destination cards.
-- Travel experience cards.
-- Package cards.
-- Information cards.
-- Promotional cards.
-- Editorial image cards.
+### Image cards
+- Foto menjadi fokus utama.
+- Gunakan crop yang menjaga subjek dan konteks destinasi.
+- Radius konsisten dengan sistem card.
+- Label dan caption singkat.
+- Overlay hanya jika diperlukan untuk keterbacaan.
+- Hover dapat memberi image zoom yang sangat halus.
 
-Avoid making every card look identical.
+### Buttons
+**Primary**
+- Gunakan warna primary brand Inspiratour.
+- Kontras tinggi dan label aksi yang jelas.
+- Bentuk rounded atau pill, sesuai karakter brand.
+- Tinggi dan padding nyaman untuk disentuh.
 
-### 4.2 Buttons
+**Secondary**
+- Neutral atau transparent surface.
+- Border halus.
+- Tidak bersaing secara visual dengan primary CTA.
 
-Buttons should be recognizable, approachable, and easy to interact with.
+**Icon button**
+- Bentuk circular atau rounded-square.
+- Ikon sederhana dan mudah dikenali.
+- Sediakan hover, focus, active, dan disabled state.
 
-**Primary Button**
-- Existing brand primary or accent color.
-- High contrast.
-- Rounded or pill-shaped.
-- Medium typography weight.
-- Comfortable padding.
-- Clear action label.
+Transition interaksi umumnya 180–280 ms.
 
-**Secondary Button**
-- Neutral or transparent surface.
-- Subtle border.
-- Clear visual distinction.
+### Badges & tags
+- Compact pill shape.
+- Warna lembut dan kontras teks yang cukup.
+- Gunakan untuk kategori, tipe pengalaman, status, atau metadata yang berguna.
+- Hindari badge dekoratif yang tidak menambah informasi.
 
-**Icon Button**
-- Circular or rounded-square.
-- Minimal appearance.
-- Clear interaction state.
+### Charts
+Chart bukan elemen wajib pada website travel. Gunakan hanya jika data memang membantu pengguna memahami sesuatu, misalnya tren, perbandingan, atau ringkasan informasi.
 
-Interaction states:
-- Default.
-- Hover.
-- Active.
-- Focus.
-- Disabled.
-- Loading.
-
-Use smooth transitions around 200–300ms.
-
-### 4.3 Navigation
-
-Navigation should be minimal and intuitive.
-
-- Clean typography.
-- Comfortable spacing.
-- Clear active state.
-- Consistent brand identity.
-- Distinct primary action.
-- Responsive mobile navigation.
-
-Avoid excessive decoration.
-
-### 4.4 Charts
-
-Charts should be functional and easy to understand.
-
-Visual direction:
 - Minimal gridlines.
-- Rounded bars.
-- Subtle transitions.
-- Clear numerical labels.
-- Existing brand colors for primary data.
-- Neutral colors for supporting data.
+- Label dan angka mudah dibaca.
+- Satu warna brand untuk data utama.
+- Warna netral untuk data pembanding.
+- Animasi singkat dan tidak mengganggu.
+- Jangan membuat chart dekoratif tanpa makna.
 
-Never use charts purely as decoration.
+### Meters & progress
+- Track rounded.
+- Active state memakai warna brand.
+- Inactive track memakai neutral tone.
+- Tampilkan angka atau label jika membantu pemahaman.
+- Hindari meter jika informasi dapat disampaikan lebih sederhana.
 
-### 4.5 Meters & Indicators
-
-Use simple and refined indicators.
-
-- Rounded progress tracks.
-- Minimal visual noise.
-- Clear progress states.
-- Existing brand colors for active values.
-- Neutral background for inactive values.
-- Readable numerical values.
-
-### 4.6 Badges & Tags
-
-- Rounded pill shapes.
-- Compact typography.
-- Subtle backgrounds.
-- Clear semantic meaning.
-- Minimal decoration.
-
-Use badges for relevant information such as travel categories, availability, and experience levels.
-
-### 4.7 Image Treatment
-
-Photography is a major part of the Inspiratour visual experience.
-
-Image guidelines:
-- Prioritize high-quality destination photography.
-- Use natural and authentic travel imagery.
-- Maintain consistent image quality.
-- Use appropriate aspect ratios.
-- Apply rounded corners selectively.
-- Avoid unnecessary image overlays.
-- Maintain text readability when overlaying images.
-
-Images should communicate the destination and create an emotional connection.
+### Navigation & form controls
+- Navigasi ringkas dan mudah dipahami.
+- Active state terlihat jelas.
+- Dropdown, input, dan date selector konsisten dengan radius serta spacing komponen.
+- Focus state harus jelas.
+- Touch target mobile nyaman digunakan.
 
 ---
 
-## 05. SPACING & DENSITY
+## 05. DENSITY & SPACING
 
-### Density Direction
+### Density: 2/3 — Balanced, spacious, informative
+Tampilan harus terasa lapang, tetapi tidak kosong. Berikan ruang untuk fotografi dan headline tanpa membuat pengguna harus scroll terlalu jauh untuk menemukan informasi penting.
 
-**Medium — Spacious Editorial**
+- Kelompokkan informasi yang saling berkaitan.
+- Hindari paragraf panjang tanpa pemisah.
+- Jaga keseimbangan antara foto, teks, dan komponen.
+- Gunakan whitespace untuk membentuk hierarki.
+- Jangan menambahkan card atau dekorasi hanya untuk mengisi ruang.
 
-The interface should feel spacious, informative, and visually balanced.
-
-Avoid:
-- Overcrowded content.
-- Excessive decorative elements.
-- Too many cards competing for attention.
-- Long paragraphs without visual breaks.
-- Inconsistent spacing.
-
-Prioritize:
-- Clear information grouping.
-- Generous whitespace.
-- Strong visual hierarchy.
-- Balanced photography and typography.
-- Consistent component spacing.
-
-### Spacing System
-
-Use an 8px-based spacing scale.
+### Spacing scale
+Gunakan basis 8 px:
 
 | Token | Value |
 |---|---:|
-| XS | 8px |
-| SM | 16px |
-| MD | 24px |
-| LG | 32px |
-| XL | 48px |
-| 2XL | 64px |
-| 3XL | 96px |
+| XS | 8 px |
+| SM | 16 px |
+| MD | 24 px |
+| LG | 32 px |
+| XL | 48 px |
+| 2XL | 64 px |
+| 3XL | 96 px |
 
-Larger spacing should separate major content groups. Smaller spacing should connect related elements.
+Gunakan jarak kecil untuk elemen yang berhubungan dan jarak besar untuk memisahkan kelompok konten.
 
 ---
 
-## 06. DESIGN DIALS
+## 06. MOTION & PARALLAX
+
+### Motion character
+Motion harus terasa smooth, natural, cinematic, dan purposeful. Gerakan mendukung pengalaman menjelajahi destinasi, bukan menjadi atraksi yang mengganggu.
+
+### Section-to-section image parallax
+Terapkan **image parallax saat pengguna berpindah dari satu section ke section berikutnya**.
+
+Arahan:
+- Gunakan gambar sebagai layer visual yang bergerak lebih lambat daripada scroll halaman.
+- Gerakan gambar harus terasa subtle dan memberi kedalaman.
+- Gunakan parallax pada section yang memiliki foto atau visual destinasi, bukan pada semua elemen.
+- Pertahankan focal point foto agar subjek utama tidak keluar dari frame.
+- Gunakan `overflow: hidden` pada container gambar bila diperlukan.
+- Pastikan teks dan informasi tetap stabil serta mudah dibaca.
+- Hindari parallax berlebihan yang membuat pengguna kehilangan orientasi.
+- Jangan membuat efek parallax menghambat scroll atau interaksi.
+
+### Suggested motion values
+| Motion | Guideline |
+|---|---|
+| Micro interaction | 150–200 ms |
+| Hover transition | 180–280 ms |
+| Element reveal | 350–600 ms |
+| Section image parallax | Subtle scroll-linked movement |
+| Image hover zoom | Scale sekitar 1.02–1.05 |
+
+Gunakan easing yang natural. Jika menggunakan GSAP ScrollTrigger, pastikan trigger dan scrub tidak menyebabkan layout jump. Jangan memaksa smooth scrolling jika mengganggu aksesibilitas atau native scroll.
+
+### Accessibility & performance
+- Hormati `prefers-reduced-motion`.
+- Pada perangkat dengan kemampuan terbatas, kurangi atau nonaktifkan parallax.
+- Hindari animasi yang memicu layout shift.
+- Prioritaskan transform dan opacity untuk animasi.
+- Pastikan gambar memiliki ukuran dan loading strategy yang sesuai.
+
+---
+
+## 07. DESIGN DIALS
 
 ### ENERGY — 2/3
+Enerjik dan mengundang eksplorasi, tetapi tetap profesional.
 
-Professional but adventurous.
-
-- Expressive photography.
-- Strong visual hierarchy.
-- Selective accent colors.
-- Playful micro-details.
-- Avoid overly corporate or childish styling.
+- Fotografi destinasi yang ekspresif.
+- Aksen warna yang terkontrol.
+- Headline yang percaya diri.
+- Detail playful dalam dosis kecil.
 
 ### RHYTHM — 2/3
+Komposisi editorial yang seimbang.
 
-Balanced editorial composition.
-
-- Vary image proportions.
-- Mix large and small typography.
-- Use whitespace as visual pauses.
-- Balance visual and informational content.
-- Avoid repetitive visual patterns.
+- Variasi skala headline dan gambar.
+- Pergantian area visual dan area informasi.
+- Whitespace sebagai jeda.
+- Hindari pola komponen yang monoton.
 
 ### MOTION — 2/3
+Halus dan sinematik.
 
-Smooth, natural, and purposeful.
-
-- Subtle entrance animations.
-- Smooth scroll reveals.
-- Gentle image zoom.
-- Soft hover interactions.
-- Natural easing.
-- Small interactive feedback.
-
-Motion should enhance the experience without distracting users.
-
-Respect reduced-motion preferences and maintain performance.
+- Subtle image parallax antar-section.
+- Gentle image reveal.
+- Smooth hover transitions.
+- Stagger ringan bila relevan.
+- Motion selalu memiliki tujuan.
 
 ---
 
-## 07. RESPONSIVE DESIGN
-
-The visual identity must remain consistent across desktop, tablet, and mobile.
+## 08. RESPONSIVE PRINCIPLES
 
 ### Desktop
-- Spacious content presentation.
-- Strong editorial typography.
-- Large destination photography.
-- Balanced content density.
-- Refined interaction details.
+- Beri ruang untuk fotografi dan headline.
+- Jaga komposisi tetap seimbang.
+- Manfaatkan parallax secara halus jika performa mendukung.
 
 ### Tablet
-- Adapt component proportions.
-- Maintain typography hierarchy.
-- Reduce unnecessary whitespace.
-- Preserve image quality.
+- Sesuaikan rasio gambar dan lebar konten.
+- Kurangi jarak yang terlalu besar.
+- Jaga keterbacaan dan hierarki.
 
 ### Mobile
-- Prioritize readability.
-- Simplify complex component arrangements.
-- Use comfortable touch targets.
-- Maintain clear navigation.
-- Avoid excessively small text.
-- Keep photography visually engaging.
-
-Use responsive layouts instead of simply shrinking desktop components.
+- Prioritaskan native scrolling dan kemudahan navigasi.
+- Kurangi atau nonaktifkan parallax yang berat.
+- Pastikan teks tidak menutupi subjek utama foto.
+- Gunakan touch target yang nyaman.
+- Hindari layout desktop yang hanya diperkecil.
 
 ---
 
-## 08. MOTION PRINCIPLES
+## 09. STRICT DESIGN RULES
 
-Motion should feel elegant and natural.
+**DO**
+- Pertahankan identitas dan warna brand Inspiratour yang sudah ada.
+- Gunakan screenshot hanya sebagai referensi bahasa visual.
+- Jadikan destinasi dan pengalaman perjalanan sebagai fokus visual.
+- Jaga konsistensi komponen, typography, dan spacing.
+- Gunakan motion untuk memperkuat storytelling perjalanan.
 
-Recommended motion patterns:
-- Fade-up entrance.
-- Subtle staggered text reveal.
-- Image scale on hover.
-- Smooth opacity transitions.
-- Subtle scroll-based reveal.
-- Button interaction feedback.
-
-Suggested timing:
-- Micro-interaction: 150–200ms.
-- Component transition: 200–300ms.
-- Entrance animation: 400–700ms.
-
-Avoid:
-- Excessive parallax.
-- Aggressive zoom.
-- Unnecessary bouncing.
-- Long blocking animations.
-- Motion that interferes with navigation.
+**DON'T**
+- Jangan menyalin layout atau urutan section dari screenshot.
+- Jangan menyalin konten, logo, atau identitas brand referensi.
+- Jangan mengganti warna brand resmi tanpa alasan.
+- Jangan memakai banyak font family.
+- Jangan menggunakan gradient, shadow, atau animasi secara berlebihan.
+- Jangan menambahkan chart atau meter yang tidak relevan.
+- Jangan mengorbankan keterbacaan demi efek visual.
 
 ---
 
-## 09. VISUAL REFERENCE INTERPRETATION
+## FINAL ART DIRECTION
 
-The supplied screenshots are visual references only.
+**INSPIRATOUR — A More Inspiring Way to Explore**
 
-Extract their visual characteristics:
+Bangun pengalaman travel yang profesional, playful, dan penuh karakter melalui fotografi destinasi yang kuat, tipografi editorial, interface modern, warna yang natural, serta transisi image parallax yang halus antar-section.
 
-**Reference 01**
-- Outdoor editorial atmosphere.
-- Natural landscape photography.
-- Minimal interface.
-- Strong typography.
-- Subtle accent treatment.
+Hasil akhirnya harus terasa seperti brand travel yang terpercaya dan berpengalaman, sekaligus membangkitkan rasa penasaran untuk menjelajahi tempat baru.
 
-**Reference 02**
-- Premium editorial quality.
-- Refined typography.
-- Warm atmosphere.
-- Playful visual details.
-- Photography-driven presentation.
-
-**Reference 03**
-- Modern travel aesthetic.
-- Immersive photography.
-- Rounded components.
-- Spacious interface.
-- Contemporary typography.
-- Smooth interactions.
-
-### Strict Restrictions
-
-DO NOT:
-- Copy the reference layouts.
-- Reproduce the original section sequence.
-- Copy their content.
-- Recreate their exact card arrangements.
-- Copy their brand colors.
-- Replace Inspiratour's logo.
-- Replace Inspiratour's established brand identity.
-
-Use the references only to guide visual quality and design language.
-
----
-
-## 10. IMPLEMENTATION PRIORITIES
-
-Before modifying the website:
-
-1. Inspect the existing Inspiratour codebase.
-2. Identify the current brand colors and HEX values.
-3. Identify the existing font family.
-4. Inspect logo, icons, and existing brand assets.
-5. Identify existing reusable components.
-6. Map the existing branding into semantic design tokens.
-7. Apply the new visual direction without changing the established brand identity.
-
-### Design Consistency
-
-All new components must follow this document.
-
-If an existing component already follows the brand identity and usability standards, improve it rather than replacing it unnecessarily.
-
-Prioritize:
-- Brand consistency.
-- Visual quality.
-- Readability.
-- Accessibility.
-- Responsive behavior.
-- Performance.
-
----
-
-# FINAL DESIGN DIRECTION
-
-**INSPIRATOUR — Modern Travel Editorial**
-
-A professional, playful, and inspiring travel experience.
-
-The website should combine the visual richness of travel photography, the sophistication of editorial design, and the usability of a modern digital product.
-
-Preserve Inspiratour's original brand identity while elevating the overall visual experience.
-
-**Brand remains recognizable. Visual experience becomes more distinctive.**
+**Use the visual language. Do not copy the reference layout.**
