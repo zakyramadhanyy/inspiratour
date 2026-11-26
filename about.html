@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us | Inspira Tour</title>
+  <meta name="description" content="Inspira Tour is an incentive house. A travel agency specialising in corporate tour management, led by founder and CEO Daniel Tan.">
+  <meta name="theme-color" content="#F6F4EC">
+  <link rel="icon" href="data:,">
+  <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="assets/js/gsap.min.js" defer></script>
+  <script src="assets/js/ScrollTrigger.min.js" defer></script>
+  <script src="assets/js/lenis.min.js" defer></script>
+  <script src="assets/js/site.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="bar">
+    <a class="bar__logo" href="index.html" aria-label="Inspira Tour, home"><img src="assets/img/logo.webp" width="640" height="121" alt="Inspira Tour. What inspires you?"></a>
+    <nav class="nav" aria-label="Main">
+      <ul>
+        <li><a class="nav__a" href="index.html">Home</a></li>
+        <li class="has-sub">
+          <a class="nav__a" href="about.html" aria-current="page">About Us</a>
+          <button class="nav__t" type="button" aria-expanded="false" aria-controls="sub-about" aria-label="About Us submenu"><svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5 6 6.5 11 1.5"/></svg></button>
+          <ul class="sub" id="sub-about"><li><a href="about.html#team">Our Team</a></li></ul>
+        </li>
+        <li class="has-sub">
+          <a class="nav__a" href="gallery.html">Gallery</a>
+          <button class="nav__t" type="button" aria-expanded="false" aria-controls="sub-gallery" aria-label="Gallery submenu"><svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5 6 6.5 11 1.5"/></svg></button>
+          <ul class="sub" id="sub-gallery"><li><a href="gallery.html#asia">Gallery Asia</a></li><li><a href="gallery.html#america">Gallery America</a></li><li><a href="gallery.html#europe">Gallery Europe</a></li><li><a href="gallery.html#australia">Gallery Australia &amp; New Zealand</a></li></ul>
+        </li>
+        <li><a class="nav__a" href="testimonials.html">Testimonials</a></li>
+        <li><a class="nav__a" href="inspiration.html">Inspiration</a></li>
+      </ul>
+    </nav>
+    <div class="bar__end">
+      <a class="btn btn--s" href="contact.html">Contact Us</a>
+      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu" data-menu-open><svg viewBox="0 0 18 12" aria-hidden="true"><path d="M0 1h18M0 11h18"/></svg></button>
+    </div>
+  </header>
+
+  <dialog class="menu dark" id="menu" aria-label="Main menu" data-lenis-prevent>
+    <div class="menu__top">
+      <img src="assets/img/logo-white.webp" width="640" height="136" alt="">
+      <button class="round" type="button" aria-label="Close menu" data-menu-close><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m2 2 12 12M14 2 2 14"/></svg></button>
+    </div>
+    <nav aria-label="Mobile">
+      <ul class="menu__list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" aria-current="page">About Us</a><ul><li><a href="about.html#team">Our Team</a></li></ul></li>
+        <li><a href="gallery.html">Gallery</a><ul><li><a href="gallery.html#asia">Gallery Asia</a></li><li><a href="gallery.html#america">Gallery America</a></li><li><a href="gallery.html#europe">Gallery Europe</a></li><li><a href="gallery.html#australia">Gallery Australia &amp; New Zealand</a></li></ul></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="inspiration.html">Inspiration</a></li>
+      </ul>
+      <a class="btn" href="contact.html">Contact Us</a>
+    </nav>
+  </dialog>
+
+  <main id="main">
+    <section class="intro wrap" aria-labelledby="page-t">
+      <div class="intro__t">
+        <h1 class="h1" id="page-t">About Us</h1>
+        <p class="intro__say">Inspira Tour is an <em>incentive house.</em> A travel agency specialising in corporate tour management</p>
+        <dl class="intro__facts">
+          <div><dt>Years of experience</dt><dd class="num">30+</dd></div>
+          <div><dt>Corporate Clients</dt><dd class="num">120+</dd></div>
+          <div><dt>Happy Traveler</dt><dd class="num">3500+</dd></div>
+        </dl>
+      </div>
+      <figure class="intro__pic" data-lift>
+        <div class="ring"><div class="win px" style="--p:8; --pos:46% 50%"><img src="assets/img/alpine.webp" width="2200" height="1260" alt="Sanken group on an Inspira Tour trip in front of the snow walls of the Japan Alpine Route" fetchpriority="high"><span class="shade"></span></div></div>
+        <figcaption>Sanken group, Japan Alpine Route</figcaption>
+      </figure>
+    </section>
+
+    <section class="sheet letter" aria-labelledby="ceo-t">
+      <div class="wrap letter__g">
+        <aside class="letter__id">
+          <div class="ring"><div class="win"><img src="assets/img/founder.webp" width="269" height="308" alt="Daniel Tan" loading="lazy"></div></div>
+          <h2 id="ceo-t">Daniel Tan</h2>
+          <p>Founder &amp; CEO</p>
+        </aside>
+        <div class="letter__t">
+          <p class="letter__lead">Being 30 years in the corporate incentive industry, through all those challenges and victories, had made us what we are today. Aiming at the highest standard of service with an affordable budget, we dedicate our 100% energy and persistence to accomplish your goal.</p>
+          <blockquote class="letter__pull"><p>In the heart of Inspira Tour, we believe in the alignment of your goal and ours.</p></blockquote>
+          <p>In this years of growing competition, we are stretching ourselves to make every distinctions, every signature, at every step of the process, in order to be the pioneer and inventor of a new breed of services.</p>
+          <p>Our focus to details, habits, empathizes, understandings, anticipations, technologies, and integrated databases, will increase our competitiveness to serve you better.</p>
+          <p>As part of commitment, we always keep on asking ourselves. Questions like:</p>
+          <ul class="letter__qs" data-stagger>
+            <li>How can we be in assistance to obtain an efficient and effective campaign for your company?</li>
+            <li>How to motivate your dealers?</li>
+            <li>How to empower and inspiring them?</li>
+            <li>How to keep their loyalty?</li>
+            <li>How to increase your profit?</li>
+            <li>How to achieve success?</li>
+            <li>How to grow and expand?</li>
+          </ul>
+          <p>You will see our reasons of existence in the next pages. We elaborate them in powerful statements like: Who we are, What we do, Why we do, How does it look like.</p>
+          <p>We are proud to be in partnership with you, as well as our esteemed existing clientele.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="values dark" aria-labelledby="values-t">
+      <div class="wrap values__g">
+        <h2 class="h2" id="values-t" data-words>Team &amp; Culture</h2>
+        <ul data-stagger>
+          <li>Fun &amp; Creative</li>
+          <li>Integrity &amp; Commitment</li>
+          <li>Wealth &amp; Abundance</li>
+          <li>Productive &amp; Consistent</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="wrap vis3" aria-labelledby="vision-t">
+      <h2 class="h2" id="vision-t" data-words>Vision</h2>
+      <ul>
+        <li><div class="ring"><div class="win px" style="--p:10; --pos:56% 50%"><img src="assets/img/activities/dogsled.webp" width="1146" height="900" alt="Two travellers waving from a dogsled on snow" loading="lazy"></div></div><h3>Inspiring</h3><p>As its name suggests, we exist to inspire.</p><p>Inspiring our clients, our staff, and the people we interact with.</p></li>
+        <li data-drift="40"><div class="ring"><div class="win px" style="--p:10; --pos:42% 50%"><img src="assets/img/activities/snow-mobile.webp" width="1200" height="762" alt="Two travellers giving a thumbs up on a snow mobile" loading="lazy"></div></div><h3>Empowering</h3><p>We are a catalyst to your business empowerment.</p><p>Joining an Inspira Journey leaves our clients fulfilled and empowered, ready to take on challenges.</p></li>
+        <li><div class="ring"><div class="win px" style="--p:10; --pos:50% 55%"><img src="assets/img/activities/gala-dinner.webp" width="1200" height="801" alt="Ballroom set for a gala dinner" loading="lazy"></div></div><h3>Service Excellence</h3><p>Assisting clients from the very beginning until the very end.</p><p>Providing service excellence and constant assistance throughout.</p></li>
+      </ul>
+    </section>
+
+    <section class="mis2" aria-labelledby="mission-t">
+      <div class="wrap mis2__g">
+        <h2 class="h2" id="mission-t" data-words>Mission</h2>
+        <ul data-stagger>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 10.5 3.2 3.2L15 6.8"/></svg>Total assistance and dedication</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 10.5 3.2 3.2L15 6.8"/></svg>Giving out the “WOW Factor”</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 10.5 3.2 3.2L15 6.8"/></svg>Delivering service-excellence</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 10.5 3.2 3.2L15 6.8"/></svg>Create an Inspiring Journey</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 10.5 3.2 3.2L15 6.8"/></svg>Maximising the clients’ trust</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 10.5 3.2 3.2L15 6.8"/></svg>Superior product</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 10.5 3.2 3.2L15 6.8"/></svg>Exceptional creativity</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 10.5 3.2 3.2L15 6.8"/></svg>High value service</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 10.5 3.2 3.2L15 6.8"/></svg>Excellent client loyalty</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="team team--canvas" id="team" aria-labelledby="team-t">
+      <div class="wrap">
+        <h2 class="h2" id="team-t" data-words>Meet Our Inspira Team!</h2>
+        <ul class="crew">
+          <li><div class="ring"><div class="win"><img src="assets/img/team/efata-eben.webp" width="640" height="720" alt="Efata Eben" loading="lazy"></div></div><h3>Efata Eben</h3><p>Incentive Specialist Manager</p></li>
+          <li><div class="ring"><div class="win"><img src="assets/img/team/mey.webp" width="640" height="720" alt="Mey" loading="lazy"></div></div><h3>Mey</h3><p>Product Specialist Manager</p></li>
+          <li><div class="ring"><div class="win"><img src="assets/img/team/ezra-dynand.webp" width="640" height="720" alt="Ezra Dynand" loading="lazy"></div></div><h3>Ezra Dynand</h3><p>GRV Manager</p></li>
+          <li><div class="ring"><div class="win"><img src="assets/img/team/fely-julia-wijaya.webp" width="640" height="720" alt="Fely Julia Wijaya" loading="lazy"></div></div><h3>Fely Julia Wijaya</h3><p>Product Specialist Assistant</p></li>
+          <li><div class="ring"><div class="win"><img src="assets/img/team/hendar-supriatna.webp" width="640" height="720" alt="Hendar Supriatna" loading="lazy"></div></div><h3>Hendar Supriatna</h3><p>GRV</p></li>
+          <li><div class="ring"><div class="win"><img src="assets/img/team/yessy-okta-widjaja.webp" width="640" height="720" alt="Yessy Okta Widjaja" loading="lazy"></div></div><h3>Yessy Okta Widjaja</h3><p>Incentive Specialist Assistant</p></li>
+          <li><div class="ring"><div class="win"><img src="assets/img/team/gabriel-miracle.webp" width="640" height="720" alt="Gabriel Miracle" loading="lazy"></div></div><h3>Gabriel Miracle</h3><p>Incentive Specialist Assistant</p></li>
+          <li><div class="ring"><div class="win"><img src="assets/img/team/dewi-damayanti.webp" width="640" height="720" alt="Dewi Damayanti" loading="lazy"></div></div><h3>Dewi Damayanti</h3><p>Incentive Specialist Assistant</p></li>
+          <li><div class="ring"><div class="win"><img src="assets/img/team/agung-rahmat-wijaya-hia.webp" width="640" height="720" alt="Agung Rahmat Wijaya Hia" loading="lazy"></div></div><h3>Agung Rahmat Wijaya Hia</h3><p>Document Staff</p></li>
+          <li><div class="ring"><div class="win"><img src="assets/img/team/astrid-patricia.webp" width="640" height="720" alt="Astrid Patricia" loading="lazy"></div></div><h3>Astrid Patricia</h3><p>Document Staff</p></li>
+          <li><div class="ring"><div class="win"><img src="assets/img/team/aziz-fikri.webp" width="640" height="720" alt="Aziz Fikri" loading="lazy"></div></div><h3>Aziz Fikri</h3><p>Graphic Design</p></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="night dark" id="contact">
+    <div class="night__row" aria-hidden="true" data-night>
+      <div class="ring"><div class="win px" style="--p:8; --pos:20% 40%"><img src="assets/img/asia.webp" width="736" height="1104" alt="" loading="lazy"><span class="shade"></span></div></div>
+      <div class="ring"><div class="win px" style="--p:8; --pos:88% 50%"><img src="assets/img/australia.webp" width="1068" height="561" alt="" loading="lazy"><span class="shade"></span></div></div>
+      <div class="ring"><div class="win px" style="--p:8; --pos:50% 0%"><img src="assets/img/activities/aurora.webp" width="473" height="709" alt="" loading="lazy"><span class="shade"></span></div></div>
+      <div class="ring"><div class="win px" style="--p:8; --pos:50% 50%"><img src="assets/img/europe.webp" width="1120" height="426" alt="" loading="lazy"><span class="shade"></span></div></div>
+      <div class="ring"><div class="win px" style="--p:8; --pos:50% 50%"><img src="assets/img/activities/gala-dinner.webp" width="1200" height="801" alt="" loading="lazy"><span class="shade"></span></div></div>
+    </div>
+    <div class="wrap">
+      <div class="contact">
+        <h2 class="h2" data-words>Have questions? Feel free to write us</h2>
+        <dl>
+          <div><dt>Drop a Line</dt><dd><a href="tel:+622129405333">(021)29405333</a></dd></div>
+          <div><dt>Email Address</dt><dd><a href="mailto:info@inspiratour.co.id">info@inspiratour.co.id</a></dd></div>
+          <div><dt>Visit office</dt><dd><a href="https://maps.app.goo.gl/cVauzKDgBsiJzicm8">Ruko Duta Garden Blok B4 No.15 Tangerang 15124 <span style="white-space:nowrap">Banten-Indonesia</span></a></dd></div>
+        </dl>
+      </div>
+      <div class="foot">
+        <div class="foot__a">
+          <a class="foot__logo" href="index.html" aria-label="Inspira Tour, home"><img src="assets/img/logo-white.webp" width="640" height="136" alt="Inspira Tour. What inspires you?" loading="lazy"></a>
+          <p>Inspira Tour is an <em>incentive house.</em> A travel agency specialising in corporate tour management</p>
+          <ul class="social">
+            <li><a href="https://www.tiktok.com/@inspiratour">Tiktok</a></li>
+            <li><a href="https://www.instagram.com/inspira_tour/">Instagram</a></li>
+            <!-- TODO: add the real Facebook and LinkedIn profile URLs. -->
+            <li><span>Facebook <small>coming soon</small></span></li>
+            <li><span>Linkedin <small>coming soon</small></span></li>
+          </ul>
+        </div>
+        <nav aria-label="Pages">
+          <h2>Pages</h2>
+          <ul>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="gallery.html#asia">Gallery Asia</a></li>
+            <li><a href="gallery.html#america">Gallery America</a></li>
+            <li><a href="gallery.html#europe">Gallery Europe</a></li>
+            <li><a href="gallery.html#australia">Gallery Australia &amp; New Zealand</a></li>
+            <li><a href="inspiration.html">Inspirations</a></li>
+            <li><a href="testimonials.html">Testimonial</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+          </ul>
+        </nav>
+      </div>
+      <p class="legal">© 2023 Inspiratour. All Rights Reserved</p>
+    </div>
+  </footer>
+</body>
+</html>

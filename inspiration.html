@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inspirations | Inspira Tour</title>
+  <meta name="description" content="Trips Inspira Tour has run for corporate clients: Japan, China, Thailand, Bhutan, Europe, Turkey, the United Kingdom and the West Coast of the USA.">
+  <meta name="theme-color" content="#F6F4EC">
+  <link rel="icon" href="data:,">
+  <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="assets/js/gsap.min.js" defer></script>
+  <script src="assets/js/ScrollTrigger.min.js" defer></script>
+  <script src="assets/js/lenis.min.js" defer></script>
+  <script src="assets/js/site.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="bar">
+    <a class="bar__logo" href="index.html" aria-label="Inspira Tour, home"><img src="assets/img/logo.webp" width="640" height="121" alt="Inspira Tour. What inspires you?"></a>
+    <nav class="nav" aria-label="Main">
+      <ul>
+        <li><a class="nav__a" href="index.html">Home</a></li>
+        <li class="has-sub">
+          <a class="nav__a" href="about.html">About Us</a>
+          <button class="nav__t" type="button" aria-expanded="false" aria-controls="sub-about" aria-label="About Us submenu"><svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5 6 6.5 11 1.5"/></svg></button>
+          <ul class="sub" id="sub-about"><li><a href="about.html#team">Our Team</a></li></ul>
+        </li>
+        <li class="has-sub">
+          <a class="nav__a" href="gallery.html">Gallery</a>
+          <button class="nav__t" type="button" aria-expanded="false" aria-controls="sub-gallery" aria-label="Gallery submenu"><svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5 6 6.5 11 1.5"/></svg></button>
+          <ul class="sub" id="sub-gallery"><li><a href="gallery.html#asia">Gallery Asia</a></li><li><a href="gallery.html#america">Gallery America</a></li><li><a href="gallery.html#europe">Gallery Europe</a></li><li><a href="gallery.html#australia">Gallery Australia &amp; New Zealand</a></li></ul>
+        </li>
+        <li><a class="nav__a" href="testimonials.html">Testimonials</a></li>
+        <li><a class="nav__a" href="inspiration.html" aria-current="page">Inspiration</a></li>
+      </ul>
+    </nav>
+    <div class="bar__end">
+      <a class="btn btn--s" href="contact.html">Contact Us</a>
+      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu" data-menu-open><svg viewBox="0 0 18 12" aria-hidden="true"><path d="M0 1h18M0 11h18"/></svg></button>
+    </div>
+  </header>
+
+  <dialog class="menu dark" id="menu" aria-label="Main menu" data-lenis-prevent>
+    <div class="menu__top">
+      <img src="assets/img/logo-white.webp" width="640" height="136" alt="">
+      <button class="round" type="button" aria-label="Close menu" data-menu-close><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m2 2 12 12M14 2 2 14"/></svg></button>
+    </div>
+    <nav aria-label="Mobile">
+      <ul class="menu__list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a><ul><li><a href="about.html#team">Our Team</a></li></ul></li>
+        <li><a href="gallery.html">Gallery</a><ul><li><a href="gallery.html#asia">Gallery Asia</a></li><li><a href="gallery.html#america">Gallery America</a></li><li><a href="gallery.html#europe">Gallery Europe</a></li><li><a href="gallery.html#australia">Gallery Australia &amp; New Zealand</a></li></ul></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="inspiration.html" aria-current="page">Inspiration</a></li>
+      </ul>
+      <a class="btn" href="contact.html">Contact Us</a>
+    </nav>
+  </dialog>
+
+  <main id="main">
+    <section class="intro intro--insp wrap" aria-labelledby="page-t">
+      <div class="intro__t">
+        <h1 class="h1" id="page-t">Inspirations</h1>
+        <p class="intro__say">People Don’t Take Trips, Trips Take People.</p>
+        <p class="intro__lede">Japan to Scandinavia, Bhutan to the West Coast of the USA: these are trips we have already run for our corporate clients, with photos and videos from each one.</p>
+        <a class="more" href="#board">See every destination</a>
+      </div>
+      <div class="intro__vid"><button class="vid vid--big" type="button" data-video="z2QFoiGtbis" data-title="Daikin, Enchanting Turkey, Sep 2022"><span class="vid__img"><img src="assets/img/videos/z2QFoiGtbis.webp" width="960" height="540" alt="" loading="lazy"><span class="vid__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span></span><span class="vid__t"><b>Enchanting Turkey</b><span>Daikin · Sep 2022</span></span><span class="sr">, play video</span></button></div>
+    </section>
+
+    <section class="sheet board" id="board" aria-labelledby="board-t">
+      <div class="wrap">
+        <div class="board__h">
+          <h2 class="h2" id="board-t" data-words>Where we have taken our clients</h2>
+          <p class="board__status" data-filter-status="board" aria-live="polite">Showing 16 of 16</p>
+        </div>
+        <div class="chips" role="group" aria-label="Filter destinations by region" data-filter="board">
+          <button type="button" data-key="all" aria-pressed="true">All <span>16</span></button>
+          <button type="button" data-key="asia" aria-pressed="false">Asia <span>5</span></button>
+          <button type="button" data-key="europe" aria-pressed="false">Europe <span>9</span></button>
+          <button type="button" data-key="america" aria-pressed="false">America <span>1</span></button>
+          <button type="button" data-key="oceania" aria-pressed="false">Oceania <span>1</span></button>
+        </div>
+        <ul class="rows" data-group="board">
+          <li class="row" data-tags="asia"><h3>Japan</h3><p class="row__r">Asia</p><ul><li><a class="trip-chip" href="gallery.html#asia"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6.5h3l1.5-2h5L14 6.5h3v9H3z"/><circle cx="10" cy="11" r="2.8"/></svg><span>Sanken: Japan Alpine Route</span></a></li><li><a class="trip-chip" href="gallery.html#asia"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6.5h3l1.5-2h5L14 6.5h3v9H3z"/><circle cx="10" cy="11" r="2.8"/></svg><span>J&amp;T Express: Incredible Japan Hokkaido</span></a></li><li><a class="trip-chip" href="gallery.html#asia"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6.5h3l1.5-2h5L14 6.5h3v9H3z"/><circle cx="10" cy="11" r="2.8"/></svg><span>Tasco: Beautiful Japan</span></a></li><li><a class="trip-chip" href="gallery.html#asia"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6.5h3l1.5-2h5L14 6.5h3v9H3z"/><circle cx="10" cy="11" r="2.8"/></svg><span>Mahkota Diesel: Beautiful Japan</span></a></li><li><button type="button" class="trip-chip" data-video="ciHkDSz3Kr0" data-title="Kresna, Wonderful Japan, Nov 2019"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 5v10l8-5z"/></svg><span>Kresna: Wonderful Japan, Nov 2019</span><span class="sr">, play video</span></button></li></ul></li>
+          <li class="row" data-tags="asia"><h3>China &amp; Hong Kong</h3><p class="row__r">Asia</p><ul><li><a class="trip-chip" href="gallery.html#asia"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6.5h3l1.5-2h5L14 6.5h3v9H3z"/><circle cx="10" cy="11" r="2.8"/></svg><span>J&amp;T Express: Explore Yiwu, Experience Shanghai</span></a></li><li><a class="trip-chip" href="gallery.html#asia"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6.5h3l1.5-2h5L14 6.5h3v9H3z"/><circle cx="10" cy="11" r="2.8"/></svg><span>Sanken: Beautiful Yunnan</span></a></li><li><a class="trip-chip" href="gallery.html#asia"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6.5h3l1.5-2h5L14 6.5h3v9H3z"/><circle cx="10" cy="11" r="2.8"/></svg><span>Amazing Three Kingdom: Chongqing, Guangyuan, Jianmenguan, Chengdu</span></a></li><li><button type="button" class="trip-chip" data-video="YQy6B7O_FQw" data-title="Inspira Tour, The Beauty of China, Zhangjiajie &amp; Hong Kong, Sep 2018"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 5v10l8-5z"/></svg><span>Inspira Tour: The Beauty of China, Zhangjiajie &amp; Hong Kong, Sep 2018</span><span class="sr">, play video</span></button></li></ul></li>
+          <li class="row" data-tags="asia"><h3>Thailand</h3><p class="row__r">Asia</p><ul><li><a class="trip-chip" href="gallery.html#asia"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6.5h3l1.5-2h5L14 6.5h3v9H3z"/><circle cx="10" cy="11" r="2.8"/></svg><span>ToffeeDev: Funtastic Thailand</span></a></li><li><a class="trip-chip" href="gallery.html#asia"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6.5h3l1.5-2h5L14 6.5h3v9H3z"/><circle cx="10" cy="11" r="2.8"/></svg><span>Sanken: Beautiful Khao Yai</span></a></li><li><button type="button" class="trip-chip" data-video="Ibj0uVvkQR0" data-title="Angkasa Mesin, Thailand, Aug 2017"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 5v10l8-5z"/></svg><span>Angkasa Mesin: Thailand, Aug 2017</span><span class="sr">, play video</span></button></li></ul></li>
+          <li class="row" data-tags="asia"><h3>Vietnam</h3><p class="row__r">Asia</p><ul><li><a class="trip-chip" href="gallery.html#asia"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6.5h3l1.5-2h5L14 6.5h3v9H3z"/><circle cx="10" cy="11" r="2.8"/></svg><span>Atlanta Electronics and Samsung: Paradise of Danang</span></a></li></ul></li>
+          <li class="row" data-tags="asia"><h3>Bhutan</h3><p class="row__r">Asia</p><ul><li><button type="button" class="trip-chip" data-video="eNCirypmiFY" data-title="Thera-In &amp; SJB, Bhutan, Oct 2019"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 5v10l8-5z"/></svg><span>Thera-In &amp; SJB: Bhutan, Oct 2019</span><span class="sr">, play video</span></button></li></ul></li>
+          <li class="row" data-tags="europe"><h3>East Europe</h3><p class="row__r">Europe</p><ul><li><a class="trip-chip" href="gallery.html#europe"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6.5h3l1.5-2h5L14 6.5h3v9H3z"/><circle cx="10" cy="11" r="2.8"/></svg><span>Sanken: Enchanting East Europe</span></a></li><li><a class="trip-chip" href="gallery.html#europe"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6.5h3l1.5-2h5L14 6.5h3v9H3z"/><circle cx="10" cy="11" r="2.8"/></svg><span>Polytron: Charming East Europe</span></a></li><li><a class="trip-chip" href="gallery.html#europe"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6.5h3l1.5-2h5L14 6.5h3v9H3z"/><circle cx="10" cy="11" r="2.8"/></svg><span>Alisan: Exotic East Europe</span></a></li><li><a class="trip-chip" href="gallery.html#europe"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6.5h3l1.5-2h5L14 6.5h3v9H3z"/><circle cx="10" cy="11" r="2.8"/></svg><span>Cahaya Mas: East Europe</span></a></li><li><a class="trip-chip" href="gallery.html#europe"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6.5h3l1.5-2h5L14 6.5h3v9H3z"/><circle cx="10" cy="11" r="2.8"/></svg><span>U.D. Duta Teknik Jaya: Magnificent East Europe</span></a></li><li><a class="trip-chip" href="gallery.html#europe"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6.5h3l1.5-2h5L14 6.5h3v9H3z"/><circle cx="10" cy="11" r="2.8"/></svg><span>KBN: East Europe plus Paris</span></a></li></ul></li>
+          <li class="row" data-tags="europe"><h3>West Europe</h3><p class="row__r">Europe</p><ul><li><a class="trip-chip" href="gallery.html#europe"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6.5h3l1.5-2h5L14 6.5h3v9H3z"/><circle cx="10" cy="11" r="2.8"/></svg><span>J&amp;T Express: Wonderful West Europe</span></a></li><li><a class="trip-chip" href="gallery.html#europe"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6.5h3l1.5-2h5L14 6.5h3v9H3z"/><circle cx="10" cy="11" r="2.8"/></svg><span>Sanken: Fantastic West Europe</span></a></li><li><button type="button" class="trip-chip" data-video="aStQxcDtXRI" data-title="Inspira Tour, Fabulous Europe, 11 days, Nov 2018"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 5v10l8-5z"/></svg><span>Inspira Tour: Fabulous Europe, 11 days, Nov 2018</span><span class="sr">, play video</span></button></li></ul></li>
+          <li class="row" data-tags="europe"><h3>Across Europe</h3><p class="row__r">Europe</p><ul><li><a class="trip-chip" href="gallery.html#europe"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6.5h3l1.5-2h5L14 6.5h3v9H3z"/><circle cx="10" cy="11" r="2.8"/></svg><span>Bahn Hoft: Charming Europe</span></a></li><li><a class="trip-chip" href="gallery.html#europe"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6.5h3l1.5-2h5L14 6.5h3v9H3z"/><circle cx="10" cy="11" r="2.8"/></svg><span>Modena: Europe Charming</span></a></li><li><a class="trip-chip" href="gallery.html#europe"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6.5h3l1.5-2h5L14 6.5h3v9H3z"/><circle cx="10" cy="11" r="2.8"/></svg><span>Modena: Europe Sensation</span></a></li><li><a class="trip-chip" href="gallery.html#europe"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6.5h3l1.5-2h5L14 6.5h3v9H3z"/><circle cx="10" cy="11" r="2.8"/></svg><span>Toko Lima: Lima Family Tour</span></a></li><li><a class="trip-chip" href="gallery.html#europe"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6.5h3l1.5-2h5L14 6.5h3v9H3z"/><circle cx="10" cy="11" r="2.8"/></svg><span>Orient: Trip of Winners</span></a></li></ul></li>
+          <li class="row" data-tags="europe"><h3>Greece &amp; Cyprus</h3><p class="row__r">Europe</p><ul><li><a class="trip-chip" href="gallery.html#europe"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6.5h3l1.5-2h5L14 6.5h3v9H3z"/><circle cx="10" cy="11" r="2.8"/></svg><span>Polytron: Amazing Greece</span></a></li><li><a class="trip-chip" href="gallery.html#europe"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6.5h3l1.5-2h5L14 6.5h3v9H3z"/><circle cx="10" cy="11" r="2.8"/></svg><span>Carlton: The Beauty of Greece and Cyprus</span></a></li></ul></li>
+          <li class="row" data-tags="europe"><h3>Italy</h3><p class="row__r">Europe</p><ul><li><a class="trip-chip" href="gallery.html#europe"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6.5h3l1.5-2h5L14 6.5h3v9H3z"/><circle cx="10" cy="11" r="2.8"/></svg><span>STIHL: Northern Italy</span></a></li></ul></li>
+          <li class="row" data-tags="europe"><h3>Spain &amp; Portugal</h3><p class="row__r">Europe</p><ul><li><a class="trip-chip" href="gallery.html#europe"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6.5h3l1.5-2h5L14 6.5h3v9H3z"/><circle cx="10" cy="11" r="2.8"/></svg><span>Polytron: Exotic Spain Portugal</span></a></li></ul></li>
+          <li class="row" data-tags="europe"><h3>Scandinavia</h3><p class="row__r">Europe</p><ul><li><a class="trip-chip" href="gallery.html#europe"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6.5h3l1.5-2h5L14 6.5h3v9H3z"/><circle cx="10" cy="11" r="2.8"/></svg><span>Polytron: Scandinavia</span></a></li><li><button type="button" class="trip-chip" data-video="TjgPL3PtPiI" data-title="Polytron, Enticing Scandinavia, Jul 2019"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 5v10l8-5z"/></svg><span>Polytron: Enticing Scandinavia, Jul 2019</span><span class="sr">, play video</span></button></li></ul></li>
+          <li class="row" data-tags="europe"><h3>United Kingdom</h3><p class="row__r">Europe</p><ul><li><button type="button" class="trip-chip" data-video="Bdqxpxgg6LY" data-title="Samsung, UK &amp; Scotland, Feb 2020"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 5v10l8-5z"/></svg><span>Samsung: UK &amp; Scotland, Feb 2020</span><span class="sr">, play video</span></button></li></ul></li>
+          <li class="row" data-tags="europe"><h3>Turkey</h3><p class="row__r">Europe</p><ul><li><button type="button" class="trip-chip" data-video="z2QFoiGtbis" data-title="Daikin, Enchanting Turkey, Sep 2022"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 5v10l8-5z"/></svg><span>Daikin: Enchanting Turkey, Sep 2022</span><span class="sr">, play video</span></button></li></ul></li>
+          <li class="row" data-tags="america"><h3>United States</h3><p class="row__r">America</p><ul><li><button type="button" class="trip-chip" data-video="za_v73Uj4rQ" data-title="J&amp;T, West Coast USA, Mar 2019"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 5v10l8-5z"/></svg><span>J&amp;T: West Coast USA, Mar 2019</span><span class="sr">, play video</span></button></li></ul></li>
+          <li class="row" data-tags="oceania"><h3>New Zealand</h3><p class="row__r">Oceania</p><ul><li><a class="trip-chip" href="testimonials.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 5h12v8H9l-4 3v-3H4z"/></svg><span>STIHL: guest testimonial</span></a></li></ul></li>
+        </ul>
+        <p class="board__key"><span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6.5h3l1.5-2h5L14 6.5h3v9H3z"/><circle cx="10" cy="11" r="2.8"/></svg> Trip photo in our gallery</span><span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 5v10l8-5z"/></svg> Trip video</span><span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 5h12v8H9l-4 3v-3H4z"/></svg> Guest testimonial</span></p>
+      </div>
+    </section>
+
+    <section class="videos" id="videos" aria-labelledby="videos-t">
+      <div class="wrap">
+        <h2 class="h2" id="videos-t" data-words>Our Trip Inspiration</h2>
+        <ul class="videos__g">
+          <li><button class="vid" type="button" data-video="Bdqxpxgg6LY" data-title="Samsung, UK &amp; Scotland, Feb 2020"><span class="vid__img"><img src="assets/img/videos/Bdqxpxgg6LY.webp" width="960" height="540" alt="" loading="lazy"><span class="vid__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span></span><span class="vid__t"><b>UK &amp; Scotland</b><span>Samsung · Feb 2020</span></span><span class="sr">, play video</span></button></li>
+          <li><button class="vid" type="button" data-video="ciHkDSz3Kr0" data-title="Kresna, Wonderful Japan, Nov 2019"><span class="vid__img"><img src="assets/img/videos/ciHkDSz3Kr0.webp" width="960" height="540" alt="" loading="lazy"><span class="vid__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span></span><span class="vid__t"><b>Wonderful Japan</b><span>Kresna · Nov 2019</span></span><span class="sr">, play video</span></button></li>
+          <li><button class="vid" type="button" data-video="eNCirypmiFY" data-title="Thera-In &amp; SJB, Bhutan, Oct 2019"><span class="vid__img"><img src="assets/img/videos/eNCirypmiFY.webp" width="960" height="540" alt="" loading="lazy"><span class="vid__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span></span><span class="vid__t"><b>Bhutan</b><span>Thera-In &amp; SJB · Oct 2019</span></span><span class="sr">, play video</span></button></li>
+          <li><button class="vid" type="button" data-video="TjgPL3PtPiI" data-title="Polytron, Enticing Scandinavia, Jul 2019"><span class="vid__img"><img src="assets/img/videos/TjgPL3PtPiI.webp" width="960" height="540" alt="" loading="lazy"><span class="vid__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span></span><span class="vid__t"><b>Enticing Scandinavia</b><span>Polytron · Jul 2019</span></span><span class="sr">, play video</span></button></li>
+          <li><button class="vid" type="button" data-video="za_v73Uj4rQ" data-title="J&amp;T, West Coast USA, Mar 2019"><span class="vid__img"><img src="assets/img/videos/za_v73Uj4rQ.webp" width="960" height="540" alt="" loading="lazy"><span class="vid__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span></span><span class="vid__t"><b>West Coast USA</b><span>J&amp;T · Mar 2019</span></span><span class="sr">, play video</span></button></li>
+          <li><button class="vid" type="button" data-video="aStQxcDtXRI" data-title="Inspira Tour, Fabulous Europe, 11 days, Nov 2018"><span class="vid__img"><img src="assets/img/videos/aStQxcDtXRI.webp" width="960" height="540" alt="" loading="lazy"><span class="vid__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span></span><span class="vid__t"><b>Fabulous Europe, 11 days</b><span>Inspira Tour · Nov 2018</span></span><span class="sr">, play video</span></button></li>
+          <li><button class="vid" type="button" data-video="YQy6B7O_FQw" data-title="Inspira Tour, The Beauty of China, Zhangjiajie &amp; Hong Kong, Sep 2018"><span class="vid__img"><img src="assets/img/videos/YQy6B7O_FQw.webp" width="960" height="540" alt="" loading="lazy"><span class="vid__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span></span><span class="vid__t"><b>The Beauty of China, Zhangjiajie &amp; Hong Kong</b><span>Inspira Tour · Sep 2018</span></span><span class="sr">, play video</span></button></li>
+          <li><button class="vid" type="button" data-video="Ibj0uVvkQR0" data-title="Angkasa Mesin, Thailand, Aug 2017"><span class="vid__img"><img src="assets/img/videos/Ibj0uVvkQR0.webp" width="960" height="540" alt="" loading="lazy"><span class="vid__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span></span><span class="vid__t"><b>Thailand</b><span>Angkasa Mesin · Aug 2017</span></span><span class="sr">, play video</span></button></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="az dark" aria-labelledby="az-t">
+      <div class="wrap az__g">
+        <div class="az__h">
+          <h2 class="h2" id="az-t" data-words>Business Oriented Solution</h2>
+          <p lang="id">Menyediakan segala kebutuhan Anda, meminimalkan pekerjaan Anda. Karena kami melakukan segala sesuatu A-Z.</p>
+        </div>
+        <ol class="az__steps" lang="id" data-stagger>
+          <li><h3>Draft campaign</h3><p>Membuat draft campaign untuk Anda.</p></li>
+          <li><h3>Persiapan sebelum keberangkatan</h3><p>Kami memberikan progress report selama persiapan acara perjalanan berlangsung, laksana Personal Assistant Anda.</p></li>
+          <li><h3>Proses dokumen perjalanan</h3></li>
+          <li><h3>Saat keberangkatan</h3></li>
+          <li><h3>Acara perjalanan</h3><p>Inspira Moments will be sprinkled along the trip: inspirational and motivational stories that boost the work ethic of listeners.</p></li>
+          <li><h3>Pelayanan saat kembali ke Tanah Air</h3></li>
+          <li><h3>Post Tour Touch</h3><p>Memberikan Laporan yang transparan &amp; konkrit setelah Tour: jaminan bahwa Tour yang Anda jalankan benar-benar memenuhi misi business Anda.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="wrap extras" aria-labelledby="extras-t">
+      <div class="extras__h">
+        <h2 class="h2" id="extras-t" data-words>Popular Activities</h2>
+        <a class="more" href="index.html#activities">See them on the home page</a>
+      </div>
+      <ul class="extras__l" data-stagger>
+          <li><span class="ring"><span class="win"><img src="assets/img/activities/aurora.webp" width="473" height="709" alt="" loading="lazy"></span></span><b>Aurora Hunting</b></li>
+          <li><span class="ring"><span class="win"><img src="assets/img/activities/dogsled.webp" width="1146" height="900" alt="" loading="lazy"></span></span><b>Dogsled</b></li>
+          <li><span class="ring"><span class="win"><img src="assets/img/activities/funicular.webp" width="640" height="480" alt="" loading="lazy"></span></span><b>Funicular</b></li>
+          <li><span class="ring"><span class="win"><img src="assets/img/activities/segway.webp" width="473" height="709" alt="" loading="lazy"></span></span><b>Segway</b></li>
+          <li><span class="ring"><span class="win"><img src="assets/img/activities/helicopter.webp" width="1200" height="800" alt="" loading="lazy"></span></span><b>Helicopter Ride</b></li>
+          <li><span class="ring"><span class="win"><img src="assets/img/activities/speedboat.webp" width="669" height="446" alt="" loading="lazy"></span></span><b>Speedboat</b></li>
+          <li><span class="ring"><span class="win"><img src="assets/img/activities/snow-mobile.webp" width="1200" height="762" alt="" loading="lazy"></span></span><b>Snow Mobile</b></li>
+          <li><span class="ring"><span class="win"><img src="assets/img/activities/cycling.webp" width="473" height="709" alt="" loading="lazy"></span></span><b>Cycling</b></li>
+          <li><span class="ring"><span class="win"><img src="assets/img/activities/rickshaw.webp" width="473" height="709" alt="" loading="lazy"></span></span><b>Rickshaw</b></li>
+          <li><span class="ring"><span class="win"><img src="assets/img/activities/ferrari.webp" width="473" height="709" alt="" loading="lazy"></span></span><b>Ferrari Self Drive</b></li>
+          <li><span class="ring"><span class="win"><img src="assets/img/activities/gala-dinner.webp" width="1200" height="801" alt="" loading="lazy"></span></span><b>Gala Dinner</b></li>
+      </ul>
+    </section>
+
+    <section class="wrap social-cards" aria-labelledby="social-t">
+      <h2 class="h2" id="social-t" data-words>Our Social Media</h2>
+      <ul>
+        <li><a href="https://www.tiktok.com/@inspiratour"><small>TikTok</small><b>@inspiratour</b><span>Short videos from our trips</span></a></li>
+        <li><a href="https://www.instagram.com/inspira_tour/"><small>Instagram</small><b>@inspira_tour</b><span>Photos from our trips</span></a></li>
+      </ul>
+    </section>
+
+    <section class="ready" aria-label="Plan a trip">
+      <div class="ready__bg px" style="--p:4; --pos:50% 60%"><img src="assets/img/lake.webp" width="2200" height="1260" alt="Tasco group on an Inspira Tour trip beside a lake in Japan" loading="lazy"></div>
+      <div class="wrap ready__over"><div class="ready__card"><p>Ready to adventure and enjoy premium trip</p><a class="btn" href="contact.html">Explore More</a></div></div>
+    </section>
+  </main>
+
+  <footer class="night dark" id="contact">
+    <div class="night__row" aria-hidden="true" data-night>
+      <div class="ring"><div class="win px" style="--p:8; --pos:20% 40%"><img src="assets/img/asia.webp" width="736" height="1104" alt="" loading="lazy"><span class="shade"></span></div></div>
+      <div class="ring"><div class="win px" style="--p:8; --pos:88% 50%"><img src="assets/img/australia.webp" width="1068" height="561" alt="" loading="lazy"><span class="shade"></span></div></div>
+      <div class="ring"><div class="win px" style="--p:8; --pos:50% 0%"><img src="assets/img/activities/aurora.webp" width="473" height="709" alt="" loading="lazy"><span class="shade"></span></div></div>
+      <div class="ring"><div class="win px" style="--p:8; --pos:50% 50%"><img src="assets/img/europe.webp" width="1120" height="426" alt="" loading="lazy"><span class="shade"></span></div></div>
+      <div class="ring"><div class="win px" style="--p:8; --pos:50% 50%"><img src="assets/img/activities/gala-dinner.webp" width="1200" height="801" alt="" loading="lazy"><span class="shade"></span></div></div>
+    </div>
+    <div class="wrap">
+      <div class="contact">
+        <h2 class="h2" data-words>Have questions? Feel free to write us</h2>
+        <dl>
+          <div><dt>Drop a Line</dt><dd><a href="tel:+622129405333">(021)29405333</a></dd></div>
+          <div><dt>Email Address</dt><dd><a href="mailto:info@inspiratour.co.id">info@inspiratour.co.id</a></dd></div>
+          <div><dt>Visit office</dt><dd><a href="https://maps.app.goo.gl/cVauzKDgBsiJzicm8">Ruko Duta Garden Blok B4 No.15 Tangerang 15124 <span style="white-space:nowrap">Banten-Indonesia</span></a></dd></div>
+        </dl>
+      </div>
+      <div class="foot">
+        <div class="foot__a">
+          <a class="foot__logo" href="index.html" aria-label="Inspira Tour, home"><img src="assets/img/logo-white.webp" width="640" height="136" alt="Inspira Tour. What inspires you?" loading="lazy"></a>
+          <p>Inspira Tour is an <em>incentive house.</em> A travel agency specialising in corporate tour management</p>
+          <ul class="social">
+            <li><a href="https://www.tiktok.com/@inspiratour">Tiktok</a></li>
+            <li><a href="https://www.instagram.com/inspira_tour/">Instagram</a></li>
+            <!-- TODO: add the real Facebook and LinkedIn profile URLs. -->
+            <li><span>Facebook <small>coming soon</small></span></li>
+            <li><span>Linkedin <small>coming soon</small></span></li>
+          </ul>
+        </div>
+        <nav aria-label="Pages">
+          <h2>Pages</h2>
+          <ul>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="gallery.html#asia">Gallery Asia</a></li>
+            <li><a href="gallery.html#america">Gallery America</a></li>
+            <li><a href="gallery.html#europe">Gallery Europe</a></li>
+            <li><a href="gallery.html#australia">Gallery Australia &amp; New Zealand</a></li>
+            <li><a href="inspiration.html">Inspirations</a></li>
+            <li><a href="testimonials.html">Testimonial</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+          </ul>
+        </nav>
+      </div>
+      <p class="legal">© 2023 Inspiratour. All Rights Reserved</p>
+    </div>
+  </footer>
+  <dialog class="box player dark" id="player" aria-label="Trip video" data-lenis-prevent>
+    <div class="player__frame" data-player-frame></div>
+    <div class="box__bar">
+      <p aria-live="polite"><b data-player-t></b><a class="player__yt" href="https://www.youtube.com/" data-player-yt>Open on YouTube</a></p>
+      <div class="box__ctrl"><button class="round" type="button" aria-label="Close video" data-player-close><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m2 2 12 12M14 2 2 14"/></svg></button></div>
+    </div>
+  </dialog>
+</body>
+</html>

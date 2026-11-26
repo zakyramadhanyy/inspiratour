@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery | Inspira Tour</title>
+  <meta name="description" content="Photos from Inspira Tour corporate incentive trips across Asia and Europe.">
+  <meta name="theme-color" content="#F6F4EC">
+  <link rel="icon" href="data:,">
+  <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="assets/js/gsap.min.js" defer></script>
+  <script src="assets/js/ScrollTrigger.min.js" defer></script>
+  <script src="assets/js/lenis.min.js" defer></script>
+  <script src="assets/js/site.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="bar">
+    <a class="bar__logo" href="index.html" aria-label="Inspira Tour, home"><img src="assets/img/logo.webp" width="640" height="121" alt="Inspira Tour. What inspires you?"></a>
+    <nav class="nav" aria-label="Main">
+      <ul>
+        <li><a class="nav__a" href="index.html">Home</a></li>
+        <li class="has-sub">
+          <a class="nav__a" href="about.html">About Us</a>
+          <button class="nav__t" type="button" aria-expanded="false" aria-controls="sub-about" aria-label="About Us submenu"><svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5 6 6.5 11 1.5"/></svg></button>
+          <ul class="sub" id="sub-about"><li><a href="about.html#team">Our Team</a></li></ul>
+        </li>
+        <li class="has-sub">
+          <a class="nav__a" href="gallery.html" aria-current="page">Gallery</a>
+          <button class="nav__t" type="button" aria-expanded="false" aria-controls="sub-gallery" aria-label="Gallery submenu"><svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5 6 6.5 11 1.5"/></svg></button>
+          <ul class="sub" id="sub-gallery"><li><a href="gallery.html#asia">Gallery Asia</a></li><li><a href="gallery.html#america">Gallery America</a></li><li><a href="gallery.html#europe">Gallery Europe</a></li><li><a href="gallery.html#australia">Gallery Australia &amp; New Zealand</a></li></ul>
+        </li>
+        <li><a class="nav__a" href="testimonials.html">Testimonials</a></li>
+        <li><a class="nav__a" href="inspiration.html">Inspiration</a></li>
+      </ul>
+    </nav>
+    <div class="bar__end">
+      <a class="btn btn--s" href="contact.html">Contact Us</a>
+      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu" data-menu-open><svg viewBox="0 0 18 12" aria-hidden="true"><path d="M0 1h18M0 11h18"/></svg></button>
+    </div>
+  </header>
+
+  <dialog class="menu dark" id="menu" aria-label="Main menu" data-lenis-prevent>
+    <div class="menu__top">
+      <img src="assets/img/logo-white.webp" width="640" height="136" alt="">
+      <button class="round" type="button" aria-label="Close menu" data-menu-close><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m2 2 12 12M14 2 2 14"/></svg></button>
+    </div>
+    <nav aria-label="Mobile">
+      <ul class="menu__list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a><ul><li><a href="about.html#team">Our Team</a></li></ul></li>
+        <li><a href="gallery.html" aria-current="page">Gallery</a><ul><li><a href="gallery.html#asia">Gallery Asia</a></li><li><a href="gallery.html#america">Gallery America</a></li><li><a href="gallery.html#europe">Gallery Europe</a></li><li><a href="gallery.html#australia">Gallery Australia &amp; New Zealand</a></li></ul></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="inspiration.html">Inspiration</a></li>
+      </ul>
+      <a class="btn" href="contact.html">Contact Us</a>
+    </nav>
+  </dialog>
+
+  <main id="main">
+    <section class="intro intro--gal wrap" aria-labelledby="page-t">
+      <div class="intro__t">
+        <h1 class="h1" id="page-t">Gallery</h1>
+        <p class="intro__say">People Don’t Take Trips, Trips Take People.</p>
+      </div>
+      <ul class="dests">
+          <li><a class="dest" href="#asia"><span class="ring"><span class="win px" style="--p:8; --pos:50% 60%"><img src="assets/img/asia.webp" width="736" height="1104" alt="Mount Fuji behind a red pagoda" fetchpriority="high"><span class="shade"></span></span></span><span class="dest__t"><small>Travel to</small><strong>Asia</strong><span>12 trip photos</span></span></a></li>
+          <li><a class="dest" href="#america"><span class="ring"><span class="win px" style="--p:8; --pos:34% 50%"><img src="assets/img/america.webp" width="660" height="462" alt="Golden Gate Bridge" fetchpriority="high"><span class="shade"></span></span></span><span class="dest__t"><small>Travel to</small><strong>America</strong><span>Photos coming soon</span></span></a></li>
+          <li><a class="dest" href="#europe"><span class="ring"><span class="win px" style="--p:8; --pos:47% 50%"><img src="assets/img/europe.webp" width="1120" height="426" alt="Louvre Pyramid at night" loading="lazy"><span class="shade"></span></span></span><span class="dest__t"><small>Travel to</small><strong>Europe</strong><span>21 trip photos</span></span></a></li>
+          <li><a class="dest" href="#australia"><span class="ring"><span class="win px" style="--p:8; --pos:62% 50%"><img src="assets/img/australia.webp" width="1068" height="561" alt="Sydney Harbour Bridge at dusk" loading="lazy"><span class="shade"></span></span></span><span class="dest__t"><small>Travel to</small><strong>Australia &amp; New Zealand</strong><span>Photos coming soon</span></span></a></li>
+      </ul>
+    </section>
+
+    <nav class="jump" aria-label="Gallery regions">
+      <ul class="wrap">
+        <li><a href="#asia">Asia <span>12</span></a></li>
+        <li><a href="#america">America <span>soon</span></a></li>
+        <li><a href="#europe">Europe <span>21</span></a></li>
+        <li><a href="#australia">Australia &amp; NZ <span>soon</span></a></li>
+      </ul>
+    </nav>
+
+    <section class="region" id="asia" aria-labelledby="asia-t">
+      <div class="wrap">
+        <div class="region__h">
+          <h2 class="h2" id="asia-t" data-words>Gallery Asia</h2>
+          <p>12 trip photos. Select a photo to see it larger.</p>
+        </div>
+        <ul class="shots" data-shots>
+          <li><button class="shot" type="button" data-shot data-full="assets/img/trips/asia-01.webp" data-client="Sanken" data-title="Japan Alpine Route" data-alt="Sanken group on an Inspira Tour trip, Japan Alpine Route"><span class="shot__img"><img src="assets/img/trips/asia-01.webp" width="1400" height="933" alt="" loading="lazy"></span><span class="shot__t"><b>Sanken</b><span>Japan Alpine Route</span></span><span class="sr">, open larger photo</span></button></li>
+          <li><button class="shot" type="button" data-shot data-full="assets/img/trips/asia-02.webp" data-client="J&amp;T Express" data-title="Incredible Japan Hokkaido" data-alt="J&amp;T Express group on an Inspira Tour trip, Incredible Japan Hokkaido"><span class="shot__img"><img src="assets/img/trips/asia-02-s.webp" width="660" height="440" alt="" loading="lazy"></span><span class="shot__t"><b>J&amp;T Express</b><span>Incredible Japan Hokkaido</span></span><span class="sr">, open larger photo</span></button></li>
+          <li><button class="shot" type="button" data-shot data-full="assets/img/trips/asia-03.webp" data-client="J&amp;T Express" data-title="Explore Yiwu, Experience Shanghai" data-alt="J&amp;T Express group on an Inspira Tour trip, Explore Yiwu, Experience Shanghai"><span class="shot__img"><img src="assets/img/trips/asia-03-s.webp" width="660" height="440" alt="" loading="lazy"></span><span class="shot__t"><b>J&amp;T Express</b><span>Explore Yiwu, Experience Shanghai</span></span><span class="sr">, open larger photo</span></button></li>
+          <li><button class="shot" type="button" data-shot data-full="assets/img/trips/asia-04.webp" data-client="Atlanta Electronics and Samsung" data-title="Paradise of Danang" data-alt="Atlanta Electronics and Samsung group on an Inspira Tour trip, Paradise of Danang"><span class="shot__img"><img src="assets/img/trips/asia-04-s.webp" width="660" height="440" alt="" loading="lazy"></span><span class="shot__t"><b>Atlanta Electronics and Samsung</b><span>Paradise of Danang</span></span><span class="sr">, open larger photo</span></button></li>
+          <li><button class="shot" type="button" data-shot data-full="assets/img/trips/asia-05.webp" data-client="Sanken" data-title="Beautiful Yunnan" data-alt="Sanken group on an Inspira Tour trip, Beautiful Yunnan"><span class="shot__img"><img src="assets/img/trips/asia-05-s.webp" width="660" height="440" alt="" loading="lazy"></span><span class="shot__t"><b>Sanken</b><span>Beautiful Yunnan</span></span><span class="sr">, open larger photo</span></button></li>
+          <li><button class="shot" type="button" data-shot data-full="assets/img/trips/asia-06.webp" data-client="ToffeeDev" data-title="Funtastic Thailand" data-alt="ToffeeDev group on an Inspira Tour trip, Funtastic Thailand"><span class="shot__img"><img src="assets/img/trips/asia-06-s.webp" width="660" height="440" alt="" loading="lazy"></span><span class="shot__t"><b>ToffeeDev</b><span>Funtastic Thailand</span></span><span class="sr">, open larger photo</span></button></li>
+          <li><button class="shot" type="button" data-shot data-full="assets/img/trips/asia-07.webp" data-client="Tasco" data-title="Beautiful Japan" data-alt="Tasco group on an Inspira Tour trip, Beautiful Japan"><span class="shot__img"><img src="assets/img/trips/asia-07-s.webp" width="660" height="440" alt="" loading="lazy"></span><span class="shot__t"><b>Tasco</b><span>Beautiful Japan</span></span><span class="sr">, open larger photo</span></button></li>
+          <li><button class="shot" type="button" data-shot data-full="assets/img/trips/asia-08.webp" data-client="Sanken" data-title="Beautiful Khao Yai" data-alt="Sanken group on an Inspira Tour trip, Beautiful Khao Yai"><span class="shot__img"><img src="assets/img/trips/asia-08.webp" width="1400" height="933" alt="" loading="lazy"></span><span class="shot__t"><b>Sanken</b><span>Beautiful Khao Yai</span></span><span class="sr">, open larger photo</span></button></li>
+          <li><button class="shot" type="button" data-shot data-full="assets/img/trips/asia-09.webp" data-client="J&amp;T Express" data-title="Incredible Japan Hokkaido" data-alt="J&amp;T Express group on an Inspira Tour trip, Incredible Japan Hokkaido"><span class="shot__img"><img src="assets/img/trips/asia-09-s.webp" width="660" height="440" alt="" loading="lazy"></span><span class="shot__t"><b>J&amp;T Express</b><span>Incredible Japan Hokkaido</span></span><span class="sr">, open larger photo</span></button></li>
+          <li><button class="shot" type="button" data-shot data-full="assets/img/trips/asia-10.webp" data-client="Amazing Three Kingdom" data-title="Chongqing, Guangyuan, Jianmenguan, Chengdu" data-alt="Amazing Three Kingdom group on an Inspira Tour trip, Chongqing, Guangyuan, Jianmenguan, Chengdu"><span class="shot__img"><img src="assets/img/trips/asia-10-s.webp" width="660" height="440" alt="" loading="lazy"></span><span class="shot__t"><b>Amazing Three Kingdom</b><span>Chongqing, Guangyuan, Jianmenguan, Chengdu</span></span><span class="sr">, open larger photo</span></button></li>
+          <li><button class="shot" type="button" data-shot data-full="assets/img/trips/asia-11.webp" data-client="Mahkota Diesel" data-title="Beautiful Japan" data-alt="Mahkota Diesel group on an Inspira Tour trip, Beautiful Japan"><span class="shot__img"><img src="assets/img/trips/asia-11-s.webp" width="660" height="440" alt="" loading="lazy"></span><span class="shot__t"><b>Mahkota Diesel</b><span>Beautiful Japan</span></span><span class="sr">, open larger photo</span></button></li>
+          <li><button class="shot" type="button" data-shot data-full="assets/img/trips/asia-12.webp" data-client="J&amp;T Express" data-title="Incredible Japan Hokkaido" data-alt="J&amp;T Express group on an Inspira Tour trip, Incredible Japan Hokkaido"><span class="shot__img"><img src="assets/img/trips/asia-12-s.webp" width="660" height="440" alt="" loading="lazy"></span><span class="shot__t"><b>J&amp;T Express</b><span>Incredible Japan Hokkaido</span></span><span class="sr">, open larger photo</span></button></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="region region--soon" id="america" aria-labelledby="america-t">
+      <div class="wrap soon">
+        <div class="soon__pic"><div class="ring"><div class="win px" style="--p:8; --pos:34% 50%"><img src="assets/img/america.webp" width="660" height="462" alt="Golden Gate Bridge" loading="lazy"></div></div></div>
+        <div class="soon__t">
+          <h2 class="h2" id="america-t" data-words>Gallery America</h2>
+          <!-- TODO: add trip photos for this region when the client sends them. -->
+          <p class="soon__label">Trip photos coming soon</p>
+          <p>We are preparing the photos from our trips to America.</p>
+          <a class="more" href="inspiration.html#videos">Watch the J&amp;T West Coast USA trip video</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="region" id="europe" aria-labelledby="europe-t">
+      <div class="wrap">
+        <div class="region__h">
+          <h2 class="h2" id="europe-t" data-words>Gallery Europe</h2>
+          <p>21 trip photos. Select a photo to see it larger.</p>
+        </div>
+        <ul class="shots" data-shots>
+          <li><button class="shot" type="button" data-shot data-full="assets/img/trips/europe-01.webp" data-client="Sanken" data-title="Enchanting East Europe" data-alt="Sanken group on an Inspira Tour trip, Enchanting East Europe"><span class="shot__img"><img src="assets/img/trips/europe-01.webp" width="1400" height="933" alt="" loading="lazy"></span><span class="shot__t"><b>Sanken</b><span>Enchanting East Europe</span></span><span class="sr">, open larger photo</span></button></li>
+          <li><button class="shot" type="button" data-shot data-full="assets/img/trips/europe-02.webp" data-client="Polytron" data-title="Amazing Greece" data-alt="Polytron group on an Inspira Tour trip, Amazing Greece"><span class="shot__img"><img src="assets/img/trips/europe-02-s.webp" width="660" height="440" alt="" loading="lazy"></span><span class="shot__t"><b>Polytron</b><span>Amazing Greece</span></span><span class="sr">, open larger photo</span></button></li>
+          <li><button class="shot" type="button" data-shot data-full="assets/img/trips/europe-03.webp" data-client="Orient" data-title="Trip of Winners" data-alt="Orient group on an Inspira Tour trip, Trip of Winners"><span class="shot__img"><img src="assets/img/trips/europe-03-s.webp" width="660" height="440" alt="" loading="lazy"></span><span class="shot__t"><b>Orient</b><span>Trip of Winners</span></span><span class="sr">, open larger photo</span></button></li>
+          <li><button class="shot" type="button" data-shot data-full="assets/img/trips/europe-04.webp" data-client="STIHL" data-title="Northern Italy" data-alt="STIHL group on an Inspira Tour trip, Northern Italy"><span class="shot__img"><img src="assets/img/trips/europe-04-s.webp" width="660" height="440" alt="" loading="lazy"></span><span class="shot__t"><b>STIHL</b><span>Northern Italy</span></span><span class="sr">, open larger photo</span></button></li>
+          <li><button class="shot" type="button" data-shot data-full="assets/img/trips/europe-05.webp" data-client="J&amp;T Express" data-title="Wonderful West Europe" data-alt="J&amp;T Express group on an Inspira Tour trip, Wonderful West Europe"><span class="shot__img"><img src="assets/img/trips/europe-05-s.webp" width="660" height="440" alt="" loading="lazy"></span><span class="shot__t"><b>J&amp;T Express</b><span>Wonderful West Europe</span></span><span class="sr">, open larger photo</span></button></li>
+          <li><button class="shot" type="button" data-shot data-full="assets/img/trips/europe-06.webp" data-client="Polytron" data-title="Scandinavia" data-alt="Polytron group on an Inspira Tour trip, Scandinavia"><span class="shot__img"><img src="assets/img/trips/europe-06-s.webp" width="660" height="440" alt="" loading="lazy"></span><span class="shot__t"><b>Polytron</b><span>Scandinavia</span></span><span class="sr">, open larger photo</span></button></li>
+          <li><button class="shot" type="button" data-shot data-full="assets/img/trips/europe-07.webp" data-client="Bahn Hoft" data-title="Charming Europe" data-alt="Bahn Hoft group on an Inspira Tour trip, Charming Europe"><span class="shot__img"><img src="assets/img/trips/europe-07-s.webp" width="660" height="440" alt="" loading="lazy"></span><span class="shot__t"><b>Bahn Hoft</b><span>Charming Europe</span></span><span class="sr">, open larger photo</span></button></li>
+          <li><button class="shot" type="button" data-shot data-full="assets/img/trips/europe-08.webp" data-client="J&amp;T Express" data-title="Wonderful West Europe" data-alt="J&amp;T Express group on an Inspira Tour trip, Wonderful West Europe"><span class="shot__img"><img src="assets/img/trips/europe-08.webp" width="1400" height="933" alt="" loading="lazy"></span><span class="shot__t"><b>J&amp;T Express</b><span>Wonderful West Europe</span></span><span class="sr">, open larger photo</span></button></li>
+          <li><button class="shot" type="button" data-shot data-full="assets/img/trips/europe-09.webp" data-client="Polytron" data-title="Charming East Europe" data-alt="Polytron group on an Inspira Tour trip, Charming East Europe"><span class="shot__img"><img src="assets/img/trips/europe-09-s.webp" width="660" height="440" alt="" loading="lazy"></span><span class="shot__t"><b>Polytron</b><span>Charming East Europe</span></span><span class="sr">, open larger photo</span></button></li>
+          <li><button class="shot" type="button" data-shot data-full="assets/img/trips/europe-10.webp" data-client="Sanken" data-title="Fantastic West Europe" data-alt="Sanken group on an Inspira Tour trip, Fantastic West Europe"><span class="shot__img"><img src="assets/img/trips/europe-10-s.webp" width="660" height="440" alt="" loading="lazy"></span><span class="shot__t"><b>Sanken</b><span>Fantastic West Europe</span></span><span class="sr">, open larger photo</span></button></li>
+          <li><button class="shot" type="button" data-shot data-full="assets/img/trips/europe-11.webp" data-client="Alisan" data-title="Exotic East Europe" data-alt="Alisan group on an Inspira Tour trip, Exotic East Europe"><span class="shot__img"><img src="assets/img/trips/europe-11-s.webp" width="660" height="440" alt="" loading="lazy"></span><span class="shot__t"><b>Alisan</b><span>Exotic East Europe</span></span><span class="sr">, open larger photo</span></button></li>
+          <li><button class="shot" type="button" data-shot data-full="assets/img/trips/europe-12.webp" data-client="Polytron" data-title="Charming East Europe" data-alt="Polytron group on an Inspira Tour trip, Charming East Europe"><span class="shot__img"><img src="assets/img/trips/europe-12-s.webp" width="660" height="440" alt="" loading="lazy"></span><span class="shot__t"><b>Polytron</b><span>Charming East Europe</span></span><span class="sr">, open larger photo</span></button></li>
+          <li><button class="shot" type="button" data-shot data-full="assets/img/trips/europe-13.webp" data-client="Toko Lima" data-title="Lima Family Tour part 3" data-alt="Toko Lima group on an Inspira Tour trip, Lima Family Tour part 3"><span class="shot__img"><img src="assets/img/trips/europe-13.webp" width="1400" height="933" alt="" loading="lazy"></span><span class="shot__t"><b>Toko Lima</b><span>Lima Family Tour part 3</span></span><span class="sr">, open larger photo</span></button></li>
+          <li><button class="shot" type="button" data-shot data-full="assets/img/trips/europe-14.webp" data-client="Modena" data-title="Europe Charming" data-alt="Modena group on an Inspira Tour trip, Europe Charming"><span class="shot__img"><img src="assets/img/trips/europe-14-s.webp" width="660" height="440" alt="" loading="lazy"></span><span class="shot__t"><b>Modena</b><span>Europe Charming</span></span><span class="sr">, open larger photo</span></button></li>
+          <li><button class="shot" type="button" data-shot data-full="assets/img/trips/europe-15.webp" data-client="KBN" data-title="East Europe plus Paris" data-alt="KBN group on an Inspira Tour trip, East Europe plus Paris"><span class="shot__img"><img src="assets/img/trips/europe-15-s.webp" width="660" height="440" alt="" loading="lazy"></span><span class="shot__t"><b>KBN</b><span>East Europe plus Paris</span></span><span class="sr">, open larger photo</span></button></li>
+          <li><button class="shot" type="button" data-shot data-full="assets/img/trips/europe-16.webp" data-client="Modena" data-title="Europe Sensation" data-alt="Modena group on an Inspira Tour trip, Europe Sensation"><span class="shot__img"><img src="assets/img/trips/europe-16-s.webp" width="660" height="440" alt="" loading="lazy"></span><span class="shot__t"><b>Modena</b><span>Europe Sensation</span></span><span class="sr">, open larger photo</span></button></li>
+          <li><button class="shot" type="button" data-shot data-full="assets/img/trips/europe-17.webp" data-client="Carlton" data-title="The Beauty of Greece and Cyprus" data-alt="Carlton group on an Inspira Tour trip, The Beauty of Greece and Cyprus"><span class="shot__img"><img src="assets/img/trips/europe-17-s.webp" width="660" height="440" alt="" loading="lazy"></span><span class="shot__t"><b>Carlton</b><span>The Beauty of Greece and Cyprus</span></span><span class="sr">, open larger photo</span></button></li>
+          <li><button class="shot" type="button" data-shot data-full="assets/img/trips/europe-18.webp" data-client="Cahaya Mas" data-title="East Europe" data-alt="Cahaya Mas group on an Inspira Tour trip, East Europe"><span class="shot__img"><img src="assets/img/trips/europe-18-s.webp" width="660" height="440" alt="" loading="lazy"></span><span class="shot__t"><b>Cahaya Mas</b><span>East Europe</span></span><span class="sr">, open larger photo</span></button></li>
+          <li><button class="shot" type="button" data-shot data-full="assets/img/trips/europe-19.webp" data-client="Polytron" data-title="Exotic Spain Portugal" data-alt="Polytron group on an Inspira Tour trip, Exotic Spain Portugal"><span class="shot__img"><img src="assets/img/trips/europe-19-s.webp" width="660" height="440" alt="" loading="lazy"></span><span class="shot__t"><b>Polytron</b><span>Exotic Spain Portugal</span></span><span class="sr">, open larger photo</span></button></li>
+          <li><button class="shot" type="button" data-shot data-full="assets/img/trips/europe-20.webp" data-client="Toko Lima" data-title="Lima Family Tour part 5" data-alt="Toko Lima group on an Inspira Tour trip, Lima Family Tour part 5"><span class="shot__img"><img src="assets/img/trips/europe-20.webp" width="1400" height="933" alt="" loading="lazy"></span><span class="shot__t"><b>Toko Lima</b><span>Lima Family Tour part 5</span></span><span class="sr">, open larger photo</span></button></li>
+          <li><button class="shot" type="button" data-shot data-full="assets/img/trips/europe-21.webp" data-client="U.D. Duta Teknik Jaya" data-title="Magnificent East Europe" data-alt="U.D. Duta Teknik Jaya group on an Inspira Tour trip, Magnificent East Europe"><span class="shot__img"><img src="assets/img/trips/europe-21-s.webp" width="660" height="440" alt="" loading="lazy"></span><span class="shot__t"><b>U.D. Duta Teknik Jaya</b><span>Magnificent East Europe</span></span><span class="sr">, open larger photo</span></button></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="region region--soon" id="australia" aria-labelledby="australia-t">
+      <div class="wrap soon">
+        <div class="soon__pic"><div class="ring"><div class="win px" style="--p:8; --pos:62% 50%"><img src="assets/img/australia.webp" width="1068" height="561" alt="Sydney Harbour Bridge at dusk" loading="lazy"></div></div></div>
+        <div class="soon__t">
+          <h2 class="h2" id="australia-t" data-words>Gallery Australia &amp; New Zealand</h2>
+          <!-- TODO: add trip photos for this region when the client sends them. -->
+          <p class="soon__label">Trip photos coming soon</p>
+          <p>We are preparing the photos from our trips to Australia &amp; New Zealand.</p>
+          <a class="more" href="testimonials.html">Read what a guest wrote about New Zealand</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="night dark" id="contact">
+    <div class="night__row" aria-hidden="true" data-night>
+      <div class="ring"><div class="win px" style="--p:8; --pos:20% 40%"><img src="assets/img/asia.webp" width="736" height="1104" alt="" loading="lazy"><span class="shade"></span></div></div>
+      <div class="ring"><div class="win px" style="--p:8; --pos:88% 50%"><img src="assets/img/australia.webp" width="1068" height="561" alt="" loading="lazy"><span class="shade"></span></div></div>
+      <div class="ring"><div class="win px" style="--p:8; --pos:50% 0%"><img src="assets/img/activities/aurora.webp" width="473" height="709" alt="" loading="lazy"><span class="shade"></span></div></div>
+      <div class="ring"><div class="win px" style="--p:8; --pos:50% 50%"><img src="assets/img/europe.webp" width="1120" height="426" alt="" loading="lazy"><span class="shade"></span></div></div>
+      <div class="ring"><div class="win px" style="--p:8; --pos:50% 50%"><img src="assets/img/activities/gala-dinner.webp" width="1200" height="801" alt="" loading="lazy"><span class="shade"></span></div></div>
+    </div>
+    <div class="wrap">
+      <div class="contact">
+        <h2 class="h2" data-words>Have questions? Feel free to write us</h2>
+        <dl>
+          <div><dt>Drop a Line</dt><dd><a href="tel:+622129405333">(021)29405333</a></dd></div>
+          <div><dt>Email Address</dt><dd><a href="mailto:info@inspiratour.co.id">info@inspiratour.co.id</a></dd></div>
+          <div><dt>Visit office</dt><dd><a href="https://maps.app.goo.gl/cVauzKDgBsiJzicm8">Ruko Duta Garden Blok B4 No.15 Tangerang 15124 <span style="white-space:nowrap">Banten-Indonesia</span></a></dd></div>
+        </dl>
+      </div>
+      <div class="foot">
+        <div class="foot__a">
+          <a class="foot__logo" href="index.html" aria-label="Inspira Tour, home"><img src="assets/img/logo-white.webp" width="640" height="136" alt="Inspira Tour. What inspires you?" loading="lazy"></a>
+          <p>Inspira Tour is an <em>incentive house.</em> A travel agency specialising in corporate tour management</p>
+          <ul class="social">
+            <li><a href="https://www.tiktok.com/@inspiratour">Tiktok</a></li>
+            <li><a href="https://www.instagram.com/inspira_tour/">Instagram</a></li>
+            <!-- TODO: add the real Facebook and LinkedIn profile URLs. -->
+            <li><span>Facebook <small>coming soon</small></span></li>
+            <li><span>Linkedin <small>coming soon</small></span></li>
+          </ul>
+        </div>
+        <nav aria-label="Pages">
+          <h2>Pages</h2>
+          <ul>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="gallery.html#asia">Gallery Asia</a></li>
+            <li><a href="gallery.html#america">Gallery America</a></li>
+            <li><a href="gallery.html#europe">Gallery Europe</a></li>
+            <li><a href="gallery.html#australia">Gallery Australia &amp; New Zealand</a></li>
+            <li><a href="inspiration.html">Inspirations</a></li>
+            <li><a href="testimonials.html">Testimonial</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+          </ul>
+        </nav>
+      </div>
+      <p class="legal">© 2023 Inspiratour. All Rights Reserved</p>
+    </div>
+  </footer>
+  <dialog class="box dark" id="lightbox" aria-label="Trip photo" data-lenis-prevent>
+    <img class="box__img" width="1400" height="933" alt="" data-box-img>
+    <div class="box__bar">
+      <p aria-live="polite"><b data-box-t></b><span data-box-s></span></p>
+      <div class="box__ctrl">
+        <span class="box__n" data-box-n></span>
+        <button class="round" type="button" aria-label="Previous photo" data-box-prev><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 2 4 8l6 6"/></svg></button>
+        <button class="round" type="button" aria-label="Next photo" data-box-next><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 2 6 6-6 6"/></svg></button>
+        <button class="round" type="button" aria-label="Close photo" data-box-close><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m2 2 12 12M14 2 2 14"/></svg></button>
+      </div>
+    </div>
+  </dialog>
+</body>
+</html>
